@@ -48,8 +48,9 @@ const ContactPage: React.FC = () => {
   };
 
   const openGoogleMaps = () => {
-    window.open(`https://www.google.com/maps/place/DUA+PHARMACY,+Chanarthal+Rd,+near+New+Anaj+Mandi,+Thanesar,+Haryana+136118/@29.9516773,76.8391367,17z/data=!4m6!3m5!1s0x390e3b83dd0a5a13:0x8b2abc7cc9ceed3b!8m2!3d29.9517022!4d76.8392053!16s%2Fg%2F11wq0bj8_0?utm_campaign=ml-ardl&g_ep=Eg1tbF8yMDI1MDUxMl8wIJvbDyoASAJQAQ%3D%3D`, '_blank', 'noopener,noreferrer');
-  };
+    window.open(`https://www.google.co.in/maps/place/Architect+Teeksha+Gupta/@30.6836404,76.8435553,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.6836358!4d76.8461302!16s%2Fg%2F11cmvtg6f8?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D`, '_blank', 'noopener,noreferrer');
+}
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
