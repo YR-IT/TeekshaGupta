@@ -1,7 +1,6 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -24,83 +23,101 @@ const projects = [
     id: 3,
     title: "Urban Apartment Complex",
     description:
-      "Located in the vibrant core of the city, this urban apartment complex offers a modern lifestyle with unmatched convenience. The design focuses on sustainability and community, featuring green roofs, energy-efficient systems, and shared amenities like rooftop gardens, fitness centers, and co-working spaces. Interiors boast sleek, contemporary finishes with open-concept living, smart appliances, and plenty of natural light. It’s a forward-thinking residential solution for urban dwellers.",
+      "Located in the vibrant core of the city, this urban apartment complex offers a modern lifestyle with unmatched convenience. The design focuses on sustainability and community, featuring green roofs, energy-efficient systems, and shared amenities like rooftop gardens, fitness centers, and co-working spaces. Interiors boast sleek, contemporary finishes with open-concept living, smart appliances, and plenty of natural light. It's a forward-thinking residential solution for urban dwellers.",
     image: "/project3.jpg",
     link: "/projects/urban-apartment-complex",
   },
 ];
 
+interface ProjectCardProps {
+  project: typeof projects[0];
+  index: number;
+}
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+  const isEven = index % 2 === 0;
+
+  return (
+    <div className={`flex flex-col lg:flex-row gap-8 lg:gap-12 items-center ${
+      !isEven ? 'lg:flex-row-reverse' : ''
+    }`}>
+      {/* Image Container - Takes up more space */}
+      <div className="flex-1 lg:flex-[1.4]">
+        <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
+          <div className="aspect-[4/3] relative">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
+              priority={index === 0}
+            />
+            {/* Overlay for better text readability on hover */}
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
+          
+          {/* Floating project number */}
+          <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-gray-900 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+            {String(project.id).padStart(2, '0')}
+          </div>
+        </div>
+      </div>
+
+      {/* Content Container */}
+      <div className="flex-1 space-y-6">
+        <div className="space-y-4">
+          <h3 className="text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
+            {project.title}
+          </h3>
+          <p className="text-gray-600 leading-relaxed text-lg">
+            {project.description}
+          </p>
+        </div>
+        
+        <Link 
+          href={project.link}
+          className="inline-flex items-center gap-3 text-gray-900 font-medium text-lg hover:gap-4 transition-all duration-300 group"
+        >
+          View Project
+          <svg 
+            className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
-const Projects = () => {
+const ProjectSection: React.FC = () => {
   return (
-    <section
-      id="projects"
-      className="relative z-10 py-24 px-6 bg-gradient-to-b from-gray-100 to-white"
-    >
-      <div className="absolute -top-20 left-0 h-72 w-72 rounded-full bg-pink-100 opacity-30 blur-3xl"></div>
+    <section className="py-20 lg:py-32 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16 lg:mb-24">
+          <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-6">
+            Featured Projects
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Discover our latest interior design projects that showcase innovative spaces, 
+            thoughtful functionality, and timeless aesthetic appeal.
+          </p>
+        </div>
 
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="mb-14 text-center text-4xl font-extrabold text-gray-800 md:text-5xl"
-      >
-        <span className="inline-block bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-black">
-          OUR PROJECTS
-        </span>
-        <div className="mx-auto mt-2 h-1 w-24 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
-      </motion.h2>
-
-      <div className="space-y-24">
-        {projects.map(({ id, title, description, image, link }, index) => {
-          const isEven = index % 2 !== 0;
-
-          return (
-            <motion.a
-              key={id}
-              href={link}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className={`group flex flex-col ${
-                isEven ? "lg:flex-row-reverse" : "lg:flex-row"
-              } items-center gap-8 rounded-3xl bg-white/70 p-6 shadow-md backdrop-blur-md transition hover:shadow-2xl hover:border-purple-300 border border-gray-200`}
-            >
-              {/* Image */}
-              <div className="relative h-64 w-full flex-1 overflow-hidden rounded-3xl">
-                <Image
-                  src={image}
-                  alt={title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  priority={id === 1}
-                />
-              </div>
-
-              {/* Text */}
-              <div className="flex-1">
-                <h3 className="mb-4 text-2xl font-bold text-indigo-700 group-hover:text-purple-600 transition-colors">
-                  {title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">{description}</p>
-              </div>
-            </motion.a>
-          );
-        })}
+        {/* Projects Grid */}
+        <div className="space-y-24 lg:space-y-32">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default ProjectSection;

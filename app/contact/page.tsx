@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
+
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -54,6 +57,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <Navbar />
       {/* Hero Banner */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Enhanced overlay with gradient */}
@@ -542,6 +546,7 @@ const ContactPage: React.FC = () => {
         <div className="absolute bottom-32 right-16 w-6 h-6 bg-teal-400/20 rounded-full animate-bounce"></div>
         <div className="absolute top-1/2 left-20 w-2 h-2 bg-white/40 rounded-full animate-ping"></div>
       </section>
+      <Footer />
     </div>
   );
 };

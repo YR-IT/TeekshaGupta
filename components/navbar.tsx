@@ -114,15 +114,18 @@ const Navbar = () => {
             {/* CTA Button & Mobile Menu */}
             <div className="flex items-center space-x-4">
               {/* CTA Button - White Background with Black Text */}
-              <button
-                className="hidden sm:block relative px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group shadow-lg hover:shadow-xl bg-white text-black border-2 border-black hover:bg-black hover:text-white"
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
-                <span className="relative">Get In Touch</span>
-              </button>
+              <Link href="/contact">
+  <button
+    className="hidden sm:block relative px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group shadow-lg hover:shadow-xl bg-white text-black border-2 border-black hover:bg-black hover:text-white"
+    style={{
+      fontFamily: "Inter, sans-serif",
+    }}
+  >
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
+    <span className="relative">Get In Touch</span>
+  </button>
+</Link>
+
 
               {/* Mobile Menu Button */}
               <button
@@ -171,14 +174,18 @@ const Navbar = () => {
                   {item.title}
                 </Link>
               ))}
-              <button
-                className="w-full mt-6 px-8 py-3 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-2 border-black hover:bg-black hover:text-white"
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                }}
-              >
-                Get In Touch
-              </button>
+              <Link href="/contact">
+  <button
+    className="w-full mt-6 px-8 py-3 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-2 border-black hover:bg-black hover:text-white"
+    style={{
+      fontFamily: "Inter, sans-serif",
+    }}
+    onClick={() => setNavbarOpen(false)}
+  >
+    Get In Touch
+  </button>
+</Link>
+
             </div>
           </div>
         </div>

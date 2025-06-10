@@ -12,98 +12,145 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-600 text-white">
-      <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Brand + Social */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <h2 className="text-xl font-semibold">Ar Teeksha Gupta</h2>
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-50 relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-teal-400 rounded-full blur-3xl transform -translate-x-32 -translate-y-32"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-300 rounded-full blur-3xl transform translate-x-48 translate-y-48"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          
+          {/* Brand + Social */}
+          <div className="md:col-span-1">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-amber-100 mb-3 tracking-wide">
+                AR Teeksha Gupta
+              </h2>
+              <div className="w-12 h-1 bg-gradient-to-r from-teal-400 to-amber-400 rounded-full mb-4"></div>
+            </div>
+            <p className="text-slate-300 mb-8 leading-relaxed text-sm">
+              Creating spaces that inspire. We blend innovative design with functionality to create architectural masterpieces that stand the test of time.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="group bg-slate-700/50 hover:bg-teal-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-teal-500/25">
+                <Linkedin size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              </a>
+              <a href="#" className="group bg-slate-700/50 hover:bg-pink-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/25">
+                <Instagram size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              </a>
+              <a href="#" className="group bg-slate-700/50 hover:bg-blue-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                <Facebook size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              </a>
+              <a href="#" className="group bg-slate-700/50 hover:bg-sky-500 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-sky-500/25">
+                <Twitter size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              </a>
+            </div>
           </div>
-          <p className="text-sm text-gray-300 mb-6">
-            Creating spaces that inspire. We blend innovative design with functionality to create architectural masterpieces.
-          </p>
-          <div className="flex space-x-3">
-            <a href="#" className="bg-gray-700 hover:bg-primary p-2 rounded-full">
-              <Linkedin size={18} />
-            </a>
-            <a href="#" className="bg-gray-700 hover:bg-primary p-2 rounded-full">
-              <Instagram size={18} />
-            </a>
-            <a href="#" className="bg-gray-700 hover:bg-primary p-2 rounded-full">
-              <Facebook size={18} />
-            </a>
-            <a href="#" className="bg-gray-700 hover:bg-primary p-2 rounded-full">
-              <Twitter size={18} />
-            </a>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-bold text-amber-100 mb-6 text-lg">Quick Links</h4>
+            <ul className="space-y-3">
+              {['Home', 'Projects', 'Services', 'About Us', 'Contact'].map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-slate-300 hover:text-teal-400 transition-all duration-200 text-sm group flex items-center">
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-teal-400 mr-0 group-hover:mr-3 transition-all duration-200"></span>
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h4 className="font-semibold mb-4">Our Services</h4>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li>Architectural Design</li>
-            <li>Interior Design</li>
-            <li>Urban Planning</li>
-            <li>Landscape Design</li>
-            <li>Renovation</li>
-            <li>Construction Management</li>
-            <li>Evaluation</li>
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div>
-          <h4 className="font-semibold mb-4">Contact Us</h4>
-          <div className="flex items-start gap-2 mb-3 text-sm text-gray-300">
-            <MapPin size={16} className="mt-1" />
-            <span>
-              SCO 207 CABIN 22<br />
-              SECOND FLOOR SECTOR 14,<br />
-              Panchkula, India, 134109
-            </span>
+          {/* Services */}
+          <div>
+            <h4 className="font-bold text-amber-100 mb-6 text-lg">Our Services</h4>
+            <ul className="space-y-3">
+              {[
+                'Architectural Design',
+                'Interior Design', 
+                'Urban Planning',
+                'Landscape Design',
+                'Renovation',
+                'Construction Management',
+                'Evaluation'
+              ].map((service) => (
+                <li key={service} className="text-slate-300 text-sm flex items-center">
+                  <div className="w-1.5 h-1.5 bg-teal-400 rounded-full mr-3 opacity-60"></div>
+                  {service}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="mb-4  ml-6">
-                    <a
-                      href="https://www.google.co.in/maps/place/Architect+Teeksha+Gupta/@30.6836404,76.8435553,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.6836358!4d76.8461302!16s%2Fg%2F11cmvtg6f8?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 text-white text-sm font-medium rounded-lg bg-teal-600 hover:bg-teal-700 transition"
-                    >
-                      <Navigation className="w-5 h-5" />
-                      View on Map
-                    </a>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-bold text-amber-100 mb-6 text-lg">Contact Us</h4>
+            
+            <div className="bg-slate-800/50 rounded-2xl p-6 backdrop-blur-sm border border-slate-700/50">
+              <div className="flex items-start gap-3 mb-6">
+                <div className="bg-teal-600/20 p-2 rounded-lg">
+                  <MapPin size={18} className="text-teal-400" />
+                </div>
+                <div className="text-slate-300 text-sm leading-relaxed">
+                  <div className="font-medium text-amber-100 mb-1">Our Office</div>
+                  SCO 207 CABIN 22<br />
+                  SECOND FLOOR SECTOR 14,<br />
+                  Panchkula, India, 134109
+                </div>
+              </div>
+              
+              <div className="mb-6">
+                <a
+                  href="https://www.google.co.in/maps/place/Architect+Teeksha+Gupta/@30.6836404,76.8435553,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.6836358!4d76.8461302!16s%2Fg%2F11cmvtg6f8?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-3 px-4 py-3 text-slate-900 text-sm font-semibold rounded-xl bg-gradient-to-r from-teal-400 to-amber-400 hover:from-teal-500 hover:to-amber-500 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg"
+                >
+                  <Navigation className="w-4 h-4" />
+                  View on Map
+                </a>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-amber-600/20 p-2 rounded-lg">
+                    <Mail size={16} className="text-amber-400" />
                   </div>
-          <div className="flex items-center gap-2 mb-2 text-sm text-gray-300">
-            <Mail size={16} />
-            <a href="mailto:info@anshularchitects.com">tasdesign7@gmail.com</a>
-          </div>
-          <div className="flex items-center gap-2 text-sm text-gray-300">
-            <Phone size={16} />
-            <a href="tel:+918930000984">+91 90234 22269</a>
+                  <a href="mailto:tasdesign7@gmail.com" className="text-slate-300 hover:text-amber-400 transition-colors text-sm">
+                    tasdesign7@gmail.com
+                  </a>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-emerald-600/20 p-2 rounded-lg">
+                    <Phone size={16} className="text-emerald-400" />
+                  </div>
+                  <a href="tel:+919023422269" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm font-medium">
+                    +91 90234 22269
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Footer bottom */}
-      <div className="border-t border-gray-700 py-4 px-4 md:px-0 text-center text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center container mx-auto">
-        <p>© 2025 Ar Teeksha Gupta. All rights reserved.</p>
-        <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
+      <div className="border-t border-slate-700/50 bg-slate-900/50 backdrop-blur-sm">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-slate-400 text-sm">
+              © 2025 <span className="text-amber-300 font-medium">AR Teeksha Gupta</span>. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="text-slate-400 hover:text-teal-400 transition-colors">Privacy Policy</a>
+              <a href="#" className="text-slate-400 hover:text-teal-400 transition-colors">Terms of Service</a>
+              <a href="#" className="text-slate-400 hover:text-teal-400 transition-colors">Cookie Policy</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

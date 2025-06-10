@@ -2,7 +2,6 @@ import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-
 const Projects = () => {
   const projects = [
     {
@@ -41,7 +40,7 @@ const Projects = () => {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         <Image
-          src="/ofc_cabin.png"
+          src="/11.png"
           alt="Featured Project"
           fill
           className="object-cover brightness-110 contrast-105"
@@ -51,24 +50,24 @@ const Projects = () => {
         {/* Subtle dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent" />
         
-        {/* Glassmorphism Text Container */}
-        <div className="absolute bottom-8 sm:bottom-12 left-8 sm:left-12 max-w-2xl">
-          <div className="backdrop-blur-xl bg-white/15 border border-white/20 rounded-2xl p-8 sm:p-10 shadow-2xl">
+        {/* Glassmorphism Text Container - Centered */}
+        <div className="absolute inset-0 flex items-center justify-center px-8">
+          <div className="backdrop-blur-xl bg-white/15 border border-white/20 rounded-2xl p-8 sm:p-10 shadow-2xl max-w-2xl w-full text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
-              <span className="text-gray-900 drop-shadow-sm">
-                Featured Project:
+              <span className="text-yellow-300 drop-shadow-sm">
+                Featured Projects
               </span>
               <br />
-              <span className="bg-gradient-to-r from-indigo-600 via-purple-700 to-pink-600 bg-clip-text text-transparent font-black tracking-tight">
-                Courtyard Elegance
+              <span className="bg-teal-300 bg-clip-text text-transparent font-black tracking-tight">
+                Workspace Elegance
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-800 font-semibold leading-relaxed drop-shadow-sm">
-              Blending heritage with contemporary comfort in this award-winning residence.
+            <p className="text-xl sm:text-2xl md:text-3xl text-amber font-semibold leading-relaxed drop-shadow-sm">
+              Blending the modern world with Aesthetic vibes.
             </p>
             
-            {/* Decorative accent */}
-            <div className="mt-6 w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></div>
+            {/* Decorative accent - centered */}
+            <div className="mt-6 w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
           </div>
         </div>
       </div>
