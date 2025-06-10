@@ -377,7 +377,7 @@ const ContactPage: React.FC = () => {
       
       <div className="w-full h-96 rounded-3xl overflow-hidden shadow-xl ring-4 ring-slate-200/50 hover:ring-teal-200/50 transition-all duration-300">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4118.650040256581!2d76.8391367!3d29.9516773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e3b83dd0a5a13%3A0x8b2abc7cc9ceed3b!2sDUA%20PHARMACY!5e1!3m2!1sen!2sin!4v1749462301259!5m2!1sen!2sin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.235984380159!2d76.84613019999999!3d30.683635799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f94a39b70cf8b%3A0xc4d4eeec8e4d7785!2sArchitect%20Teeksha%20Gupta!5e0!3m2!1sen!2sin!4v1749535225995!5m2!1sen!2sin" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
