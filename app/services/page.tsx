@@ -22,7 +22,7 @@ const services = [
     title: "Interior Design",
     description:
       "We craft immersive interior experiences that are tailored to your lifestyle and aspirations. Our designs reflect a balance of texture, lighting, and custom furnishings—layered with timeless sophistication. Whether residential or commercial, our spaces enhance the human experience and evoke emotion.",
-    image: "/5.png",
+    image: "/interior_service.jpg",
   },
   {
     title: "Conservation & Heritage Design",
