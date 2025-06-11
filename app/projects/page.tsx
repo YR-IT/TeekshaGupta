@@ -21,7 +21,8 @@ const Projects = () => {
           const projectId = parseInt(target.dataset.projectId || '0');
           
           if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
-            setVisibleProjects(prev => new Set([...prev, projectId]));
+            setVisibleProjects(prev => new Set([...Array.from(prev), projectId]));
+
           } else if (entry.intersectionRatio < 0.05) {
             setVisibleProjects(prev => {
               const newSet = new Set(prev);
