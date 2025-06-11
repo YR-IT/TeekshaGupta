@@ -7,17 +7,17 @@ import { Briefcase, Award, Clock, Users, Leaf, Puzzle } from "lucide-react";
 
 const philosophyCards = [
   {
-    icon: <Users className="w-8 h-8 text-black" />,
+    icon: <Users className="w-8 h-8 text-white" />,
     title: "Human-Centric Thinking",
     desc: "Architecture should serve the people who inhabit it. By understanding user needs and behaviors, we create spaces that enrich daily life and foster connection.",
   },
   {
-    icon: <Leaf className="w-8 h-8 text-black" />,
+    icon: <Leaf className="w-8 h-8 text-white" />,
     title: "Eco-Conscious Design",
     desc: "We integrate environmental responsibility into every project, designing for low impact, reduced carbon footprint, and long-term well-being.",
   },
   {
-    icon: <Puzzle className="w-8 h-8 text-black" />,
+    icon: <Puzzle className="w-8 h-8 text-white" />,
     title: "Innovating with Purpose",
     desc: "Innovation guided by cultural, social, and environmental context. Our designs balance bold creativity with respectful integration.",
   },
@@ -29,7 +29,7 @@ const About = () => {
       {/* Hero Section */}
       <Navbar />
       <div style={{ fontFamily: "'Inter', sans-serif" }}>
-        <section className="h-[90vh] flex items-center justify-center relative overflow-hidden">
+        <section className="h-[70vh] sm:h-[90vh] flex items-center justify-center relative overflow-hidden">
           {/* Background Video */}
           <video
             autoPlay
@@ -135,20 +135,19 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {philosophyCards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 transition duration-300 cursor-pointer"
-              >
-                <div className="mb-4">{card.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 text-black">
-                  {card.title}
-                </h3>
-                <p className="text-gray-800">{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  {philosophyCards.map((card, index) => (
+    <div
+      key={index}
+      className="bg-white/10 backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 transition duration-300 cursor-pointer text-white"
+    >
+      <div className="mb-4">{card.icon}</div>
+      <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+      <p className="text-white/90">{card.desc}</p>
+    </div>
+  ))}
+</div>
+
         </section>
 
         {/* Core Values */}
@@ -218,49 +217,51 @@ const About = () => {
         </section>
 
         {/* Achievements Section */}
-        <section className="h-[100vh] flex items-center px-6 py-32 bg-[url('/achievements_bg.jpg')] bg-cover bg-center relative">
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/50 z-0" />
+        <section className="min-h-screen flex items-center px-4 sm:px-6 py-16 sm:py-24 bg-[url('/achievements_bg.jpg')] bg-cover bg-center relative">
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50 z-0" />
 
-          <div className="relative z-10 max-w-6xl mx-auto text-center text-white py-16">
-            <h2 className="text-5xl font-black mb-6">Our Achievements</h2>
-            <p className="text-lg mb-12">
-              A few milestones we’re proud of along our journey of creative
-              excellence.
-            </p>
+  <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6">
+      Our Achievements
+    </h2>
+    <p className="text-base sm:text-lg mb-8 sm:mb-12">
+      A few milestones we’re proud of along our journey of creative excellence.
+    </p>
 
-            <div className="grid md:grid-cols-3 gap-12">
-              {[
-                {
-                  stat: "150+",
-                  label: "Projects Completed",
-                  icon: <Briefcase size={40} className="text-black" />,
-                },
-                {
-                  stat: "18",
-                  label: "Design Awards",
-                  icon: <Award size={40} className="text-black" />,
-                },
-                {
-                  stat: "10+",
-                  label: "Years of Excellence",
-                  icon: <Clock size={40} className="text-black" />,
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center text-center transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-white/20 hover:border-white hover:border-2"
-                >
-                  <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-4">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-4xl font-extrabold">{item.stat}</h3>
-                  <p className="text-lg mt-2 font-medium">{item.label}</p>
-                </div>
-              ))}
-            </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+      {[
+        {
+          stat: "150+",
+          label: "Projects Completed",
+          icon: <Briefcase size={40} className="text-black" />,
+        },
+        {
+          stat: "18",
+          label: "Design Awards",
+          icon: <Award size={40} className="text-black" />,
+        },
+        {
+          stat: "10+",
+          label: "Years of Excellence",
+          icon: <Clock size={40} className="text-black" />,
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center text-center transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-white/20 hover:border-white hover:border-2"
+        >
+          <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-4">
+            {item.icon}
           </div>
-        </section>
+          <h3 className="text-3xl sm:text-4xl font-extrabold">{item.stat}</h3>
+          <p className="text-base sm:text-lg mt-2 font-medium">{item.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       </div>
       <Footer />
     </main>
