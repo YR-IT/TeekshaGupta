@@ -447,60 +447,67 @@ const ContactPage = () => {
       </div>
 
       {/* Ready to Begin CTA Section */}
-      <div className="py-32 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-1/4 w-64 h-64 border border-white rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 right-1/4 w-48 h-48 border border-white rounded-full animate-spin" style={{animationDuration: '50s'}}></div>
-        </div>
+<div className="py-32 relative overflow-hidden" style={{backgroundImage: 'url(33.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+  {/* Dark Overlay */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div>
+  
+  {/* Enhanced Black Translucent Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-8 text-center">
-          <span className="text-xs tracking-[0.4em] text-gray-400 font-light uppercase mb-8 block">
-            Ready to Begin?
-          </span>
-          
-          <h3 className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tight text-white mb-12">
-            Ready to Transform
-            <br />
-            <span className="font-thin italic bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-              Your Space?
-            </span>
-          </h3>
-          
-          <div className="w-40 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-12"></div>
-          
-          <p className="text-lg text-gray-300 font-light max-w-4xl mx-auto leading-relaxed mb-16">
-            Let's schedule a consultation and bring your interior design dreams to life with our <em className="font-normal">personalized approach</em>
-          </p>
+  {/* Background Pattern */}
+  <div className="absolute inset-0 opacity-5">
+    <div className="absolute top-20 left-1/4 w-64 h-64 border border-white rounded-full animate-pulse"></div>
+    <div className="absolute bottom-20 right-1/4 w-48 h-48 border border-white rounded-full animate-spin" style={{animationDuration: '50s'}}></div>
+  </div>
 
-          {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-12 mt-24">
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 mb-6 group-hover:bg-white/20 transition-all duration-300 rounded-lg">
-                <Award className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-3xl font-light text-white mb-2">100+</h4>
-              <p className="text-sm tracking-wide text-gray-400 uppercase font-light">Projects Successfully Completed</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 mb-6 group-hover:bg-white/20 transition-all duration-300 rounded-lg">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-3xl font-light text-white mb-2">24-Hour</h4>
-              <p className="text-sm tracking-wide text-gray-400 uppercase font-light">Response Quick Communication</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 mb-6 group-hover:bg-white/20 transition-all duration-300 rounded-lg">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-3xl font-light text-white mb-2">100%</h4>
-              <p className="text-sm tracking-wide text-gray-400 uppercase font-light">Client Satisfaction Our Top Priority</p>
-            </div>
-          </div>
+  <div className="relative z-10 max-w-6xl mx-auto px-8 text-center">
+    <span className="text-xs tracking-[0.4em] text-gray-400 font-light uppercase mb-8 block">
+      Ready to Begin?
+    </span>
+    
+    <h3 className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tight text-white mb-12">
+      Ready to Transform
+      <br />
+      <span className="font-thin italic bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+        Your Space?
+      </span>
+    </h3>
+    
+    <div className="w-40 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-12"></div>
+    
+    <p className="text-lg text-gray-300 font-light max-w-4xl mx-auto leading-relaxed mb-16">
+      Let's schedule a consultation and bring your interior design dreams to life with our <em className="font-normal">personalized approach</em>
+    </p>
+
+    {/* Stats */}
+    <div className="grid md:grid-cols-3 gap-12 mt-24">
+      <div className="text-center group">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 mb-6 group-hover:bg-white/20 transition-all duration-300 rounded-lg">
+          <Award className="w-8 h-8 text-white" />
         </div>
+        <h4 className="text-3xl font-light text-white mb-2">100+</h4>
+        <p className="text-sm tracking-wide text-gray-400 uppercase font-light">Projects Successfully Completed</p>
       </div>
+      
+      <div className="text-center group">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 mb-6 group-hover:bg-white/20 transition-all duration-300 rounded-lg">
+          <Zap className="w-8 h-8 text-white" />
+        </div>
+        <h4 className="text-3xl font-light text-white mb-2">24-Hour</h4>
+        <p className="text-sm tracking-wide text-gray-400 uppercase font-light">Response Quick Communication</p>
+      </div>
+      
+      <div className="text-center group">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 mb-6 group-hover:bg-white/20 transition-all duration-300 rounded-lg">
+          <Users className="w-8 h-8 text-white" />
+        </div>
+        <h4 className="text-3xl font-light text-white mb-2">100%</h4>
+        <p className="text-sm tracking-wide text-gray-400 uppercase font-light">Client Satisfaction Our Top Priority</p>
+      </div>
+    </div>
+  </div>
+</div>
+
       <Footer/>
     </div>
 

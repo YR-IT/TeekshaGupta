@@ -94,7 +94,12 @@ const Projects = () => {
     Your browser does not support the video tag.
   </video>
   
-  {/* Dark Overlay */}
+  {/* Dark Overlay */}{/* Dark Overlay */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div>
+  
+  {/* Enhanced Black Translucent Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+ 
   <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div>
   
   {/* Enhanced Black Translucent Overlay */}

@@ -1,11 +1,11 @@
 // components/testimonials.tsx
 
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { FaQuoteLeft } from "react-icons/fa";
+import { Star, Quote, Users, Award, TrendingUp } from 'lucide-react';
 
 const testimonials = [
   {
@@ -50,11 +50,10 @@ const renderStars = (rating: number) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     stars.push(
-      i <= rating ? (
-        <AiFillStar key={i} className="text-amber-400 text-lg drop-shadow-sm" />
-      ) : (
-        <AiOutlineStar key={i} className="text-amber-200 text-lg" />
-      )
+      <Star 
+        key={i} 
+        className={`w-4 h-4 ${i <= rating ? 'text-white fill-current' : 'text-white/30'} transition-colors duration-300`} 
+      />
     );
   }
   return stars;
@@ -88,132 +87,189 @@ const settings = {
 };
 
 const Testimonial = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
+  const stats = [
+    { icon: Users, label: 'Happy Clients', value: '100+' },
+    { icon: Star, label: 'Average Rating', value: '4.8★' },
+    { icon: Award, label: 'Projects Completed', value: '50+' }
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section className="relative flex w-full items-center justify-center px-4 py-20 text-center overflow-hidden">
-      {/* Enhanced Background with Gradient Overlays */}
+    <section className="relative py-24 overflow-hidden">
+      {/* Background Image with Sophisticated Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="/ofc_image2.png"
           alt="Testimonial Background"
           fill
-          className="object-cover brightness-40 scale-105 transition-transform duration-[20s] hover:scale-110"
+          className="object-cover scale-105 transition-transform duration-[20s] hover:scale-110"
           priority
         />
-        {/* Multi-layered gradient overlay for better contrast */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/90" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+        {/* Sophisticated Overlay - Matching About Section Style */}
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/80" />
       </div>
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 -z-5 opacity-30">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-400/15 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-purple-400/20 rounded-full blur-2xl animate-pulse delay-2000" />
+      {/* Minimalist Decorative Elements */}
+      <div className="absolute inset-0 -z-5 opacity-20">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/10 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/[0.05] rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-2 h-32 bg-white rotate-45 opacity-20"></div>
+        <div className="absolute bottom-40 left-1/4 w-1 h-20 bg-white opacity-30"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl">
-        {/* Enhanced Header Section */}
-        <div className="mb-16 space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-400/10 backdrop-blur-sm rounded-full border border-amber-400/20">
-            <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-            <span className="text-amber-300 text-sm font-medium tracking-wide uppercase">
-              Client Testimonials
-            </span>
+      <div className="relative container mx-auto px-6 lg:px-8">
+        {/* Section Header - Matching About Section Style */}
+        <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center gap-2 px-6 py-2 bg-white text-black text-sm font-medium rounded-full mb-6">
+            <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
+            CLIENT TESTIMONIALS
           </div>
-          
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            What Our{" "}
-            <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
-              Clients Say
-            </span>
+          <h2 className="text-6xl lg:text-7xl font-light text-white mb-4 tracking-tight">
+            What Our
+            <span className="block font-bold">Clients Say</span>
           </h2>
-          
-          <p className="mx-auto max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed">
-            Discover the experiences of those who trusted us to bring their{" "}
-            <span className="text-amber-300 font-medium">architectural dreams</span> to life
+          <div className="w-24 h-px bg-white mx-auto mb-8"></div>
+          <p className="mx-auto max-w-2xl text-xl text-white/80 leading-relaxed">
+            Discover the experiences of those who trusted us to bring their architectural dreams to life
           </p>
         </div>
 
-        {/* Enhanced Slider */}
-        <div className="testimonials-slider px-2">
-          <Slider {...settings}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="px-4 py-2">
-                <div className="group relative h-full">
-                  {/* Glowing border effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400/30 via-yellow-300/20 to-amber-500/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Main card - Auto height with proper constraints */}
-                  <div className="relative min-h-[280px] max-h-[350px] flex flex-col rounded-2xl bg-white/5 backdrop-blur-xl p-6 sm:p-7 shadow-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
-                    
-                    {/* Quote Icon */}
-                    <div className="absolute -top-2 left-6">
-                      <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
-                        <FaQuoteLeft className="text-white text-sm" />
-                      </div>
-                    </div>
-
-                    {/* Content with proper spacing */}
-                    <div className="pt-5 flex flex-col h-full gap-4">
-                      {/* Quote - Flexible height with proper line clamping */}
-                      <blockquote className="flex-1 text-yellow-100 text-sm sm:text-base leading-relaxed font-light italic overflow-hidden">
-                        <span className="line-clamp-4 sm:line-clamp-5">
-                          "{testimonial.quote}"
-                        </span>
-                      </blockquote>
-
-                      {/* Footer - Fixed at bottom */}
-                      <div className="flex-shrink-0 space-y-3 pt-2">
-                        {/* Stars */}
-                        <div className="flex justify-start gap-1">
-                          {renderStars(testimonial.rating)}
-                        </div>
-
-                        {/* Name */}
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-full flex items-center justify-center border border-amber-400/30 flex-shrink-0">
-                            <span className="text-amber-300 font-bold text-sm">
-                              {testimonial.name.charAt(0)}
-                            </span>
-                          </div>
-                          <div className="min-w-0">
-                            <p className="font-semibold text-white text-base truncate">
-                              {testimonial.name}
-                            </p>
-                            <p className="text-amber-300/80 text-xs">
-                              Valued Client
-                            </p>
-                          </div>
+        {/* Testimonials Slider */}
+        <div className={`mb-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="testimonials-slider px-2">
+            <Slider {...settings}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="px-4 py-2">
+                  <div 
+                    className="group relative h-full cursor-pointer"
+                    onMouseEnter={() => setActiveCard(index)}
+                    onMouseLeave={() => setActiveCard(null)}
+                  >
+                    {/* Main Card - Minimalist Design */}
+                    <div className={`relative min-h-[320px] flex flex-col bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 border-2 border-transparent hover:border-white/30 hover:bg-white/15 hover:scale-[1.02] ${
+                      activeCard === index ? 'border-white/50 shadow-2xl bg-white/15' : ''
+                    }`}>
+                      
+                      {/* Quote Icon */}
+                      <div className="absolute -top-4 left-8">
+                        <div className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center shadow-xl">
+                          <Quote className="w-5 h-5" />
                         </div>
                       </div>
-                    </div>
 
-                    {/* Decorative corner accents */}
-                    <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-amber-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-amber-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      {/* Content */}
+                      <div className="pt-8 flex flex-col h-full">
+                        {/* Quote */}
+                        <blockquote className="flex-1 text-white/90 text-base leading-relaxed font-light mb-6">
+                          <span className="line-clamp-4">
+                            "{testimonial.quote}"
+                          </span>
+                        </blockquote>
+
+                        {/* Footer */}
+                        <div className="space-y-4 pt-4 border-t border-white/20">
+                          {/* Stars */}
+                          <div className="flex gap-1">
+                            {renderStars(testimonial.rating)}
+                          </div>
+
+                          {/* Client Info */}
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-white/20 text-white rounded-full flex items-center justify-center border-2 border-white/30 flex-shrink-0">
+                              <span className="font-bold text-lg">
+                                {testimonial.name.charAt(0)}
+                              </span>
+                            </div>
+                            <div>
+                              <p className="font-bold text-white text-lg">
+                                {testimonial.name}
+                              </p>
+                              <p className="text-white/60 text-sm uppercase tracking-wider">
+                                Valued Client
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Hover Effect Line */}
+                      <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${
+                        activeCard === index ? 'w-full' : 'w-0'
+                      }`}></div>
+
+                      {/* Corner Accents */}
+                      <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
 
-        {/* Bottom CTA or Stats */}
-        <div className="mt-16 flex flex-wrap justify-center gap-8 text-center">
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-amber-400">100+</div>
-            <div className="text-slate-300 text-sm">Happy Clients</div>
-          </div>
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-amber-400">4.8★</div>
-            <div className="text-slate-300 text-sm">Average Rating</div>
-          </div>
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-amber-400">50+</div>
-            <div className="text-slate-300 text-sm">Projects Completed</div>
+        {/* Stats Section - Matching About Section Style */}
+        <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15"
+                onMouseEnter={() => setActiveCard(100 + index)}
+                onMouseLeave={() => setActiveCard(null)}
+              >
+                <div className="text-center space-y-4">
+                  <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                    <div className="text-white/80 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
+                  </div>
+                </div>
+                
+                {/* Hover effect line */}
+                <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${
+                  activeCard === 100 + index ? 'w-full' : 'w-0'
+                }`}></div>
+
+                {/* Corner accents */}
+                <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Bottom Quote Section - Matching About Section */}
+        {/* <div className={`mt-24 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-xl p-12 border-2 border-white/20 relative hover:border-white/40 hover:bg-white/15 transition-all duration-500">
+              <Quote className="w-16 h-16 text-white/30 mx-auto mb-6" />
+              <blockquote className="text-2xl lg:text-3xl font-light text-white leading-relaxed italic mb-6">
+                "Excellence is never an accident. It is always the result of high intention, sincere effort, and intelligent execution."
+              </blockquote>
+              <div className="text-white/70 font-medium uppercase tracking-wider text-sm">— Our Commitment to Every Project</div>
+              
+              <div className="absolute top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-white/30"></div>
+              <div className="absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 border-white/30"></div>
+              <div className="absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 border-white/30"></div>
+              <div className="absolute bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-white/30"></div>
+            </div>
+          </div>
+        </div> */}
       </div>
 
       <style jsx>{`
