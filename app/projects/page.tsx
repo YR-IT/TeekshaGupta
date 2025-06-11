@@ -1,120 +1,356 @@
+'use client'
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { useState, useEffect, useRef } from "react";
 
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [visibleProjects, setVisibleProjects] = useState(new Set<number>());
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    // Intersection Observer for scroll-triggered animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const target = entry.target as HTMLElement;
+          const projectId = parseInt(target.dataset.projectId || '0');
+          
+          if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+            setVisibleProjects(prev => new Set([...prev, projectId]));
+          } else if (entry.intersectionRatio < 0.05) {
+            setVisibleProjects(prev => {
+              const newSet = new Set(prev);
+              newSet.delete(projectId);
+              return newSet;
+            });
+          }
+        });
+      },
+      {
+        threshold: [0.05, 0.2, 0.5],
+        rootMargin: '-5% 0px -5% 0px'
+      }
+    );
+
+    projectRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const projects = [
     {
       id: 1,
       title: "Bedroom Interior",
-      image: "/project1.jpg",
-      description:
-        "Luxurious and elegant bedroom interiors with modern materials.",
+      image: "/bedroom.png",
+      description: "Luxurious and elegant bedroom interiors with modern materials and sophisticated lighting design.",
+      category: "RESIDENTIAL"
     },
     {
       id: 2,
       title: "Dining Area",
       image: "/dining_area.png",
-      description:
-        "Functional and aesthetic dining area designs with natural elements.",
+      description: "Functional and aesthetic dining area designs with natural elements and contemporary furnishing.",
+      category: "HOSPITALITY"
     },
     {
       id: 3,
       title: "Workspace Interior",
       image: "/ofc_image.png",
-      description:
-        "Luxurious and elegant workspace interiors with modern materials.",
+      description: "Luxurious and elegant workspace interiors with modern materials and ergonomic considerations.",
+      category: "COMMERCIAL"
     },
     {
       id: 4,
       title: "Jewellery Shop Interior",
       image: "/hero_image1.jpg",
-      description:
-        "Functional and aesthetic jewellery shop designs with natural elements.",
+      description: "Functional and aesthetic jewellery shop designs with premium lighting and display solutions.",
+      category: "RETAIL"
     },
   ];
 
   return (
-    <section className="bg-gradient-to-r from-teal-100 to-amber-100">
-        <Navbar />
-      {/* Hero Section */}
-      <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
-        <Image
-          src="/11.png"
-          alt="Featured Project"
-          fill
-          className="object-cover brightness-110 contrast-105"
-          priority
-        />
+    <section className="bg-white overflow-hidden">
+      <Navbar />
+      
+      {/* Hero Section with Background Video */}
+<div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+  {/* Background Video */}
+  <video
+    className="absolute top-0 left-0 w-full h-full object-cover"
+    autoPlay
+    muted
+    loop
+    playsInline
+  >
+    <source src="/pbg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  
+  {/* Dark Overlay */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div>
+  
+  {/* Enhanced Black Translucent Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+  
+  {/* Animated Background Pattern */}
+  <div className="absolute inset-0 opacity-5">
+    <div className="absolute top-20 left-20 w-96 h-96 border border-white rounded-full animate-spin" style={{animationDuration: '40s'}}></div>
+    <div className="absolute bottom-20 right-20 w-64 h-64 border border-white rounded-full animate-spin" style={{animationDuration: '35s', animationDirection: 'reverse'}}></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-white rounded-full animate-pulse"></div>
+  </div>
+  
+  {/* Hero Content */}
+  <div className={`relative z-10 text-center px-8 transform transition-all duration-2000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+    <div className="mb-8">
+      <div className="inline-block">
+        <span className="text-xs tracking-[0.4em] text-gray-300 font-light uppercase mb-6 block animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+          Portfolio Collection
+        </span>
         
-        {/* Subtle dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent" />
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight tracking-tight leading-none mb-8">
+          <span className={`inline-block text-white transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{animationDelay: '0.8s'}}>
+            CURATED
+          </span>
+          <br />
+          <span className={`inline-block bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{animationDelay: '1.1s'}}>
+            SPACES
+          </span>
+        </h1>
         
-        {/* Glassmorphism Text Container - Centered */}
-        <div className="absolute inset-0 flex items-center justify-center px-8">
-          <div className="backdrop-blur-xl bg-white/15 border border-white/20 rounded-2xl p-8 sm:p-10 shadow-2xl max-w-2xl w-full text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
-              <span className="text-yellow-300 drop-shadow-sm">
-                Featured Projects
-              </span>
-              <br />
-              <span className="bg-teal-300 bg-clip-text text-transparent font-black tracking-tight">
-                Workspace Elegance
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-amber font-semibold leading-relaxed drop-shadow-sm">
-              Blending the modern world with Aesthetic vibes.
+        <div className={`w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-10 transform transition-all duration-1500 ease-out ${isVisible ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}`} style={{animationDelay: '1.4s'}}></div>
+        
+        <p className={`text-lg sm:text-xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} style={{animationDelay: '1.7s'}}>
+          Where monochrome elegance meets architectural precision.<br />
+          Discover spaces that evolve with your presence.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+      {/* Projects Section */}
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
+        <div className="max-w-8xl mx-auto py-40 px-4 sm:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center mb-32">
+            <span className="text-xs tracking-[0.4em] text-gray-600 font-light uppercase mb-8 block">
+              Selected Works
+            </span>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-extralight tracking-tight text-gray-900 mb-10">
+              OUR <span className="font-thin italic text-gray-600">FINEST</span>
+            </h2>
+            <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-10"></div>
+            <p className="text-lg text-gray-700 font-light max-w-3xl mx-auto leading-relaxed">
+              Each project represents our commitment to timeless design,<br />
+              where every detail serves a greater purpose.
             </p>
-            
-            {/* Decorative accent - centered */}
-            <div className="mt-6 w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
+          </div>
+
+          {/* Projects Grid with Scroll Animations */}
+          <div className="space-y-48">
+            {projects.map((project, index) => {
+              const isProjectVisible = visibleProjects.has(project.id);
+              
+              return (
+                <div
+                  key={project.id}
+                  ref={el => { projectRefs.current[index] = el; }}
+                  data-project-id={project.id}
+                  className={`group relative ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-center gap-12 lg:gap-20 transition-all duration-[1800ms] ease-out`}
+                  onMouseEnter={() => setHoveredProject(project.id)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
+                  {/* Project Image with Advanced Scroll Animations */}
+                  <div className="relative w-full lg:w-3/5 xl:w-2/3">
+                    <div className={`aspect-[5/4] lg:aspect-[4/3] xl:aspect-[3/2] relative overflow-hidden rounded-2xl transition-all duration-[2000ms] ease-out ${
+                      isProjectVisible 
+                        ? 'scale-100 shadow-2xl' 
+                        : 'scale-95 shadow-lg'
+                    }`}>
+                      
+                      {/* Multi-layered Image Container */}
+                      <div className="absolute inset-0 bg-gray-200">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className={`object-cover transition-all duration-[2500ms] ease-out ${
+                            isProjectVisible || hoveredProject === project.id
+                              ? 'filter-none scale-100 brightness-100' 
+                              : 'filter grayscale brightness-75 contrast-90 scale-102'
+                          }`}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 66vw"
+                          priority={index < 2}
+                        />
+                        
+                        {/* Dynamic Overlay System */}
+                        <div className={`absolute inset-0 transition-all duration-[2000ms] ease-out ${
+                          isProjectVisible || hoveredProject === project.id
+                            ? 'bg-gradient-to-t from-black/5 via-transparent to-transparent' 
+                            : 'bg-gradient-to-t from-black/50 via-black/25 to-black/15'
+                        }`}></div>
+                        
+                        {/* Enhanced Project Number */}
+                        <div className={`absolute top-8 left-8 transition-all duration-[1200ms] ease-out ${
+                          isProjectVisible ? 'opacity-100 transform translate-y-0 scale-100' : 'opacity-50 transform translate-y-3 scale-95'
+                        }`}>
+                          <div className={`px-5 py-3 rounded-full backdrop-blur-md transition-all duration-[1500ms] ease-out ${
+                            isProjectVisible 
+                              ? 'bg-white/25 text-white border border-white/40' 
+                              : 'bg-black/40 text-gray-300 border border-gray-500/40'
+                          }`}>
+                            <span className="text-sm tracking-[0.3em] font-light">
+                              {String(index + 1).padStart(2, '0')}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Enhanced Category Badge */}
+                        <div className={`absolute top-8 right-8 transition-all duration-[1200ms] ease-out ${
+                          isProjectVisible ? 'opacity-100 transform translate-y-0 scale-100' : 'opacity-50 transform translate-y-3 scale-95'
+                        }`}>
+                          <div className={`px-5 py-3 rounded-full backdrop-blur-md transition-all duration-[1500ms] ease-out ${
+                            isProjectVisible 
+                              ? 'bg-white/25 text-white border border-white/40' 
+                              : 'bg-black/40 text-gray-300 border border-gray-500/40'
+                          }`}>
+                            <span className="text-xs tracking-[0.25em] font-light">
+                              {project.category}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Subtle Reveal Indicator */}
+                        <div className={`absolute bottom-8 left-8 transition-all duration-[1500ms] ease-out ${
+                          isProjectVisible ? 'opacity-0 transform translate-y-6 scale-95' : 'opacity-80 transform translate-y-0 scale-100'
+                        }`}>
+                          <div className="flex items-center space-x-3 px-4 py-3 rounded-full bg-black/30 backdrop-blur-md border border-white/20">
+                            <div className="w-2 h-2 bg-white rounded-full animate-pulse opacity-70"></div>
+                            <span className="text-xs text-white font-light tracking-wide opacity-90">
+                              Scroll to reveal
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Enhanced Animated Border */}
+                      <div className={`absolute inset-0 rounded-2xl border-2 transition-all duration-[1800ms] ease-out ${
+                        isProjectVisible || hoveredProject === project.id
+                          ? 'border-white/40 scale-100 opacity-100' 
+                          : 'border-gray-400/20 scale-98 opacity-0'
+                      }`}></div>
+                    </div>
+
+                    {/* Enhanced Shadow Effect */}
+                    <div className={`absolute -inset-8 rounded-2xl blur-2xl transition-all duration-[2000ms] ease-out ${
+                      isProjectVisible 
+                        ? 'bg-gradient-to-r from-gray-900/15 via-gray-600/10 to-gray-900/15 opacity-50' 
+                        : 'bg-gradient-to-r from-gray-500/8 via-gray-400/5 to-gray-500/8 opacity-25'
+                    } -z-10`}></div>
+                  </div>
+
+                  {/* Enhanced Project Info */}
+                  <div className={`w-full lg:w-2/5 xl:w-1/3 space-y-8 lg:px-8 transition-all duration-[1800ms] ease-out ${
+                    isProjectVisible ? 'opacity-100 transform translate-y-0' : 'opacity-60 transform translate-y-8'
+                  }`}>
+                    <div>
+                      <h3 className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extralight leading-tight mb-6 transition-all duration-[1500ms] ease-out ${
+                        isProjectVisible ? 'text-gray-900 transform translate-y-0' : 'text-gray-600 transform translate-y-2'
+                      }`}>
+                        {project.title}
+                      </h3>
+                      
+                      <div className={`h-px mb-8 transition-all duration-[1800ms] ease-out ${
+                        isProjectVisible 
+                          ? 'w-24 bg-gray-900' 
+                          : 'w-16 bg-gray-500'
+                      }`}></div>
+                      
+                      <p className={`text-lg font-light leading-relaxed mb-10 transition-all duration-[1500ms] ease-out ${
+                        isProjectVisible ? 'text-gray-800 transform translate-y-0' : 'text-gray-600 transform translate-y-2'
+                      }`}>
+                        {project.description}
+                      </p>
+                      
+                      {/* Enhanced View Project Button */}
+                      <button className={`group/btn relative inline-flex items-center transition-all duration-[1200ms] ease-out px-8 py-4 rounded-full ${
+                        isProjectVisible 
+                          ? 'bg-gray-900 text-white hover:bg-gray-800 transform translate-y-0 scale-100' 
+                          : 'bg-gray-200 text-gray-700 hover:bg-gray-300 transform translate-y-1 scale-95'
+                      }`}>
+                        <span className="text-sm tracking-[0.2em] font-light uppercase mr-4">
+                          Explore Project
+                        </span>
+                        <div className={`relative w-12 h-px transition-all duration-500 ease-out ${
+                          isProjectVisible ? 'bg-white' : 'bg-gray-700'
+                        } group-hover/btn:w-16`}>
+                          <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0 transition-all duration-500 ease-out ${
+                            isProjectVisible 
+                              ? 'border-l-white border-t-transparent border-b-transparent' 
+                              : 'border-l-gray-700 border-t-transparent border-b-transparent'
+                          } border-l-[6px] border-t-[3px] border-b-[3px] group-hover/btn:translate-x-1`}></div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          
+          {/* Enhanced Call to Action */}
+          <div className="text-center mt-40 pt-32 border-t border-gray-300">
+            <h3 className="text-3xl sm:text-4xl font-extralight text-gray-900 mb-4">
+              Ready to transform your <span className="italic text-gray-600">vision</span>?
+            </h3>
+            <p className="text-lg text-gray-600 font-light mb-12 max-w-2xl mx-auto">
+              Let's create spaces that evolve and inspire through thoughtful design
+            </p>
+            <button className="group relative inline-flex items-center justify-center px-16 py-5 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-[1000ms] ease-out overflow-hidden rounded-full">
+              <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
+                Begin Your Journey
+              </span>
+              <div className="absolute inset-0 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-center rounded-full"></div>
+            </button>
           </div>
         </div>
       </div>
-
-      {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mb-6 text-center">
-          OUR BEST{" "}
-          <span className="bg-gradient-to-r from-teal-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-extrabold animate-[pulse_2s_ease-in-out_infinite]">
-            PROJECTS
-          </span>
-        </h2>
-        <p className="text-center text-gray-600 mb-10 sm:text-lg">
-          Discover some of our most inspiring and innovative designs.
-        </p>
-        <div className="grid gap-x-12 gap-y-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="relative rounded-xl shadow-lg group"
-            >
-              {/* Background Image */}
-              <div className="relative h-[400px] w-full">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform group-hover:scale-105 duration-300 rounded-lg"
-                />
-              </div>
-              {/* Overlay Info Card */}
-              <div className="absolute -bottom-12 -right-6 bg-teal-100 bg-opacity-90 rounded-lg shadow-md p-4 max-w-[70%]">
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
-                  {project.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-700">
-                  {project.description}
-                </p>
-                <button className="text-black font-medium hover:underline mt-2">
-                  View Details →
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      
       <Footer />
+      
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 2s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .filter {
+          filter: grayscale(100%);
+        }
+        
+        .filter-none {
+          filter: grayscale(0%);
+        }
+      `}</style>
     </section>
   );
 };

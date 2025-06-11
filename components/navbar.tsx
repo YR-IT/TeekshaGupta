@@ -69,7 +69,7 @@ const Navbar = () => {
                     textShadow: sticky ? "none" : "2px 2px 4px rgba(0,0,0,0.5)",
                   }}
                 >
-                  ARTEEKSHA Interiors
+                  AR-TEEKSHA Interiors
                 </h1>
                 <p
                   className={`text-sm font-medium transition-all duration-300 ${
