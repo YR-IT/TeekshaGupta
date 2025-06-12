@@ -191,16 +191,34 @@ const About = () => {
       {/* RATINGS Section */}
       <div 
         ref={ratingsRef}
-        className={`relative bg-[#1a1c1a] py-20 overflow-hidden transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        className={`relative bg-[#1a1c1a] py-16 overflow-hidden transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        {/* Animated Background Elements */}
+        {/* Enhanced Animated Background Elements */}
         <div className="absolute inset-0">
+          {/* Floating Particles */}
           <div className="absolute top-10 left-10 w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
           <div className="absolute top-32 right-20 w-1 h-1 bg-white/30 rounded-full animate-ping"></div>
           <div className="absolute bottom-20 left-32 w-3 h-3 bg-white/10 rounded-full animate-bounce"></div>
           <div className="absolute top-1/2 right-10 w-2 h-2 bg-white/25 rounded-full animate-pulse delay-300"></div>
+          <div className="absolute top-16 left-1/2 w-1.5 h-1.5 bg-white/15 rounded-full animate-ping delay-200"></div>
+          <div className="absolute bottom-32 right-1/4 w-2.5 h-2.5 bg-white/20 rounded-full animate-bounce delay-400"></div>
+          
+          {/* Vertical Lines */}
           <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent animate-pulse"></div>
           <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent animate-pulse delay-500"></div>
+          <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-white/8 to-transparent animate-pulse delay-700"></div>
+          
+          {/* Horizontal Lines */}
+          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent animate-pulse delay-300"></div>
+          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/6 to-transparent animate-pulse delay-600"></div>
+          
+          {/* Diagonal Lines */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-white/5 via-transparent to-white/5 transform rotate-12 origin-top-left animate-pulse delay-800"></div>
+            <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-white/5 via-transparent to-white/5 transform -rotate-12 origin-top-right animate-pulse delay-1000"></div>
+          </div>
+          
+          {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="grid grid-cols-12 h-full">
               {Array.from({length: 12}).map((_, i) => (
@@ -208,8 +226,58 @@ const About = () => {
               ))}
             </div>
           </div>
+          
+          {/* Geometric Shapes */}
+          <div className="absolute top-8 right-8 w-16 h-16 border border-white/10 rotate-45 animate-spin" style={{animationDuration: '20s'}}></div>
+          <div className="absolute bottom-8 left-8 w-12 h-12 border border-white/15 animate-pulse"></div>
+          <div className="absolute top-1/2 left-8 w-8 h-8 border-2 border-white/20 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
+          <div className="absolute top-24 right-1/4 w-20 h-20 border border-white/8 rotate-12 animate-pulse delay-500"></div>
+          
+          {/* Hexagon Shapes */}
+          <div className="absolute top-20 left-1/3 w-10 h-10 border border-white/12 transform rotate-30 animate-pulse delay-200" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
+          <div className="absolute bottom-16 right-1/3 w-8 h-8 border border-white/10 transform rotate-60 animate-pulse delay-700" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}}></div>
+          
+          {/* Triangle Shapes */}
+          <div className="absolute top-40 right-12 w-0 h-0 border-l-4 border-r-4 border-b-8 border-l-transparent border-r-transparent border-b-white/15 animate-bounce delay-300" style={{animationDuration: '4s'}}></div>
+          <div className="absolute bottom-40 left-16 w-0 h-0 border-l-6 border-r-6 border-t-10 border-l-transparent border-r-transparent border-t-white/10 animate-pulse delay-600"></div>
+          
+          {/* Connecting Lines */}
+          <div className="absolute top-1/3 left-1/4 w-32 h-px bg-gradient-to-r from-white/10 to-transparent animate-pulse delay-400"></div>
+          <div className="absolute top-2/3 right-1/4 w-28 h-px bg-gradient-to-l from-white/8 to-transparent animate-pulse delay-800"></div>
+          <div className="absolute top-1/2 left-1/2 w-px h-24 bg-gradient-to-b from-white/12 to-transparent animate-pulse delay-600"></div>
+          
+          {/* Orbital Rings */}
+          <div className="absolute top-16 left-16 w-24 h-24 border border-white/8 rounded-full animate-spin" style={{animationDuration: '30s'}}></div>
+          <div className="absolute bottom-20 right-20 w-32 h-32 border border-white/6 rounded-full animate-spin" style={{animationDuration: '25s', animationDirection: 'reverse'}}></div>
+          
+          {/* Crossing Lines Pattern */}
+          <div className="absolute top-0 left-1/2 w-full h-full transform -rotate-45 opacity-20">
+            <div className="w-px h-full bg-gradient-to-b from-transparent via-white/8 to-transparent mx-auto animate-pulse delay-900"></div>
+          </div>
+          <div className="absolute top-0 left-1/2 w-full h-full transform rotate-45 opacity-20">
+            <div className="w-px h-full bg-gradient-to-b from-transparent via-white/8 to-transparent mx-auto animate-pulse delay-1100"></div>
+          </div>
+          
+          {/* Glowing Orbs */}
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-40 h-40 bg-white/3 rounded-full blur-2xl animate-pulse delay-700"></div>
+          <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-white/2 rounded-full blur-3xl animate-pulse delay-1200"></div>
+          
+          {/* Constellation Pattern */}
+          <div className="absolute top-12 right-1/3 w-1 h-1 bg-white/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-16 right-1/3 w-1 h-1 bg-white/25 rounded-full animate-pulse delay-200"></div>
+          <div className="absolute top-20 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-pulse delay-400"></div>
+          <div className="absolute top-12 right-1/3 w-8 h-px bg-white/10 transform rotate-45 animate-pulse delay-600"></div>
+          
+          {/* Circuit Board Lines */}
+          <div className="absolute bottom-32 left-1/4 w-16 h-px bg-white/10 animate-pulse delay-300"></div>
+          <div className="absolute bottom-32 left-1/4 w-px h-8 bg-white/10 animate-pulse delay-500"></div>
+          <div className="absolute bottom-24 left-1/4 w-12 h-px bg-white/8 animate-pulse delay-700"></div>
+          <div className="absolute bottom-24 left-80 w-px h-6 bg-white/8 animate-pulse delay-900"></div>
+          
+          {/* Diamond Shapes */}
+          <div className="absolute top-32 left-1/2 w-6 h-6 border border-white/15 transform rotate-45 animate-pulse delay-400"></div>
+          <div className="absolute bottom-48 right-1/2 w-4 h-4 border border-white/12 transform rotate-45 animate-pulse delay-800"></div>
         </div>
 
         {/* Content Container */}
