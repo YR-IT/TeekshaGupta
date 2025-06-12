@@ -229,7 +229,7 @@ const About = () => {
               {achievements.map((item, index) => (
                 <div
                   key={index}
-                  className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center text-center transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-white/20 hover:border-white"
+                  className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center text-center transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-white/20 hover:border-white hover:border-2"
                 >
                   <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-4">
                     {item.icon}

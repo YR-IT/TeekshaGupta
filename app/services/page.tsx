@@ -213,21 +213,43 @@ const ServicesPage = () => {
             style={{ backgroundImage: "url('/1.jpg')" }}
           >
             <div className="absolute inset-0 bg-black/60 z-0" />
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">
-                Ready to Start Your Project?
-              </h2>
-              <p className="text-lg text-gray-200 mb-14">
-                Contact us today to schedule a consultation and discuss how we
-                can bring your architectural vision to life.
-              </p>
-              <button className="group relative inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white hover:bg-gray-900 hover:text-black transition-all duration-[1000ms] ease-out overflow-hidden ">
-              <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
-                Contact Us
-              </span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
-            </button>
-            </div>
+
+  <div className="relative z-10 max-w-3xl mx-auto">
+    <motion.h2
+      initial={{ y: 40, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+      viewport={{ once: true }}
+      className="text-4xl md:text-5xl font-bold text-white mb-10"
+    >
+      Ready to Start Your Project?
+    </motion.h2>
+
+    <motion.p
+      initial={{ y: 40, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      viewport={{ once: true }}
+      className="text-lg text-gray-200 mb-14"
+    >
+      Contact us today to schedule a consultation and discuss how we
+      can bring your architectural vision to life.
+    </motion.p>
+
+    <motion.div
+      initial={{ y: 40, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+      viewport={{ once: true }}
+    >
+      <button className="group relative inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white hover:bg-gray-900 hover:text-black transition-all duration-[1000ms] ease-out overflow-hidden ">
+        <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
+          Contact Us
+        </span>
+        <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
+      </button>
+    </motion.div>
+  </div>
           </section>
           <Footer />
         </>
