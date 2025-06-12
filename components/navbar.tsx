@@ -1,4 +1,3 @@
-// components/navbar.tsx
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -42,7 +41,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo - Stylish Cursive with Bold Black & White Design */}
-            <div className="flex items-center space-x-4 group">
+            <Link href="/" className="flex items-center space-x-4 group">
               <div className="relative">
                 {/* Main Logo Icon */}
                 <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-110 border-4 border-white">
@@ -83,7 +82,7 @@ const Navbar = () => {
                 >
                 </p>
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
@@ -115,17 +114,16 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               {/* CTA Button - White Background with Black Text */}
               <Link href="/contact">
-  <button
-    className="hidden sm:block relative px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group shadow-lg hover:shadow-xl bg-white text-black border-2 border-black hover:bg-black hover:text-white"
-    style={{
-      fontFamily: "Inter, sans-serif",
-    }}
-  >
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
-    <span className="relative">Get In Touch</span>
-  </button>
-</Link>
-
+                <button
+                  className="hidden sm:block relative px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group shadow-lg hover:shadow-xl bg-white text-black border-2 border-black hover:bg-black hover:text-white"
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
+                  <span className="relative">Get In Touch</span>
+                </button>
+              </Link>
 
               {/* Mobile Menu Button */}
               <button
@@ -175,17 +173,16 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link href="/contact">
-  <button
-    className="w-full mt-6 px-8 py-3 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-2 border-black hover:bg-black hover:text-white"
-    style={{
-      fontFamily: "Inter, sans-serif",
-    }}
-    onClick={() => setNavbarOpen(false)}
-  >
-    Get In Touch
-  </button>
-</Link>
-
+                <button
+                  className="w-full mt-6 px-8 py-3 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-2 border-black hover:bg-black hover:text-white"
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                  onClick={() => setNavbarOpen(false)}
+                >
+                  Get In Touch
+                </button>
+              </Link>
             </div>
           </div>
         </div>
