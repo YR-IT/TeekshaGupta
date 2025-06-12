@@ -2,7 +2,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Briefcase, Award, Clock, Users, Leaf, Puzzle } from "lucide-react";
 
 const philosophyCards = [
@@ -23,45 +23,88 @@ const philosophyCards = [
   },
 ];
 
+const achievements = [
+  {
+    target: 150,
+    suffix: "+",
+    label: "Projects Completed",
+    icon: <Briefcase size={40} className="text-black" />,
+  },
+  {
+    target: 18,
+    suffix: "",
+    label: "Design Awards",
+    icon: <Award size={40} className="text-black" />,
+  },
+  {
+    target: 10,
+    suffix: "+",
+    label: "Years of Excellence",
+    icon: <Clock size={40} className="text-black" />,
+  },
+];
+
+const AchievementCounter = ({ target, suffix }: { target: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const start = performance.now();
+          const duration = 1500;
+
+          const step = (now: number) => {
+            const progress = Math.min((now - start) / duration, 1);
+            setCount(Math.floor(progress * target));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target]);
+
+  return (
+    <div ref={ref} className="text-3xl sm:text-4xl font-extrabold">
+      {count}
+      {suffix}
+    </div>
+  );
+};
+
 const About = () => {
   return (
     <main className="font-inter text-gray-800">
-      {/* Hero Section */}
       <Navbar />
       <div style={{ fontFamily: "'Inter', sans-serif" }}>
+        {/* Hero Section */}
         <section className="h-[70vh] sm:h-[90vh] flex items-center justify-center relative overflow-hidden">
-          {/* Background Video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          >
+          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
             <source src="/about_bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
-          {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60 z-10"></div>
-
-          {/* Foreground Content */}
           <div className="relative z-20 text-center px-6">
-            <h1 className="text-5xl md:text-6xl font-black text-white drop-shadow-xl">
-              ABOUT US
-            </h1>
+            <h1 className="text-5xl md:text-6xl font-black text-white drop-shadow-xl">ABOUT US</h1>
             <div className="w-40 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mt-5" />
             <p className="text-lg md:text-xl mt-4 text-white/90 max-w-3xl mx-auto mt-5">
-              Where creativity meets functionality – shaping spaces that reflect
-              you.
+              Where creativity meets functionality – shaping spaces that reflect you.
             </p>
           </div>
         </section>
 
-        {/* The Journey - Our Story */}
+        {/* Our Story Section */}
         <section className="py-20 px-6 bg-white">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Image */}
             <div className="w-full relative bg-white p-4 shadow-2xl hover:shadow-3xl hover:-rotate-2 transition-all duration-700 rounded-xl">
               <Image
                 src="/award.png"
@@ -70,198 +113,134 @@ const About = () => {
                 height={600}
                 className="rounded-xl shadow-xl w-full h-auto object-cover"
               />
-
-              {/* Corner borders */}
               <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-black" />
               <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-black" />
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-black" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-black" />
             </div>
-
-            {/* Right: Content */}
             <div className="text-left">
-              <p className="text-sm uppercase tracking-widest text-gray-500 mb-2">
-                The Journey
-              </p>
-              <h2 className="text-4xl mb-6 underline underline-offset-8 decoration-gray-400">
-                Our Story
-              </h2>
+              <p className="text-sm uppercase tracking-widest text-gray-500 mb-2">The Journey</p>
+              <h2 className="text-4xl mb-6 underline underline-offset-8 decoration-gray-400">Our Story</h2>
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                With over two decades of design excellence, AR-TEEKSHA Interiors
-                has earned a reputation as one of the most visionary firms in
-                the industry. Our philosophy is rooted in creating spaces that
-                evoke comfort and character — whether it’s a bespoke home, a
-                cutting-edge workspace, or a tranquil retreat. We also
-                specialize in Vastu consulting, industrial design, and landscape
-                architecture, blending aesthetics with purpose to craft
-                environments that are meaningful and memorable.
+                With over two decades of design excellence, AR-TEEKSHA Interiors has earned a reputation as one of the
+                most visionary firms in the industry. Our philosophy is rooted in creating spaces that evoke comfort and
+                character — whether it’s a bespoke home, a cutting-edge workspace, or a tranquil retreat.
               </p>
-
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                Our commitment to innovation and craftsmanship has been
-                recognized with multiple prestigious design awards, celebrating
-                our ability to merge creativity with functionality. These
-                accolades are a testament to the trust our clients place in us
-                and our passion for pushing design boundaries.
+                Our commitment to innovation and craftsmanship has been recognized with multiple prestigious design
+                awards, celebrating our ability to merge creativity with functionality.
               </p>
-
               <p className="text-lg leading-relaxed text-gray-700">
-                Nationally and internationally acclaimed for design excellence,
-                AR-TEEKSHA Interiors has earned prestigious awards that
-                celebrate our ability to blend creativity with functionality.
-                These honors stand as a testament to our commitment to pushing
-                design boundaries and creating spaces that leave a lasting
-                impression.
+                Nationally and internationally acclaimed, our accolades stand as a testament to our passion and
+                dedication to design that resonates.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Philosophy section */}
-        <section
-          className="py-28 px-6 text-white"
-          style={{ backgroundColor: "#1c1c1f" }}
-        >
+        {/* Philosophy Section */}
+        <section className="py-28 px-6 text-white" style={{ backgroundColor: "#1c1c1f" }}>
           <div className="max-w-6xl mx-auto text-center mb-16">
-            <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">
-              What Drives us
-            </p>
+            <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">What Drives us</p>
             <h2 className="text-4xl font-black mb-8">Our Philosophy</h2>
             <p className="text-lg leading-relaxed text-gray-300 mb-8">
-              We believe in blending functionality with artistic expression.
-              Every design is a story — your story — crafted with care, detail,
-              and emotion. Our philosophy centers on creating soulful spaces
-              that inspire and nurture.
+              We believe in blending functionality with artistic expression. Every design is a story — your story —
+              crafted with care, detail, and emotion.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-  {philosophyCards.map((card, index) => (
-    <div
-      key={index}
-      className="bg-white/10 backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 transition duration-300 cursor-pointer text-white"
-    >
-      <div className="mb-4">{card.icon}</div>
-      <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-      <p className="text-white/90">{card.desc}</p>
-    </div>
-  ))}
-</div>
-
+            {philosophyCards.map((card, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 transition duration-300 cursor-pointer text-white"
+              >
+                <div className="mb-4">{card.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+                <p className="text-white/90">{card.desc}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* Core Values */}
-        <section className="py-20 px-6 bg-white">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
-            {/* Left Spacer or Logo Area */}
-            <div className="md:w-1/2 mb-10 md:mb-0" />
+        {/* Core Values Section */}
+        <section className="bg-white py-24 px-6">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div className="h-full">
+              <div className="overflow-hidden rounded-2xl shadow-xl">
+                <Image
+                  src="/design.jpg"
+                  alt="Interior design by AR-TEEKSHA"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-105"
+                />
+              </div>
+            </div>
 
-            {/* Right Content */}
-            <div className="md:w-1/2 text-left">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6 underline underline-offset-8 decoration-gray-400">
-                Our Core Principles
+            <div className="text-gray-800">
+              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-8 underline underline-offset-8 decoration-gray-300">
+                Design with Purpose
               </h2>
-
-              <p className="mb-6 text-gray-800">
-                Every project we take on is guided by values that go beyond just
-                aesthetics or function. These principles are embedded in how we
-                think, collaborate, and create—ensuring that our spaces not only
-                look good but feel right and live well.
+              <p className="mb-6 text-lg leading-relaxed text-gray-700 max-w-prose">
+                At <strong>AR-TEEKSHA Interiors</strong>, we believe that exceptional design is intentional. It goes
+                beyond style—shaping spaces that support how people live, feel, and connect.
               </p>
-
-              <p className="mb-6 text-gray-800 font-semibold">
-                Collaboration | Craft | People
-              </p>
-
-              <p className="mb-4 text-gray-800">
-                <strong>Collaboration</strong> — great design doesn't happen in
-                isolation. We engage deeply with our clients, consultants, and
-                community stakeholders to uncover needs, align visions, and
-                build trust. We see each project as a shared journey where
-                dialogue and co-creation lead to more meaningful outcomes.
-              </p>
-
-              <p className="mb-4 text-gray-800">
-                <strong>Craft</strong> — we approach each detail with care.
-                Whether it’s the curve of a staircase or the texture of a wall,
-                every element is considered. We champion materials that endure,
-                forms that serve purpose, and construction that respects both
-                time and context.
-              </p>
-
-              <p className="mb-4 text-gray-800">
-                <strong>People</strong> — at its core, architecture is about the
-                human experience. We design spaces where people feel connected,
-                comfortable, and inspired—whether it’s a quiet home, a vibrant
-                workplace, or a public gathering place. The impact of design is
-                measured in how people interact with and feel within their
-                environments.
-              </p>
-
-              <p className="mb-4 text-gray-800">
-                These principles aren’t slogans—they're our compass. They help
-                us create work that is not only intelligent and functional, but
-                emotionally resonant and deeply human.
-              </p>
-
-              {/* Final Statement */}
-              <p className="mt-6 text-gray-800 italic">
-                Because ultimately,{" "}
-                <strong>
-                  design isn’t just how something looks—it’s how it shapes
-                  experience. That’s why, for us, design truly matters.
-                </strong>
+              <div className="space-y-6 text-base leading-relaxed text-gray-700">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">Collaboration</h3>
+                  <p>
+                    Our process begins with listening. We work closely with clients to develop thoughtful design rooted
+                    in clarity, transparency, and trust.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">Craft</h3>
+                  <p>
+                    Details matter. From materials and lighting to proportion and finish, our work reflects a commitment
+                    to enduring quality and meaningful form.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">People</h3>
+                  <p>
+                    Every space is made for people. We focus on comfort, beauty, and usability—creating interiors that
+                    foster well-being and connection.
+                  </p>
+                </div>
+              </div>
+              <p className="mt-10 italic text-lg text-gray-800">
+                Thoughtful design isn’t just about how a space looks—
+                <strong> it’s about how it makes you feel.</strong>
               </p>
             </div>
           </div>
         </section>
 
-        {/* Achievements Section */}
-        <section className="min-h-screen flex items-center px-4 sm:px-6 py-16 sm:py-24 bg-[url('/achievements_bg.jpg')] bg-cover bg-center relative">
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/50 z-0" />
-
-  <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6">
-      Our Achievements
-    </h2>
-    <p className="text-base sm:text-lg mb-8 sm:mb-12">
-      A few milestones we’re proud of along our journey of creative excellence.
-    </p>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
-      {[
-        {
-          stat: "150+",
-          label: "Projects Completed",
-          icon: <Briefcase size={40} className="text-black" />,
-        },
-        {
-          stat: "18",
-          label: "Design Awards",
-          icon: <Award size={40} className="text-black" />,
-        },
-        {
-          stat: "10+",
-          label: "Years of Excellence",
-          icon: <Clock size={40} className="text-black" />,
-        },
-      ].map((item, index) => (
-        <div
-          key={index}
-          className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center text-center transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-white/20 hover:border-white hover:border-2"
-        >
-          <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-4">
-            {item.icon}
+        {/* Achievements Section with Animated Counters */}
+        <section className="relative bg-[url('/achievements_bg.jpg')] bg-cover bg-center px-4 sm:px-6 py-16 sm:py-24 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/60 z-0" />
+          <div className="relative z-10 max-w-6xl w-full text-center text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6">Our Achievements</h2>
+            <p className="text-base sm:text-lg mb-12 max-w-2xl mx-auto">
+              A few milestones we’re proud of along our journey of creative excellence.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+              {achievements.map((item, index) => (
+                <div
+                  key={index}
+                  className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center text-center transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-white/20 hover:border-white"
+                >
+                  <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-4">
+                    {item.icon}
+                  </div>
+                  <AchievementCounter target={item.target} suffix={item.suffix} />
+                  <p className="text-base sm:text-lg mt-2 font-medium">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <h3 className="text-3xl sm:text-4xl font-extrabold">{item.stat}</h3>
-          <p className="text-base sm:text-lg mt-2 font-medium">{item.label}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+        </section>
       </div>
       <Footer />
     </main>

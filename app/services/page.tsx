@@ -185,8 +185,7 @@ const ServicesPage = () => {
                   </p>
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full text-sm tracking-wider font-medium hover:bg-gray-700 transition"
-                  >
+                    className="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 text-sm tracking-wider font-medium hover:bg-gray-900 transition">
                     Read More
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -211,22 +210,22 @@ const ServicesPage = () => {
           {/* CTA Section */}
           <section
             className="relative w-full text-center py-24 px-6 bg-cover bg-center"
-            style={{ backgroundImage: "url('/2.png')" }}
+            style={{ backgroundImage: "url('/1.jpg')" }}
           >
             <div className="absolute inset-0 bg-black/60 z-0" />
             <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">
                 Ready to Start Your Project?
               </h2>
-              <p className="text-lg text-gray-200 mb-8">
+              <p className="text-lg text-gray-200 mb-14">
                 Contact us today to schedule a consultation and discuss how we
                 can bring your architectural vision to life.
               </p>
-              <button className="group relative bg-white inline-flex items-center justify-center px-10 py-4 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-[1000ms] ease-out overflow-hidden rounded-full">
+              <button className="group relative inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white hover:bg-gray-900 hover:text-black transition-all duration-[1000ms] ease-out overflow-hidden ">
               <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
                 Contact Us
               </span>
-              <div className="absolute inset-0 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-center rounded-full"></div>
+              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
             </button>
             </div>
           </section>
