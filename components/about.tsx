@@ -65,7 +65,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', i
     return 1 - Math.pow(1 - t, 4);
   };
 
-  // Animate counter
+  // Animate counter with easing
   const animateValue = (
     start: number,
     end: number,
@@ -114,7 +114,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', i
                     return newValues;
                   });
                 },
-                index * 200 
+                index * 200 // 200ms delay between each counter
               );
             });
           }
@@ -144,56 +144,107 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', i
 
   return (
     <section id="about" className="relative bg-gray-50 overflow-hidden">
-      
-      {/* Ratings Section */}
-<div className="bg-gray-900 pt-0 py-10">
-  <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
+    
+      {/* RATINGS Section */}
+<div 
+  className={`relative bg-[#1a1c1a] py-20 overflow-hidden transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+>
+  {/* Animated Background Elements */}
+  <div className="absolute inset-0">
+    {/* Floating Particles */}
+    <div className="absolute top-10 left-10 w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
+    <div className="absolute top-32 right-20 w-1 h-1 bg-white/30 rounded-full animate-ping"></div>
+    <div className="absolute bottom-20 left-32 w-3 h-3 bg-white/10 rounded-full animate-bounce"></div>
+    <div className="absolute top-1/2 right-10 w-2 h-2 bg-white/25 rounded-full animate-pulse delay-300"></div>
+    
+    {/* Geometric Lines */}
+    <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent animate-pulse"></div>
+    <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent animate-pulse delay-500"></div>
+    
+    {/* Subtle Grid Pattern */}
+    <div className="absolute inset-0 opacity-5">
+      <div className="grid grid-cols-12 h-full">
+        {Array.from({length: 12}).map((_, i) => (
+          <div key={i} className="border-r border-white/20"></div>
+        ))}
+      </div>
+    </div>
+    
+    {/* Animated Gradient Orbs */}
+    <div className="absolute top-20 left-20 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+    <div className="absolute bottom-20 right-20 w-40 h-40 bg-white/3 rounded-full blur-2xl animate-pulse delay-700"></div>
+    
+    {/* Moving Diagonal Lines */}
+    <div className="absolute top-0 left-0 w-full h-full">
+      <div className="absolute top-1/4 -left-20 w-40 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform rotate-45 animate-pulse"></div>
+      <div className="absolute bottom-1/4 -right-20 w-60 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent transform -rotate-45 animate-pulse delay-1000"></div>
+    </div>
+  </div>
+
+  {/* Content Container */}
+  <div className="relative z-10 px-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
       {ratings.map((stat, index) => (
         <div
           key={index}
-          className="group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15"
+          className="group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15 hover:shadow-2xl hover:shadow-white/10"
           onMouseEnter={() => setActiveCard(100 + index)}
           onMouseLeave={() => setActiveCard(null)}
         >
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+            <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-white/20">
               <stat.icon className="w-7 h-7" />
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-white/80 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
+              <div className="text-4xl font-bold text-white mb-2 group-hover:text-white/90 transition-colors duration-300">{stat.value}</div>
+              <div className="text-white/80 text-sm font-medium uppercase tracking-wider group-hover:text-white/70 transition-colors duration-300">{stat.label}</div>
             </div>
           </div>
           
-          {/* Hover effect line */}
-          <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${
+          {/* Enhanced Hover effect line */}
+          <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-white via-white/80 to-white transition-all duration-300 ${
             activeCard === 100 + index ? 'w-full' : 'w-0'
           }`}></div>
 
-          {/* Corner accents */}
-          <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          {/* Corner accents with glow */}
+          <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:shadow-sm group-hover:shadow-white/30 transition-all duration-300"></div>
+          <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:shadow-sm group-hover:shadow-white/30 transition-all duration-300"></div>
+          <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:shadow-sm group-hover:shadow-white/30 transition-all duration-300"></div>
+          <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:shadow-sm group-hover:shadow-white/30 transition-all duration-300"></div>
+          
+          {/* Card glow effect on hover */}
+          <div className="absolute inset-0 rounded-lg bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
         </div>
       ))}
     </div>
   </div>
+
+  {/* Bottom Quote Section */}
+  <div className={`mt-24 text-center transition-all duration-1000 delay-700 relative z-10 px-6 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <div className="max-w-4xl mx-auto">
+      <div className="bg-white/10 backdrop-blur-xl p-12 border-2 border-white/20 relative hover:border-white/40 hover:bg-white/15 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10">
+        <Quote className="w-16 h-16 text-white/30 mx-auto mb-6 hover:text-white/40 transition-colors duration-300" />
+        <blockquote className="text-2xl lg:text-3xl font-light text-white leading-relaxed italic mb-6">
+          "Excellence is never an accident. It is always the result of high intention, sincere effort, and intelligent execution."
+        </blockquote>
+        <div className="text-white/70 font-medium uppercase tracking-wider text-sm">— Our Commitment to Every Project</div>
+        
+        {/* Enhanced corner decorations */}
+        <div className="absolute top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-white/30 hover:border-white/50 transition-colors duration-300"></div>
+        <div className="absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 border-white/30 hover:border-white/50 transition-colors duration-300"></div>
+        <div className="absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 border-white/30 hover:border-white/50 transition-colors duration-300"></div>
+        <div className="absolute bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-white/30 hover:border-white/50 transition-colors duration-300"></div>
+        
+        {/* Quote section glow effect */}
+        <div className="absolute inset-0 rounded-lg bg-white/3 opacity-0 hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
-      {/* Minimalist Background Elements */}
-      <div className="absolute inset-0">
-        {/* Subtle Geometric Shapes */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/[0.02] rounded-full blur-3xl"></div>
-        <div className="absolute top-20 right-20 w-2 h-32 bg-black rotate-45 opacity-10"></div>
-        <div className="absolute bottom-40 left-1/4 w-1 h-20 bg-black opacity-20"></div>
-      </div>
+              
 
-    
-
-
+     
       <div className="relative container mx-auto px-6 py-8 lg:px-8">
         {/* Section Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

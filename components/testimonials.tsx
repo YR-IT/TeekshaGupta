@@ -90,7 +90,7 @@ const Testimonial = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
-  const stats = [
+  const ratings = [
     { icon: Users, label: 'Happy Clients', value: '100+' },
     { icon: Star, label: 'Average Rating', value: '4.8★' },
     { icon: Award, label: 'Projects Completed', value: '50+' }
@@ -218,10 +218,10 @@ const Testimonial = () => {
           </div>
         </div>
 
-        {/* Stats Section - Matching About Section Style */}
-        <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        {/* RATINGS Section */}
+        {/* <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
+            {ratings.map((stat, index) => (
               <div
                 key={index}
                 className="group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15"
@@ -238,12 +238,12 @@ const Testimonial = () => {
                   </div>
                 </div>
                 
-                {/* Hover effect line */}
+                Hover effect line
                 <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${
                   activeCard === 100 + index ? 'w-full' : 'w-0'
                 }`}></div>
 
-                {/* Corner accents */}
+                Corner accents
                 <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -253,8 +253,8 @@ const Testimonial = () => {
           </div>
         </div>
 
-        {/* Bottom Quote Section - Matching About Section */}
-        {/* <div className={`mt-24 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        Bottom Quote Section - Matching About Section
+        <div className={`mt-24 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-xl p-12 border-2 border-white/20 relative hover:border-white/40 hover:bg-white/15 transition-all duration-500">
               <Quote className="w-16 h-16 text-white/30 mx-auto mb-6" />
@@ -270,6 +270,8 @@ const Testimonial = () => {
             </div>
           </div>
         </div> */}
+
+
       </div>
 
       <style jsx>{`
