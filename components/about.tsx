@@ -1,22 +1,141 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Award, Users, Home, Palette, Star, ArrowRight, Quote } from 'lucide-react';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [statsVisible, setStatsVisible] = useState(false);
+  const [animatedValues, setAnimatedValues] = useState([0, 0, 0, 0]);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   const stats = [
-    { icon: Home, label: 'Projects Completed', value: '150+' },
-    { icon: Users, label: 'Happy Clients', value: '120+' },
-    { icon: Award, label: 'Years Experience', value: '8+' },
-    { icon: Palette, label: 'Design Awards', value: '15+' }
+    { icon: Home, label: 'Projects Completed', value: 150, suffix: '+' },
+    { icon: Users, label: 'Happy Clients', value: 120, suffix: '+' },
+    { icon: Award, label: 'Years Experience', value: 8, suffix: '+' },
+    { icon: Palette, label: 'Design Awards', value: 15, suffix: '+' }
   ];
 
+    const ratings = [
+      { icon: Users, label: 'Happy Clients', value: '100+' },
+      { icon: Star, label: 'Average Rating', value: '4.8★' },
+      { icon: Award, label: 'Projects Completed', value: '50+' }
+    ];
+  
   const achievements = [
     "Featured in Architectural Digest",
     "Winner of Interior Design Excellence Award 2024", 
     "Certified by International Interior Design Association"
   ];
+
+
+interface AnimatedCounterProps {
+  value: number;
+  suffix?: string;
+  isVisible: boolean;
+}
+
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', isVisible }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const increment = value / steps;
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= value) {
+        setCount(value);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [value, isVisible]);
+
+  return <span>{count}{suffix}</span>;
+};
+
+  const easeOutQuart = (t: number): number => {
+    return 1 - Math.pow(1 - t, 4);
+  };
+
+  // Animate counter
+  const animateValue = (
+    start: number,
+    end: number,
+    duration: number,
+    callback: (value: number) => void,
+    delay: number = 0
+  ) => {
+    setTimeout(() => {
+      const startTime = Date.now();
+      const animate = () => {
+        const now = Date.now();
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const easedProgress = easeOutQuart(progress);
+        const currentValue = Math.floor(start + (end - start) * easedProgress);
+        
+        callback(currentValue);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    }, delay);
+  };
+
+  // Intersection Observer for stats animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !statsVisible) {
+            setStatsVisible(true);
+            
+            // Animate each stat with staggered delays
+            stats.forEach((stat, index) => {
+              animateValue(
+                0,
+                stat.value,
+                2000, // 2 seconds duration
+                (value) => {
+                  setAnimatedValues(prev => {
+                    const newValues = [...prev];
+                    newValues[index] = value;
+                    return newValues;
+                  });
+                },
+                index * 200 
+              );
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [statsVisible]);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 200);
@@ -24,7 +143,45 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="relative py-24 bg-gray-50 overflow-hidden">
+    <section id="about" className="relative bg-gray-50 overflow-hidden">
+      
+      {/* Ratings Section */}
+<div className="bg-gray-900 pt-0 py-10">
+  <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
+      {ratings.map((stat, index) => (
+        <div
+          key={index}
+          className="group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15"
+          onMouseEnter={() => setActiveCard(100 + index)}
+          onMouseLeave={() => setActiveCard(null)}
+        >
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+              <stat.icon className="w-7 h-7" />
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-white/80 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
+            </div>
+          </div>
+          
+          {/* Hover effect line */}
+          <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${
+            activeCard === 100 + index ? 'w-full' : 'w-0'
+          }`}></div>
+
+          {/* Corner accents */}
+          <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
       {/* Minimalist Background Elements */}
       <div className="absolute inset-0">
         {/* Subtle Geometric Shapes */}
@@ -34,7 +191,10 @@ const About = () => {
         <div className="absolute bottom-40 left-1/4 w-1 h-20 bg-black opacity-20"></div>
       </div>
 
-      <div className="relative container mx-auto px-6 lg:px-8">
+    
+
+
+      <div className="relative container mx-auto px-6 py-8 lg:px-8">
         {/* Section Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-2 px-6 py-2 bg-black text-white text-sm font-medium rounded-full mb-6">
@@ -78,30 +238,49 @@ const About = () => {
               </div>
             </div>
 
-            {/* Stats Grid - Redesigned */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Stats Grid - Redesigned with Animation */}
+            <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className={`group relative bg-white p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-black ${
-                    activeCard === index ? 'border-black shadow-2xl' : 'hover:shadow-xl'
-                  }`}
+                  className={`group relative bg-white p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-black transform ${
+                    activeCard === index ? 'border-black shadow-2xl scale-105' : 'hover:shadow-xl hover:scale-102'
+                  } ${statsVisible ? 'animate-bounce-in' : ''}`}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    animationFillMode: 'both'
+                  }}
                   onMouseEnter={() => setActiveCard(index)}
                   onMouseLeave={() => setActiveCard(null)}
                 >
                   <div className="text-center space-y-4">
-                    <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                    <div className={`w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto transition-all duration-500 ${
+                      statsVisible ? 'group-hover:scale-110 group-hover:rotate-12' : ''
+                    }`}>
                       <stat.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-black">{stat.value}</div>
-                      <div className="text-sm text-gray-600 font-medium uppercase tracking-wide mt-2">{stat.label}</div>
+                      <div className={`text-3xl font-bold text-black transition-all duration-300 ${
+                        statsVisible ? 'transform scale-110' : ''
+                      }`}>
+                        <span className="inline-block">
+                          {animatedValues[index]}{stat.suffix}
+                        </span>
+                      </div>
+                      <div className="text-sm text-gray-600 font-medium uppercase tracking-wide mt-2">
+                        {stat.label}
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Hover effect line */}
-                  <div className={`absolute bottom-0 left-0 h-1 bg-black transition-all duration-300 ${
-                    activeCard === index ? 'w-full' : 'w-0'
+                  {/* Hover effect line with pulsing animation */}
+                  <div className={`absolute bottom-0 left-0 h-1 transition-all duration-500 ${
+                    activeCard === index ? 'w-full bg-black' : 'w-0 bg-black'
+                  } ${statsVisible ? 'animate-pulse-slow' : ''}`}></div>
+                  
+                  {/* Glowing effect when animated */}
+                  <div className={`absolute inset-0 rounded-lg transition-all duration-1000 ${
+                    statsVisible && animatedValues[index] > 0 ? 'shadow-lg shadow-black/10' : ''
                   }`}></div>
                 </div>
               ))}
@@ -182,6 +361,44 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* Custom CSS for animations */}
+      <style jsx>{`
+        @keyframes bounce-in {
+          0% {
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+          }
+          50% {
+            transform: translateY(-5px) scale(1.02);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.7;
+          }
+        }
+        
+        .animate-bounce-in {
+          animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .animate-pulse-slow {
+          animation: pulse-slow 2s infinite;
+        }
+        
+        .scale-102 {
+          transform: scale(1.02);
+        }
+      `}</style>
     </section>
   );
 };
