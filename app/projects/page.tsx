@@ -76,70 +76,94 @@ const Projects = () => {
     },
   ];
 
-  return (
-    <section className="bg-white overflow-hidden">
-      <Navbar />
+return (
+  <section className="bg-white overflow-hidden">
+    <Navbar />
+    
+    {/* Hero Section with Background Video */}
+    <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24">
+      {/* Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/pbg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       
-      {/* Hero Section with Background Video */}
-<div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-  {/* Background Video */}
-  <video
-    className="absolute top-0 left-0 w-full h-full object-cover"
-    autoPlay
-    muted
-    loop
-    playsInline
-  >
-    <source src="/pbg.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  
-  {/* Dark Overlay */}{/* Dark Overlay */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div>
-  
-  {/* Enhanced Black Translucent Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
- 
-  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div>
-  
-  {/* Enhanced Black Translucent Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
-  
-  {/* Animated Background Pattern */}
-  <div className="absolute inset-0 opacity-5">
-    <div className="absolute top-20 left-20 w-96 h-96 border border-white rounded-full animate-spin" style={{animationDuration: '40s'}}></div>
-    <div className="absolute bottom-20 right-20 w-64 h-64 border border-white rounded-full animate-spin" style={{animationDuration: '35s', animationDirection: 'reverse'}}></div>
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-white rounded-full animate-pulse"></div>
-  </div>
-  
-  {/* Hero Content */}
-  <div className={`relative z-10 text-center px-8 transform transition-all duration-2000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-    <div className="mb-8">
-      <div className="inline-block">
-        <span className="text-xs tracking-[0.4em] text-gray-300 font-light uppercase mb-6 block animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-          Portfolio Collection
-        </span>
-        
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight tracking-tight leading-none mb-8">
-          <span className={`inline-block text-white transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{animationDelay: '0.8s'}}>
-            CURATED
-          </span>
-          <br />
-          <span className={`inline-block bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{animationDelay: '1.1s'}}>
-            SPACES
-          </span>
-        </h1>
-        
-        <div className={`w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-10 transform transition-all duration-1500 ease-out ${isVisible ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}`} style={{animationDelay: '1.4s'}}></div>
-        
-        <p className={`text-lg sm:text-xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} style={{animationDelay: '1.7s'}}>
-          Where monochrome elegance meets architectural precision.<br />
-          Discover spaces that evolve with your presence.
-        </p>
+      {/* Dark Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div>
+      
+      {/* Enhanced Black Translucent Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+      
+      {/* Animated Background Pattern - Hidden on mobile for better performance */}
+      <div className="absolute inset-0 opacity-5 hidden sm:block">
+        <div 
+          className="absolute top-10 left-10 sm:top-20 sm:left-20 w-48 h-48 sm:w-96 sm:h-96 border border-white rounded-full animate-spin" 
+          style={{animationDuration: '40s'}}
+        ></div>
+        <div 
+          className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-32 h-32 sm:w-64 sm:h-64 border border-white rounded-full animate-spin" 
+          style={{animationDuration: '35s', animationDirection: 'reverse'}}
+        ></div>
+        <div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-80 sm:h-80 border border-white rounded-full animate-pulse"
+        ></div>
+      </div>
+      
+      {/* Hero Content */}
+      <div className={`relative z-10 text-center px-4 sm:px-6 md:px-8 w-full max-w-7xl mx-auto transform transition-all duration-2000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+        <div className="mb-6 sm:mb-8">
+          <div className="inline-block">
+            {/* Portfolio Collection Label */}
+            <span 
+              className="text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] text-gray-300 font-light uppercase mb-4 sm:mb-6 block animate-fade-in-up" 
+              style={{animationDelay: '0.5s'}}
+            >
+              Portfolio Collection
+            </span>
+            
+            {/* Main Heading - Responsive Typography */}
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight tracking-tight leading-none mb-6 sm:mb-8">
+              <span 
+                className={`inline-block text-white transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} 
+                style={{animationDelay: '0.8s'}}
+              >
+                CURATED
+              </span>
+              <br />
+              <span 
+                className={`inline-block bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} 
+                style={{animationDelay: '1.1s'}}
+              >
+                SPACES
+              </span>
+            </h1>
+            
+            {/* Decorative Line */}
+            <div 
+              className={`w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6 sm:mb-10 transform transition-all duration-1500 ease-out ${isVisible ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}`} 
+              style={{animationDelay: '1.4s'}}
+            ></div>
+            
+            {/* Description Text */}
+            <p 
+              className={`text-base sm:text-lg md:text-xl text-gray-300 font-light max-w-xs sm:max-w-2xl mx-auto leading-relaxed transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} 
+              style={{animationDelay: '1.7s'}}
+            >
+              <span className="block sm:inline">Where monochrome elegance meets architectural precision.</span>
+              <br className="hidden sm:block" />
+              <span className="block sm:inline mt-2 sm:mt-0">Discover spaces that evolve with your presence.</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  
 
       {/* Projects Section */}
       <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">

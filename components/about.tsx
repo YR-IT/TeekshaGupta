@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Award, Users, Home, Palette, Star, ArrowRight, Quote } from 'lucide-react';
+import Link from 'next/link';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -219,6 +220,11 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', i
     </div>
   </div>
 
+  
+
+
+
+
   {/* Bottom Quote Section */}
   <div className={`mt-24 text-center transition-all duration-1000 delay-700 relative z-10 px-6 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
     <div className="max-w-4xl mx-auto">
@@ -393,6 +399,27 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', i
           </div>
         </div>
 
+        {/* FIXED Learn More Button - Properly positioned and styled */}
+        <div className={`text-center mt-20 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <Link href="/about">
+            <button className="group relative inline-flex items-center px-8 py-4 bg-black text-white font-medium uppercase tracking-wider transition-all duration-300 hover:bg-gray-800 hover:shadow-xl hover:shadow-black/20 active:scale-95">
+              <span className="mr-4 transition-all duration-300 group-hover:tracking-widest">
+                Learn More About Us
+              </span>
+              <ArrowRight className="w-5 h-5 transition-all duration-300 group-hover:translate-x-1" />
+              
+              {/* Animated underline */}
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
+              
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-white opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-white opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-white opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 border-white opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
+            </button>
+          </Link>
+        </div>
+        
         {/* Bottom Quote Section */}
         <div className={`mt-24 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="max-w-4xl mx-auto">

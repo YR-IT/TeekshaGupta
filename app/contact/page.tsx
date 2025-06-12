@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown, MapPin, Phone, Mail, Clock, Users, Zap, Award, Home, Building, Wrench, MessageCircle, User, AtSign, Hash, Lightbulb } from 'lucide-react';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
+import { BiNavigation } from "react-icons/bi";
+
 
 interface FormData {
   fullName: string;
@@ -423,24 +425,38 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* Embedded Map */}
-              <div className="relative overflow-hidden border border-gray-200 group rounded-lg shadow-lg">
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
-                  <div className="bg-white/90 backdrop-blur-sm px-6 py-3 text-black font-light tracking-wide rounded-lg">
-                    Open in Maps
-                  </div>
-                </div>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.235984380159!2d76.84613019999999!3d30.683635799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f94a39b70cf8b%3A0xc4d4eeec8e4d7785!2sArchitect%20Teeksha%20Gupta!5e0!3m2!1sen!2sin!4v1749535225995!5m2!1sen!2sin"
-                  width="100%"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="filter grayscale hover:grayscale-0 transition-all duration-700 rounded-lg"
-                />
-              </div>
+
+{/* Embedded Map */}
+<div className="space-y-6">
+  <div className="relative overflow-hidden border-4 border-black rounded-lg shadow-lg">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.235984380159!2d76.84613019999999!3d30.683635799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f94a39b70cf8b%3A0xc4d4eeec8e4d7785!2sArchitect%20Teeksha%20Gupta!5e0!3m2!1sen!2sin!4v1749535225995!5m2!1sen!2sin"
+      width="100%"
+      height="600"
+      style={{ border: 0 }}
+      allowFullScreen={true}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className="rounded-lg"
+    />
+  </div>
+  
+  {/* Open in Maps Button - Centered */}
+  <div className="flex justify-center">
+    <a 
+      href="https://www.google.com/maps/place/Architect+Teeksha+Gupta/@30.683636,76.8461302,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.683636!4d76.8461302!16s%2Fg%2F11y3k8qx8q"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative inline-flex items-center justify-center gap-3 overflow-hidden border-2 border-black bg-white text-black font-medium py-3 px-8 transition-colors duration-300 group"
+    >
+      <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+        Open in Maps
+      </span>
+      <BiNavigation className="relative z-10 w-5 h-5 group-hover:text-white transition-colors duration-300" />
+      <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
+    </a>
+  </div>
+</div>
             </div>
           </div>
         </div>
