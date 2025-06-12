@@ -17,9 +17,9 @@ const About = () => {
   ];
 
     const ratings = [
-      { icon: Users, label: 'Happy Clients', value: '100+' },
-      { icon: Star, label: 'Average Rating', value: '4.8★' },
-      { icon: Award, label: 'Projects Completed', value: '50+' }
+      { icon: Users, label: 'Happy Clients', value: '100', suffix: '+' },
+      { icon: Star, label: 'Average Rating', value: '4.8', suffix: '★' },
+      { icon: Award, label: 'Projects Completed', value: '50', suffix: '+' }
     ];
   
   const achievements = [
@@ -188,16 +188,30 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', i
       {ratings.map((stat, index) => (
         <div
           key={index}
-          className="group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15 hover:shadow-2xl hover:shadow-white/10"
+          className={`group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15 hover:shadow-2xl hover:shadow-white/10 ${
+            isVisible ? 'animate-bounce-in' : ''
+          }`}
+          style={{
+            animationDelay: `${index * 100}ms`,
+            animationFillMode: 'both'
+          }}
           onMouseEnter={() => setActiveCard(100 + index)}
           onMouseLeave={() => setActiveCard(null)}
         >
           <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-white/20">
+            <div className={`w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto transition-all duration-500 ${
+              isVisible ? 'group-hover:scale-110 group-hover:rotate-12' : ''
+            }`}>
               <stat.icon className="w-7 h-7" />
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2 group-hover:text-white/90 transition-colors duration-300">{stat.value}</div>
+              <div className={`text-4xl font-bold text-white mb-2 transition-all duration-300 ${
+                isVisible ? 'transform scale-110' : ''
+              }`}>
+                <span className="inline-block">
+                  {animatedValues[index]}{stat.suffix}
+                </span>
+              </div>
               <div className="text-white/80 text-sm font-medium uppercase tracking-wider group-hover:text-white/70 transition-colors duration-300">{stat.label}</div>
             </div>
           </div>
@@ -219,9 +233,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '', i
       ))}
     </div>
   </div>
-
-  
-
+{/* </div> */}
 
 
 
