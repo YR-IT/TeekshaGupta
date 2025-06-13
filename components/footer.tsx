@@ -18,10 +18,9 @@ const Footer = () => {
         <div className="absolute top-0 left-0 w-64 h-64 bg-teal-400 rounded-full blur-3xl transform -translate-x-32 -translate-y-32"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-300 rounded-full blur-3xl transform translate-x-48 translate-y-48"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          
           {/* Brand + Social */}
           <div className="md:col-span-1">
             <div className="mb-6">
@@ -31,33 +30,78 @@ const Footer = () => {
               <div className="w-12 h-1 bg-gradient-to-r from-teal-400 to-amber-400 rounded-full mb-4"></div>
             </div>
             <p className="text-slate-300 mb-8 leading-relaxed text-sm">
-              Creating spaces that inspire. We blend innovative design with functionality to create architectural masterpieces that stand the test of time.
+              Creating spaces that inspire. We blend innovative design with
+              functionality to create architectural masterpieces that stand the
+              test of time.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="group bg-slate-700/50 hover:bg-teal-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-teal-500/25">
-                <Linkedin size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              <a
+                href="https://www.linkedin.com/in/teeksha-gupta-ba8b34110/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-slate-700/50 hover:bg-teal-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-teal-500/25"
+              >
+                <Linkedin
+                  size={20}
+                  className="text-slate-300 group-hover:text-white transition-colors"
+                />
               </a>
-              <a href="#" className="group bg-slate-700/50 hover:bg-pink-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/25">
-                <Instagram size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              <a
+                href="https://www.instagram.com/interior_by_teeksha/?igsh=YnlwaTdsMTdrbWE4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-slate-700/50 hover:bg-pink-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/25"
+              >
+                <Instagram
+                  size={20}
+                  className="text-slate-300 group-hover:text-white transition-colors"
+                />
               </a>
-              <a href="#" className="group bg-slate-700/50 hover:bg-blue-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
-                <Facebook size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              <a
+                href="https://www.facebook.com/interiorbyteeksha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-slate-700/50 hover:bg-blue-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+              >
+                <Facebook
+                  size={20}
+                  className="text-slate-300 group-hover:text-white transition-colors"
+                />
               </a>
-              <a href="#" className="group bg-slate-700/50 hover:bg-sky-500 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-sky-500/25">
-                <Twitter size={20} className="text-slate-300 group-hover:text-white transition-colors" />
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-slate-700/50 hover:bg-sky-500 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-sky-500/25"
+              >
+                <Twitter
+                  size={20}
+                  className="text-slate-300 group-hover:text-white transition-colors"
+                />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-amber-100 mb-6 text-lg">Quick Links</h4>
+            <h4 className="font-bold text-amber-100 mb-6 text-lg">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
-              {['Home', 'Projects', 'Services', 'About Us', 'Contact'].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-slate-300 hover:text-teal-400 transition-all duration-200 text-sm group flex items-center">
+              {[
+                { name: "Home", href: "/" },
+                { name: "Projects", href: "/projects" },
+                { name: "Services", href: "/services" },
+                { name: "About Us", href: "/about" },
+                { name: "Contact", href: "/contact" },
+              ].map(({ name, href }) => (
+                <li key={name}>
+                  <a
+                    href={href}
+                    className="text-slate-300 hover:text-teal-400 transition-all duration-200 text-sm group flex items-center"
+                  >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-teal-400 mr-0 group-hover:mr-3 transition-all duration-200"></span>
-                    {link}
+                    {name}
                   </a>
                 </li>
               ))}
@@ -66,18 +110,23 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold text-amber-100 mb-6 text-lg">Our Services</h4>
+            <h4 className="font-bold text-amber-100 mb-6 text-lg">
+              Our Services
+            </h4>
             <ul className="space-y-3">
               {[
-                'Architectural Design',
-                'Interior Design', 
-                'Urban Planning',
-                'Landscape Design',
-                'Renovation',
-                'Construction Management',
-                'Evaluation'
+                "Architectural Design",
+                "Interior Design",
+                "Urban Planning",
+                "Landscape Design",
+                "Renovation",
+                "Construction Management",
+                "Evaluation",
               ].map((service) => (
-                <li key={service} className="text-slate-300 text-sm flex items-center">
+                <li
+                  key={service}
+                  className="text-slate-300 text-sm flex items-center"
+                >
                   <div className="w-1.5 h-1.5 bg-teal-400 rounded-full mr-3 opacity-60"></div>
                   {service}
                 </li>
@@ -87,21 +136,27 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-amber-100 mb-6 text-lg">Contact Us</h4>
-            
+            <h4 className="font-bold text-amber-100 mb-6 text-lg">
+              Contact Us
+            </h4>
+
             <div className="bg-slate-800/50 rounded-2xl p-6 backdrop-blur-sm border border-slate-700/50">
               <div className="flex items-start gap-3 mb-6">
                 <div className="bg-teal-600/20 p-2 rounded-lg">
                   <MapPin size={18} className="text-teal-400" />
                 </div>
                 <div className="text-slate-300 text-sm leading-relaxed">
-                  <div className="font-medium text-amber-100 mb-1">Our Office</div>
-                  SCO 207 CABIN 22<br />
-                  SECOND FLOOR SECTOR 14,<br />
+                  <div className="font-medium text-amber-100 mb-1">
+                    Our Office
+                  </div>
+                  SCO 207 CABIN 22
+                  <br />
+                  SECOND FLOOR SECTOR 14,
+                  <br />
                   Panchkula, India, 134109
                 </div>
               </div>
-              
+
               <div className="mb-6">
                 <a
                   href="https://www.google.co.in/maps/place/Architect+Teeksha+Gupta/@30.6836404,76.8435553,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.6836358!4d76.8461302!16s%2Fg%2F11cmvtg6f8?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
@@ -113,22 +168,28 @@ const Footer = () => {
                   View on Map
                 </a>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="bg-amber-600/20 p-2 rounded-lg">
                     <Mail size={16} className="text-amber-400" />
                   </div>
-                  <a href="mailto:tasdesign7@gmail.com" className="text-slate-300 hover:text-amber-400 transition-colors text-sm">
+                  <a
+                    href="mailto:tasdesign7@gmail.com"
+                    className="text-slate-300 hover:text-amber-400 transition-colors text-sm"
+                  >
                     tasdesign7@gmail.com
                   </a>
                 </div>
-                
+
                 <div className="flex items-center gap-3">
                   <div className="bg-emerald-600/20 p-2 rounded-lg">
                     <Phone size={16} className="text-emerald-400" />
                   </div>
-                  <a href="tel:+919023422269" className="text-slate-300 hover:text-emerald-400 transition-colors text-sm font-medium">
+                  <a
+                    href="tel:+919023422269"
+                    className="text-slate-300 hover:text-emerald-400 transition-colors text-sm font-medium"
+                  >
                     +91 90234 22269
                   </a>
                 </div>
@@ -143,12 +204,31 @@ const Footer = () => {
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm">
-              © 2025 <span className="text-amber-300 font-medium">AR Teeksha Gupta</span>. All rights reserved.
+              © 2025{" "}
+              <span className="text-amber-300 font-medium">
+                AR Teeksha Gupta
+              </span>
+              . All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-slate-400 hover:text-teal-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-slate-400 hover:text-teal-400 transition-colors">Terms of Service</a>
-              <a href="#" className="text-slate-400 hover:text-teal-400 transition-colors">Cookie Policy</a>
+              <a
+                href="#"
+                className="text-slate-400 hover:text-teal-400 transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="text-slate-400 hover:text-teal-400 transition-colors"
+              >
+                Terms of Service
+              </a>
+              <a
+                href="#"
+                className="text-slate-400 hover:text-teal-400 transition-colors"
+              >
+                Cookie Policy
+              </a>
             </div>
           </div>
         </div>
