@@ -42,46 +42,51 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       !isEven ? 'lg:flex-row-reverse' : ''
     }`}>
       {/* Image Container - Takes up more space */}
-      <div className="flex-1 lg:flex-[1.4]">
+      <div className="flex-1 lg:flex-[1.4] w-full">
         <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
-          <div className="aspect-[4/3] relative">
+          {/* Fixed aspect ratio container that works on all screen sizes */}
+          <div className="relative w-full h-0 pb-[75%] sm:pb-[66.67%] lg:pb-[75%]">
             <Image
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
               priority={index === 0}
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center'
+              }}
             />
             {/* Overlay for better text readability on hover */}
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
           
           {/* Floating project number */}
-          <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-gray-900 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/90 backdrop-blur-sm text-gray-900 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold text-base sm:text-lg shadow-lg">
             {String(project.id).padStart(2, '0')}
           </div>
         </div>
       </div>
 
       {/* Content Container */}
-      <div className="flex-1 space-y-6">
-        <div className="space-y-4">
-          <h3 className="text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
+      <div className="flex-1 space-y-4 sm:space-y-6 w-full">
+        <div className="space-y-3 sm:space-y-4">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
             {project.title}
           </h3>
-          <p className="text-gray-600 leading-relaxed text-lg">
+          <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
             {project.description}
           </p>
         </div>
         
         <Link 
           href={project.link}
-          className="inline-flex items-center gap-3 text-gray-900 font-medium text-lg hover:gap-4 transition-all duration-300 group"
+          className="inline-flex items-center gap-3 text-gray-900 font-medium text-base sm:text-lg hover:gap-4 transition-all duration-300 group"
         >
           View Project
           <svg 
-            className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
+            className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -96,21 +101,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
 const ProjectSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-32 bg-gray-50">
+    <section className="py-12 sm:py-20 lg:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-24">
-          <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-6">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-light text-gray-900 mb-4 sm:mb-6">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             Discover our latest interior design projects that showcase innovative spaces, 
             thoughtful functionality, and timeless aesthetic appeal.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-24 lg:space-y-32">
+        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

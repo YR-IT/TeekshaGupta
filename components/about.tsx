@@ -282,7 +282,7 @@ const About = () => {
 
         {/* Content Container */}
         <div className="relative z-10 px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8 gap-16 max-w-4xl mx-auto">
             {ratings.map((stat, index) => (
               <div
                 key={index}
