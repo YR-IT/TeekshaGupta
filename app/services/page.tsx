@@ -4,44 +4,12 @@ import Image from "next/image";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/navbar";
-
-const services = [
-  {
-    title: "Architectural Design",
-    description:
-      "Our architectural design process fuses creativity with technical precision. We tailor every building to its context, ensuring both aesthetic beauty and functional harmony. From early-stage ideation to detailed blueprints, our work reflects deep attention to proportion, light, space, and materiality—transforming concepts into enduring architectural landmarks.",
-    image: "/architect_service.jpg",
-  },
-  {
-    title: "Planning Applications",
-    description:
-      "Navigating the regulatory landscape can be daunting. We handle the entire planning application process, preparing compelling documents, drawings, and statements that align with local authority guidelines. Our expertise ensures smoother approvals, mitigated risks, and a streamlined path to your project's realization.",
-    image: "/planning_service.jpg",
-  },
-  {
-    title: "Interior Design",
-    description:
-      "We craft immersive interior experiences that are tailored to your lifestyle and aspirations. Our designs reflect a balance of texture, lighting, and custom furnishings—layered with timeless sophistication. Whether residential or commercial, our spaces enhance the human experience and evoke emotion.",
-    image: "/interior_service.jpg",
-  },
-  {
-    title: "Conservation & Heritage Design",
-    description:
-      "Our heritage work honors the past while embracing the future. We breathe new life into historic buildings through meticulous restoration, adaptive reuse, and sensitive design interventions. Every detail respects cultural integrity, blending old-world craftsmanship with contemporary design sensibilities.",
-    image: "/heritage_service.jpg",
-  },
-  {
-    title: "Create & Construct",
-    description:
-      "We offer a full design-and-build solution that ensures architectural vision is fully realized during construction. Our integrated team oversees every phase—budgeting, materials, timelines, and execution—delivering cohesive, high-quality results with a single point of accountability.",
-    image: "/contruct_service.jpg",
-  },
-];
+import { services } from "../data/services";
+import Link from "next/link";
 
 const ServicesPage = () => {
   const [showServices, setShowServices] = useState(false);
   const servicesRef = useRef<HTMLDivElement | null>(null);
-
   const handleScrollClick = () => {
     setShowServices(true);
     setTimeout(() => {
@@ -183,9 +151,10 @@ const ServicesPage = () => {
                   >
                     {service.description}
                   </p>
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 text-sm tracking-wider font-medium hover:bg-gray-900 transition">
+                  <Link
+                     href={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 text-sm tracking-wider font-medium hover:bg-gray-900 transition"
+                  >
                     Read More
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +170,7 @@ const ServicesPage = () => {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -214,42 +183,54 @@ const ServicesPage = () => {
           >
             <div className="absolute inset-0 bg-black/60 z-0" />
 
-  <div className="relative z-10 max-w-3xl mx-auto">
-    <motion.h2
-      initial={{ y: 40, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-      viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-bold text-white mb-10"
-    >
-      Ready to Start Your Project?
-    </motion.h2>
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <motion.h2
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.1,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-bold text-white mb-10"
+              >
+                Ready to Start Your Project?
+              </motion.h2>
 
-    <motion.p
-      initial={{ y: 40, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      viewport={{ once: true }}
-      className="text-lg text-gray-200 mb-14"
-    >
-      Contact us today to schedule a consultation and discuss how we
-      can bring your architectural vision to life.
-    </motion.p>
+              <motion.p
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.3,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                viewport={{ once: true }}
+                className="text-lg text-gray-200 mb-14"
+              >
+                Contact us today to schedule a consultation and discuss how we
+                can bring your architectural vision to life.
+              </motion.p>
 
-    <motion.div
-      initial={{ y: 40, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      viewport={{ once: true }}
-    >
-      <button className="group relative inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white hover:bg-gray-900 hover:text-black transition-all duration-[1000ms] ease-out overflow-hidden ">
-        <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
-          Contact Us
-        </span>
-        <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
-      </button>
-    </motion.div>
-  </div>
+              <motion.div
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.5,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                viewport={{ once: true }}
+              >
+                <button className="group relative inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white hover:bg-gray-900 hover:text-black transition-all duration-[1000ms] ease-out overflow-hidden ">
+                  <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
+                    Contact Us
+                  </span>
+                  <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
+                </button>
+              </motion.div>
+            </div>
           </section>
           <Footer />
         </>
