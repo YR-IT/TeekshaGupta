@@ -26,7 +26,10 @@ const Navbar = () => {
   return (
     <>
       {/* Import Google Fonts with Stylish Cursive */}
-      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700;900&family=Great+Vibes&family=Pacifico&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700;900&family=Great+Vibes&family=Pacifico&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+      />
 
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
@@ -35,7 +38,9 @@ const Navbar = () => {
             : "backdrop-blur-md border-b border-white/10"
         }`}
         style={{
-          backgroundColor: sticky ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.08)",
+          backgroundColor: sticky
+            ? "rgba(255, 255, 255, 0.95)"
+            : "rgba(255, 255, 255, 0.08)",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -47,7 +52,10 @@ const Navbar = () => {
                 <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:shadow-3xl group-hover:scale-110 border-4 border-white">
                   <span
                     className="text-white font-black text-2xl"
-                    style={{ fontFamily: "Dancing Script, cursive", fontWeight: 900 }}
+                    style={{
+                      fontFamily: "Dancing Script, cursive",
+                      fontWeight: 900,
+                    }}
                   >
                     A
                   </span>
@@ -57,7 +65,7 @@ const Navbar = () => {
                   <div className="w-2 h-2 bg-black rounded-full"></div>
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <h1
                   className={`text-3xl font-black transition-all duration-300 ${
                     sticky ? "text-black" : "text-white"
@@ -81,6 +89,20 @@ const Navbar = () => {
                   }}
                 >
                 </p>
+              </div> */}
+              <div className="w-full px-4 sm:px-6 lg:px-8">
+                <h1
+                  className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black transition-all duration-300  ${
+                    sticky ? "text-black" : "text-white"
+                  }`}
+                  style={{
+                    fontFamily: "Dancing Script, cursive",
+                    fontWeight: 900,
+                    textShadow: sticky ? "none" : "2px 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  AR-TEEKSHA Interiors
+                </h1>
               </div>
             </Link>
 
@@ -91,7 +113,9 @@ const Navbar = () => {
                   key={item.id}
                   href={item.path || "/"}
                   className={`relative font-semibold transition-all duration-300 hover:scale-105 group ${
-                    sticky ? "text-black hover:text-gray-700" : "text-white/95 hover:text-white"
+                    sticky
+                      ? "text-black hover:text-gray-700"
+                      : "text-white/95 hover:text-white"
                   }`}
                   style={{
                     animationDelay: `${index * 100}ms`,
@@ -129,14 +153,31 @@ const Navbar = () => {
               <button
                 onClick={navbarToggleHandler}
                 className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${
-                  sticky ? "text-black hover:bg-gray-100/50" : "text-white hover:bg-white/10"
+                  sticky
+                    ? "text-black hover:bg-gray-100/50"
+                    : "text-white hover:bg-white/10"
                 }`}
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   {navbarOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   )}
                 </svg>
               </button>
