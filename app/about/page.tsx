@@ -85,7 +85,7 @@ const About = () => {
   return (
     <main className="font-inter text-gray-800">
       <Navbar />
-      <div style={{ fontFamily: "DM Serif Display" }}>
+      <div style={{ fontFamily: "DM Serif Text" }}>
         {/* Hero Section */}
         <section className="h-[70vh] sm:h-[90vh] flex items-center justify-center relative overflow-hidden">
           <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">

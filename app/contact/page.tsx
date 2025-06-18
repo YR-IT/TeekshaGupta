@@ -62,7 +62,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
+    <div className="min-h-screen bg-white overflow-hidden" style={{ fontFamily: "DM Serif Text" }}>
       <Navbar />
       {/* Hero Section */}
       <div className="relative h-screen flex items-center justify-center overflow-hidden">

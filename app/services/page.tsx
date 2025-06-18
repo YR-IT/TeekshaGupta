@@ -26,7 +26,7 @@ const ServicesPage = () => {
           <div className="max-w-3xl mx-auto animate-fade-in">
             <h1
               className="text-5xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-md"
-              style={{ fontFamily: 'DM Serif Display' }}
+              style={{ fontFamily: 'DM Serif Text' }}
             >
               OUR SERVICES
             </h1>
@@ -71,13 +71,13 @@ const ServicesPage = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           <p
             className="uppercase text-sm tracking-widest text-black-400 mb-2"
-            style={{ fontFamily: "DM Serif Display" }}
+            style={{ fontFamily: "DM Serif Text" }}
           >
             Our Expertise
           </p>
           <h2
             className="text-5xl font-bold mb-6 text-black underline underline-offset-8 decoration-white/40"
-            style={{ fontFamily: "DM Serif Display" }}
+            style={{ fontFamily: "DM Serif Text" }}
           >
             What We Offer
           </h2>
@@ -119,7 +119,7 @@ const ServicesPage = () => {
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2
                 className="text-5xl font-semibold mb-4 text-neutral-900 leading-tight"
-                style={{ fontFamily: "DM Serif Display" }}
+                style={{ fontFamily: "DM Serif Text" }}
               >
                 {service.title}
               </h2>

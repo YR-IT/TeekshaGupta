@@ -26,14 +26,14 @@ export const services: Service[] = [
   slug: "turnkey-solutions",
   description:
     "From concept to completion, our turnkey service ensures a seamless project journey. We manage every phase—design, approvals, procurement, and construction—delivering fully realized spaces ready for immediate use. With a single point of responsibility, clients benefit from streamlined communication, time savings, and budget control.",
-  image: "/turnkey_service.jpg",
+  image: "/office_image1.png",
 },
 {
   title: "Design Consultancy",
   slug: "design-consultancy",
   description:
     "Our consultancy service offers expert guidance at every stage of a project, empowering clients and collaborators with insight-driven design solutions. Whether strategic masterplans or detailed design advice, we provide clarity, creativity, and technical rigor tailored to each project's needs.",
-  image: "/consultancy_service.jpg",
+  image: "/ofc_cabin.png",
 },
 
 ];

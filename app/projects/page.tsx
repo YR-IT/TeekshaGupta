@@ -70,7 +70,7 @@ const Projects = () => {
   ];
 
 return (
-  <section className="bg-white overflow-hidden">
+  <section className="bg-white overflow-hidden" style={{ fontFamily: "DM Serif Text" }}>
     <Navbar />
     
     {/* Hero Section with Background Video */}
