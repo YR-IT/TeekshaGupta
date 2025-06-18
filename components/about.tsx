@@ -324,7 +324,7 @@ const About = () => {
 
         {/* Content Container */}
         <div className="relative z-10 px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8 gap-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8 gap-16 max-w-6xl mx-auto">
             {ratings.map((stat, index) => (
               <div
                 key={index}
@@ -466,9 +466,9 @@ const About = () => {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className={`group relative bg-white p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-black transform ${
+                  className={`group relative bg-white p-8 transition-all duration-500 cursor-pointer border-2 border-transparent transform ${
                     activeCard === index
-                      ? "border-black shadow-2xl scale-105"
+                      ? "border-white shadow-2xl scale-105"
                       : "hover:shadow-xl hover:scale-102"
                   } ${statsVisible ? "animate-bounce-in" : ""}`}
                   style={{
@@ -504,12 +504,11 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-
-                  <div
+                  {/* <div
                     className={`absolute bottom-0 left-0 h-1 transition-all duration-500 ${
                       activeCard === index ? "w-full bg-black" : "w-0 bg-black"
                     }`}
-                  ></div>
+                  ></div> */}
                 </div>
               ))}
             </div>

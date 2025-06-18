@@ -48,31 +48,24 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Bedroom Interior",
+      title: "Residential Haven",
       image: "/bedroom.png",
       description: "Luxurious and elegant bedroom interiors with modern materials and sophisticated lighting design.",
       category: "RESIDENTIAL"
     },
     {
       id: 2,
-      title: "Dining Area",
-      image: "/dining_area.png",
+      title: "Commercial Workspace",
+      image: "/ofc_image2.png",
       description: "Functional and aesthetic dining area designs with natural elements and contemporary furnishing.",
-      category: "HOSPITALITY"
-    },
-    {
-      id: 3,
-      title: "Workspace Interior",
-      image: "/ofc_image.png",
-      description: "Luxurious and elegant workspace interiors with modern materials and ergonomic considerations.",
       category: "COMMERCIAL"
     },
     {
-      id: 4,
-      title: "Jewellery Shop Interior",
+      id: 3,
+      title: "Hospitality Space",
       image: "/hero_image1.jpg",
-      description: "Functional and aesthetic jewellery shop designs with premium lighting and display solutions.",
-      category: "RETAIL"
+      description: "Luxurious and elegant workspace interiors with modern materials and ergonomic considerations.",
+      category: "HOSPITALITY"
     },
   ];
 

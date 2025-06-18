@@ -5,26 +5,26 @@ import Link from 'next/link';
 const projects = [
   {
     id: 1,
-    title: "Modern Residential Home",
+    title: "Serene Modern Residence",
     description:
-      "This stunning modern residential home is a seamless blend of contemporary design and natural elements. Floor-to-ceiling windows allow sunlight to flood the interior spaces, highlighting the open floor plan and minimalist aesthetic. The house features sustainable materials, smart home technology, and a connection to nature through landscaped courtyards and panoramic views. Every detail is crafted to promote comfort, efficiency, and timeless elegance.",
+  "The Serene Modern Residence embodies calm sophistication and refined living. Designed to harmonize with its natural surroundings, the home features clean architectural lines, expansive glazing, and a soothing material palette. Sunlight pours through floor-to-ceiling windows, illuminating airy interiors that balance minimalism with warmth. Thoughtfully integrated smart technology and sustainable materials enhance comfort, while landscaped courtyards and panoramic views offer a constant connection to nature. Every element is curated to create a peaceful, timeless sanctuary.",
     image: "/project1.jpg",
     link: "/projects/modern-residential-home",
   },
   {
     id: 2,
-    title: "Commercial Office Space",
+    title: "Innovative Commercial Workspace",
     description:
-      "Designed for innovation and productivity, this commercial office space redefines the modern workplace. The layout encourages collaboration through flexible work zones, breakout lounges, and acoustically optimized meeting areas. Natural light is maximized with glass partitions and skylights, while biophilic design elements create a calming, healthy atmosphere. Premium materials and sophisticated finishes reflect a strong brand identity and professional culture.",
-    image: "/project2.jpg",
+  "The Elevated Commercial Environment sets a new benchmark for modern workplace design—where innovation, wellness, and sophistication converge. Flexible layouts support dynamic collaboration, while breakout lounges and acoustically refined meeting zones foster focus and creativity. Abundant natural light, glass partitions, and biophilic design elements create a bright, uplifting atmosphere that promotes well-being. High-end materials and refined detailing reinforce a strong brand identity, offering a workspace that is both inspiring and elevated in every sense.",
+    image: "/ofc_image.png",
     link: "/projects/commercial-office-space",
   },
   {
     id: 3,
-    title: "Urban Apartment Complex",
+    title: "Urban Hospitality Living",
     description:
-      "Located in the vibrant core of the city, this urban apartment complex offers a modern lifestyle with unmatched convenience. The design focuses on sustainability and community, featuring green roofs, energy-efficient systems, and shared amenities like rooftop gardens, fitness centers, and co-working spaces. Interiors boast sleek, contemporary finishes with open-concept living, smart appliances, and plenty of natural light. It's a forward-thinking residential solution for urban dwellers.",
-    image: "/project3.jpg",
+  "Urban Hospitality Living reimagines city life through the lens of comfort, style, and community. Nestled in the heart of a vibrant urban setting, this development blends the warmth of hospitality with the ease of modern living. Sustainable features like green roofs and energy-efficient systems complement thoughtfully curated amenities—including rooftop lounges, wellness spaces, and co-working hubs—that foster connection and convenience. Interiors exude contemporary elegance, with open layouts, smart technologies, and abundant natural light, creating a refined yet welcoming atmosphere for the modern urban dweller or guest.",
+    image: "/reception.png",
     link: "/projects/urban-apartment-complex",
   },
 ];

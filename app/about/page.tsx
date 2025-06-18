@@ -85,7 +85,7 @@ const About = () => {
   return (
     <main className="font-inter text-gray-800">
       <Navbar />
-      <div style={{ fontFamily: "'Inter', sans-serif" }}>
+      <div style={{ fontFamily: "Italiana" }}>
         {/* Hero Section */}
         <section className="h-[70vh] sm:h-[90vh] flex items-center justify-center relative overflow-hidden">
           <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
@@ -235,7 +235,7 @@ const About = () => {
                     {item.icon}
                   </div>
                   <AchievementCounter target={item.target} suffix={item.suffix} />
-                  <p className="text-base sm:text-lg mt-2 font-medium">{item.label}</p>
+                  <p className="text-base sm:text-lg mt-2 font-dark">{item.label}</p>
                 </div>
               ))}
             </div>

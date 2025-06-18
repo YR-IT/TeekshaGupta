@@ -104,13 +104,13 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              fontFamily: 'serif',
+              fontFamily: 'Italiana, serif',
               textShadow: '0 0 40px rgba(255, 255, 255, 0.3), 0 0 80px rgba(255, 255, 255, 0.1)',
               transformOrigin: 'center center',
               filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.2))',
             }}
           >
-            AR
+            TAS
           </span>
         </div>
 
@@ -148,11 +148,11 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                fontFamily: 'serif',
+                fontFamily: 'Italiana, serif',
                 filter: 'drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1))',
               }}
             >
-              TEEKSHA
+              DESIGNS
             </span>
           </div>
           <div
@@ -162,7 +162,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
                 : 'opacity-0 translate-y-4'
             }`}
           >
-            <span
+            {/* <span
               className="text-2xl md:text-4xl font-extralight tracking-[0.5em] text-transparent bg-clip-text"
               style={{
                 background: 'linear-gradient(135deg, #6b7280 0%, #9ca3af 25%, #d1d5db 50%, #f9fafb 75%, #e5e7eb 100%)',
@@ -174,7 +174,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
               }}
             >
               GUPTA
-            </span>
+            </span> */}
           </div>
         </div>
 

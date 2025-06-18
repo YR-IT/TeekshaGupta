@@ -409,7 +409,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-xs tracking-wide text-gray-500 uppercase font-light">Phone Number</p>
-                      <p className="text-gray-900 font-light">+91 XXXXX XXXXX</p>
+                      <a href="tel:+919023422269" className="text-gray-900 font-light"> +91 90234 22269
+                      </a>
                     </div>
                   </div>
                   
@@ -419,7 +420,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="text-xs tracking-wide text-gray-500 uppercase font-light">Email Address</p>
-                      <p className="text-gray-900 font-light">hello@teekshagupta.com</p>
+                      <a
+                    href="mailto:tasdesign7@gmail.com" className="text-gray-900 font-light">tasdesign7@gmail.com</a>
                     </div>
                   </div>
                 </div>
