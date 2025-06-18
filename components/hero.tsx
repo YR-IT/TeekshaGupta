@@ -81,12 +81,12 @@ const Hero = () => {
       <div className="relative z-10 text-center px-6 sm:px-8 lg:px-12 xl:px-16 w-full max-w-7xl mx-auto">
         <div className="mb-6 sm:mb-8">
           {/* Tagline - Appears first with slide up and fade */}
-          <span className={`text-xs sm:text-sm tracking-[0.4em] sm:tracking-[0.6em] text-gray-300 font-light uppercase mb-6 sm:mb-8 py-4 sm:py-8 block transition-all duration-1200 ease-out transform ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          {/* <span className={`text-xs sm:text-sm tracking-[0.4em] sm:tracking-[0.6em] text-gray-300 font-light uppercase mb-6 sm:mb-8 py-4 sm:py-8 block transition-all duration-1200 ease-out transform ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             Architectural Excellence
-          </span>
+          </span> */}
           
           {/* Main Heading - Sophisticated staggered entrance */}
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extralight tracking-tight leading-none mb-6 sm:mb-8">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-8xl font-extralight tracking-tight leading-none mb-6 sm:mb-8 mt-8">
             {/* DESIGNING - Slides in from left with scale effect */}
             <span 
               className={`inline-block text-white transition-all duration-1000 ease-out transform ${
@@ -127,24 +127,24 @@ const Hero = () => {
           ></div>
           
           {/* Subtitle - Fades in with gentle slide up */}
-          <p 
+          {/* <p 
             className={`text-lg sm:text-xl lg:text-2xl text-gray-300 font-light mb-3 sm:mb-4 px-4 transition-all duration-1000 ease-out transform ${
               showContent ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
             style={{transitionDelay: '2000ms'}}
           >
             MODERN RESIDENTIAL & COMMERCIAL ENVIRONMENTS
-          </p>
+          </p> */}
           
           {/* Tagline - Subtle entrance */}
-          <p 
+          {/* <p 
             className={`text-base sm:text-lg text-gray-400 font-light mb-8 sm:mb-12 px-4 transition-all duration-800 ease-out transform ${
               showContent ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
             }`}
             style={{transitionDelay: '2400ms'}}
           >
             Innovation meets Timeless Elegance
-          </p>
+          </p> */}
 
           {/* CTA Buttons - Slide up with stagger */}
           <div 

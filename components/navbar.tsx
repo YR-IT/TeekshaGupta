@@ -57,7 +57,7 @@ const Navbar = () => {
                       fontWeight: 900,
                     }}
                   >
-                    A
+                    T
                   </span>
                 </div>
                 {/* Decorative Ring */}
@@ -101,7 +101,7 @@ const Navbar = () => {
                     textShadow: sticky ? "none" : "2px 2px 4px rgba(0,0,0,0.5)",
                   }}
                 >
-                  AR-TEEKSHA Interiors
+                  TAS DESIGNS
                 </h1>
               </div>
             </Link>

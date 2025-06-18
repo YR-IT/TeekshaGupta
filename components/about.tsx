@@ -404,7 +404,7 @@ const About = () => {
         >
           <div className="inline-flex items-center gap-2 px-6 py-2 bg-black text-white text-xs sm:text-sm font-medium rounded-full mb-6">
             <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            ABOUT ME
+            FOUNDER
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 tracking-tight leading-tight">
