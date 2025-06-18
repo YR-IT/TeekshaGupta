@@ -104,7 +104,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              fontFamily: 'Italiana, serif',
+              fontFamily: 'DM Serif Display, serif',
               textShadow: '0 0 40px rgba(255, 255, 255, 0.3), 0 0 80px rgba(255, 255, 255, 0.1)',
               transformOrigin: 'center center',
               filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.2))',
@@ -148,7 +148,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                fontFamily: 'Italiana, serif',
+                fontFamily: 'DM Serif Display, serif',
                 filter: 'drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1))',
               }}
             >

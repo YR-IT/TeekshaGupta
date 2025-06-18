@@ -25,14 +25,14 @@ const ServicesPage = () => {
         <div className="z-20 px-6">
           <div className="max-w-3xl mx-auto animate-fade-in">
             <h1
-              className="text-5xl md:text-6xl font-black mb-6 text-white drop-shadow-md"
-              style={{ fontFamily: "Italiana" }}
+              className="text-5xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-md"
+              style={{ fontFamily: 'DM Serif Display' }}
             >
               OUR SERVICES
             </h1>
             <p
               className="text-lg text-gray-300 leading-relaxed"
-              style={{ fontFamily: "Italiana" }}
+              style={{ fontFamily: "DM Serif Text" }}
             >
               We transform spaces into timeless expressions of purpose and
               beauty — merging architectural vision with refined interiors.
@@ -71,20 +71,20 @@ const ServicesPage = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           <p
             className="uppercase text-sm tracking-widest text-black-400 mb-2"
-            style={{ fontFamily: "Italiana" }}
+            style={{ fontFamily: "DM Serif Display" }}
           >
             Our Expertise
           </p>
           <h2
             className="text-5xl font-bold mb-6 text-black underline underline-offset-8 decoration-white/40"
-            style={{ fontFamily: "Italiana" }}
+            style={{ fontFamily: "DM Serif Display" }}
           >
             What We Offer
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-10"></div>
           <p
             className="text-lg text-black-300 leading-relaxed"
-            style={{ fontFamily: "Italiana" }}
+            style={{ fontFamily: "DM Serif Text" }}
           >
             At TAS Designs, we offer a comprehensive suite of
             architectural services thoughtfully tailored to meet the
@@ -119,14 +119,14 @@ const ServicesPage = () => {
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2
                 className="text-5xl font-semibold mb-4 text-neutral-900 leading-tight"
-                style={{ fontFamily: "Italiana" }}
+                style={{ fontFamily: "DM Serif Display" }}
               >
                 {service.title}
               </h2>
               <div className="w-16 h-1 bg-neutral-300 mb-6 mx-auto lg:mx-0" />
               <p
                 className="text-lg text-neutral-700 mb-8 leading-relaxed"
-                style={{ fontFamily: "Italiana" }}
+                style={{ fontFamily: "DM Serif Text" }}
               >
                 {service.description}
               </p>

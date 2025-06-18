@@ -407,7 +407,7 @@ const About = () => {
             FOUNDER
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 tracking-tight leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
             Teeksha
             <span className="block font-bold">Gupta</span>
           </h2>
@@ -427,13 +427,13 @@ const About = () => {
               <div className="relative px-4 sm:px-6 md:px-8">
                 <Quote className="absolute -top-4 -left-4 w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-black/20" />
 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-black leading-relaxed pl-8 sm:pl-10">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-black leading-relaxed pl-8 sm:pl-10"  style={{ fontFamily: "DM Serif Text" }}>
                   Creating spaces that tell stories, evoke emotions, and
                   transform the way people experience their environments.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-black/10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-black/10"  style={{ fontFamily: "DM Serif Text" }}>
                 <div>
                   <h3 className="text-lg font-bold text-black mb-4 uppercase tracking-wider">
                     Philosophy
@@ -514,7 +514,7 @@ const About = () => {
             </div>
 
             {/* Achievements */}
-            <div className="bg-white p-8 border-l-4 border-black">
+            <div className="bg-white p-8 border-l-4 border-black"  style={{ fontFamily: "DM Serif Text" }}>
               <h3 className="text-xl font-bold text-black mb-6 uppercase tracking-wider">
                 Recognition
               </h3>
@@ -580,7 +580,7 @@ const About = () => {
         >
           <Link href="/about">
             <button className="group relative inline-flex items-center px-8 py-4 bg-black text-white font-medium uppercase tracking-wider transition-all duration-300 hover:bg-gray-800 hover:shadow-xl active:scale-95">
-              <span className="mr-4 transition-all duration-300 group-hover:tracking-widest">
+              <span className="mr-4 transition-all duration-300 group-hover:tracking-widest"  style={{ fontFamily: "DM Serif Text" }}>
                 Learn More About Us
               </span>
               <ArrowRight className="w-5 h-5 transition-all duration-300 group-hover:translate-x-1" />

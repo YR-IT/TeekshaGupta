@@ -72,17 +72,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       {/* Content Container */}
       <div className="flex-1 space-y-4 sm:space-y-6 w-full">
         <div className="space-y-3 sm:space-y-4">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-900 leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
             {project.title}
           </h3>
-          <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+          <p className="text-gray-600 leading-relaxed text-base sm:text-lg" style={{ fontFamily: "DM Serif Text" }}>
             {project.description}
           </p>
         </div>
         
         <Link 
           href={project.link}
-          className="inline-flex items-center gap-3 text-gray-900 font-medium text-base sm:text-lg hover:gap-4 transition-all duration-300 group"
+          className="inline-flex items-center gap-3 text-gray-900 font-medium text-base sm:text-lg hover:gap-4 transition-all duration-300 group"  style={{ fontFamily: "DM Serif Text" }}
         >
           View Project
           <svg 
@@ -104,7 +104,7 @@ const ProjectSection: React.FC = () => {
     <section className="py-12 sm:py-20 lg:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-24" style={{ fontFamily: "DM Serif Text" }}>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-light text-gray-900 mb-4 sm:mb-6">
             Featured Projects
           </h2>

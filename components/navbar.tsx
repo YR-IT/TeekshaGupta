@@ -27,7 +27,7 @@ const Navbar = () => {
     <>
       {/* Import Google Fonts with Stylish Cursive */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Italiana:wght@700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
         rel="stylesheet"
       />
 
@@ -53,7 +53,7 @@ const Navbar = () => {
                   <span
                     className="text-white font-black text-2xl"
                     style={{
-                      fontFamily: "Italiana",
+                      fontFamily: "DM Serif Display",
                       fontWeight: 900,
                     }}
                   >
@@ -71,7 +71,7 @@ const Navbar = () => {
                     sticky ? "text-black" : "text-white"
                   }`}
                   style={{
-                    fontFamily: "Italiana",
+                    fontFamily: "DM Serif Display",
                     fontWeight: 900,
                     textShadow: sticky ? "none" : "2px 2px 4px rgba(0,0,0,0.5)",
                   }}
@@ -83,7 +83,7 @@ const Navbar = () => {
                     sticky ? "text-blue-700" : "text-blue-200"
                   }`}
                   style={{
-                    fontFamily: "Italiana",
+                    fontFamily: "DM Serif Display",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                   }}
@@ -92,11 +92,11 @@ const Navbar = () => {
               </div> */}
               <div className="w-full px-4 sm:px-6 lg:px-8">
                 <h1
-                  className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black transition-all duration-300  ${
+                  className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wide transition-all duration-300  ${
                     sticky ? "text-black" : "text-white"
                   }`}
                   style={{
-                    fontFamily: "Italiana",
+                    fontFamily: "DM Serif Text",
                     fontWeight: 900,
                     textShadow: sticky ? "none" : "2px 2px 4px rgba(0,0,0,0.5)",
                   }}
@@ -119,7 +119,7 @@ const Navbar = () => {
                   }`}
                   style={{
                     animationDelay: `${index * 100}ms`,
-                    fontFamily: "Italiana, sans-serif",
+                    fontFamily: "DM Serif Text, sans-serif",
                   }}
                 >
                   {item.title}
@@ -141,7 +141,7 @@ const Navbar = () => {
                 <button
                   className="hidden sm:block relative px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group shadow-lg hover:shadow-xl bg-white text-black border-2 border-black hover:bg-black hover:text-white"
                   style={{
-                    fontFamily: "Italiana, sans-serif",
+                    fontFamily: "DM Serif Text, sans-serif",
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
@@ -207,7 +207,7 @@ const Navbar = () => {
                   onClick={() => setNavbarOpen(false)}
                   style={{
                     animationDelay: `${index * 50}ms`,
-                    fontFamily: "Italiana, sans-serif",
+                    fontFamily: "DM Serif Text, sans-serif",
                   }}
                 >
                   {item.title}
@@ -217,7 +217,7 @@ const Navbar = () => {
                 <button
                   className="w-full mt-6 px-8 py-3 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-2 border-black hover:bg-black hover:text-white"
                   style={{
-                    fontFamily: "Italiana, sans-serif",
+                    fontFamily: "DM Serif Text, sans-serif",
                   }}
                   onClick={() => setNavbarOpen(false)}
                 >

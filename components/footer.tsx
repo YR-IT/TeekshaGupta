@@ -12,7 +12,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-50 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-50 relative overflow-hidden" style={{ fontFamily: "DM Serif Text" }}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-64 h-64 bg-teal-400 rounded-full blur-3xl transform -translate-x-32 -translate-y-32"></div>

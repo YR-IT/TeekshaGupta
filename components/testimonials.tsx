@@ -102,7 +102,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden"  style={{ fontFamily: "DM Serif Text" }}>
       {/* Background Image with Sophisticated Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
