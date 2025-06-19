@@ -144,7 +144,7 @@ const ContactPage = () => {
             Our Mission
           </span>
           
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tight text-gray-900 mb-12">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-gray-900 mb-12">
             Let's Create Something
             <br />
             <span className="font-thin italic bg-gradient-to-r from-gray-900 via-black to-gray-700 bg-clip-text text-transparent">

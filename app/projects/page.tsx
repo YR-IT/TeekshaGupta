@@ -285,7 +285,7 @@ return (
                     isProjectVisible ? 'opacity-100 transform translate-y-0' : 'opacity-60 transform translate-y-8'
                   }`}>
                     <div>
-                      <h3 className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extralight leading-tight mb-6 transition-all duration-[1500ms] ease-out ${
+                      <h3 className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-medium leading-tight mb-6 transition-all duration-[1500ms] ease-out ${
                         isProjectVisible ? 'text-gray-900 transform translate-y-0' : 'text-gray-600 transform translate-y-2'
                       }`}>
                         {project.title}

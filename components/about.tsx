@@ -407,7 +407,7 @@ const About = () => {
             FOUNDER
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-black mb-4 tracking-tight leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-black mb-4 tracking-tight leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
             Teeksha
             <span className="block font-bold">Gupta</span>
           </h2>
@@ -525,7 +525,7 @@ const About = () => {
                     className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300"
                   >
                     <div className="w-2 h-2 bg-black rounded-full mt-3 group-hover:scale-150 transition-transform duration-300"></div>
-                    <span className="text-gray-700 font-medium">
+                    <span className="text-gray-700 font-light">
                       {achievement}
                     </span>
                   </div>

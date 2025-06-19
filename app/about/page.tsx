@@ -183,7 +183,7 @@ const About = () => {
                 Design with Purpose
               </h2>
               <p className="mb-6 text-lg leading-relaxed text-gray-700 max-w-prose"  style={{ fontFamily: "DM Serif Text" }}>
-                At <strong>AR-TEEKSHA Interiors</strong>, we believe that exceptional design is intentional. It goes
+                At <strong>TAS Designs</strong>, we believe that exceptional design is intentional. It goes
                 beyond style—shaping spaces that support how people live, feel, and connect.
               </p>
               <div className="space-y-6 text-base leading-relaxed text-gray-700">

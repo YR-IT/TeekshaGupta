@@ -118,7 +118,7 @@ const ServicesPage = () => {
             {/* Content Section */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2
-                className="text-5xl font-semibold mb-4 text-neutral-900 leading-tight"
+                className="text-5xl font-medium mb-4 text-neutral-900 leading-tight"
                 style={{ fontFamily: "DM Serif Text" }}
               >
                 {service.title}
