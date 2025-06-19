@@ -18,35 +18,35 @@ export const projectsData: Record<string, ProjectData> = {
     description: 'Where luxury meets contemporary living',
     images: [
       {
-        src: '/proj1_1.png',
+        src: '/pro4a.png',
         title: 'Architectural Marvel',
         description: 'Experience the pinnacle of modern residential design with clean lines and sophisticated aesthetics',
         ctaText: 'Transform Your Space'
       },
       {
-        src: '/proj1_2.png',
+        src: '/pro4b.png',
         title: 'Living Redefined',
         description: 'Immerse yourself in spaces that breathe luxury and embrace minimalist elegance',
         ctaText: 'Discover More'
       },
       {
-        src: '/proj1_3.png',
+        src: '/pro4c.png',
         title: 'Timeless Elegance',
         description: 'Where every corner tells a story of refined taste and architectural brilliance',
         ctaText: 'Start Your Journey'
       },
-      {
-        src: '/proj1_4.png',
-        title: 'Sanctuary of Style',
-        description: 'Create memories in spaces designed for the discerning homeowner',
-        ctaText: 'Envision Your Dream'
-      },
-      {
-        src: '/proj1_5.png',
-        title: 'Future Living',
-        description: 'Step into tomorrow with designs that transcend time and trend',
-        ctaText: 'Make It Reality'
-      }
+      // {
+      //   src: '/proj1_4.png',
+      //   title: 'Sanctuary of Style',
+      //   description: 'Create memories in spaces designed for the discerning homeowner',
+      //   ctaText: 'Envision Your Dream'
+      // },
+      // {
+      //   src: '/proj1_5.png',
+      //   title: 'Future Living',
+      //   description: 'Step into tomorrow with designs that transcend time and trend',
+      //   ctaText: 'Make It Reality'
+      // }
     ]
   },
   'commercial-office-space': {
@@ -55,68 +55,80 @@ export const projectsData: Record<string, ProjectData> = {
     description: 'Where productivity meets sophistication',
     images: [
       {
-        src: '/proj2_1.png',
+        src: '/pro1a.jpg',
         title: 'Executive Excellence',
         description: 'Elevate your business presence with spaces that command respect and inspire innovation',
         ctaText: 'Elevate Your Business'
       },
       {
-        src: '/proj2_2.png',
+        src: '/pro1b.jpg',
         title: 'Collaborative Spaces',
         description: 'Foster creativity and teamwork in environments designed for peak performance',
         ctaText: 'Boost Productivity'
       },
       {
-        src: '/proj2_3.png',
+        src: '/pro1c.jpg',
         title: 'Professional Impact',
         description: 'Make a lasting impression with commercial spaces that reflect your brand\'s excellence',
         ctaText: 'Command Attention'
       },
       {
-        src: '/proj2_4.png',
+        src: '/pro1d.jpg',
         title: 'Innovation Hub',
         description: 'Transform your workplace into a beacon of modern business sophistication',
         ctaText: 'Lead the Future'
       },
       {
-        src: '/proj2_5.png',
+        src: '/pro1e.jpg',
         title: 'Success Environment',
         description: 'Where ambitious minds thrive and extraordinary achievements become reality',
         ctaText: 'Achieve Greatness'
+      },
+      {
+        src: "/pro1f.jpg",
+        title: "Luxury Retail Presence",
+        description: "Craft a showroom experience that blends commercial strategy with timeless elegance",
+        ctaText: "Define Distinction"
+      },
+      {
+        src: "/pro1g.jpg",
+        title: "Strategic Brilliance",
+        description: "Empower your brand with environments designed for influence, growth, and prestige",
+        ctaText: "Build Your Legacy"
       }
     ]
   },
   'urban-apartment-complex': {
     id: 'urban-apartment-complex',
-    title: 'Urban Apartment Complex',
-    description: 'City living elevated to an art form',
+    title: "Urban Hospitality Concept",
+    description: "Redefining the city stay with style, comfort, and curated experiences",
     images: [
+    {
+      src: "/pro3e.jpeg",
+      title: "City Retreat",
+      description: "Unwind in serene spaces crafted for the modern traveler amid the urban buzz",
+      ctaText: "Relax in Style"
+    },
+    {
+      src: "/pro3a.jpg",
+      title: "Contemporary Comfort",
+      description: "Where elevated design meets intuitive service for an unforgettable stay",
+      ctaText: "Stay Inspired"
+    },
+    {
+      src: "/pro3b.jpg",
+      title: "Hospitality Reimagined",
+      description: "A refined urban haven blending boutique charm with metropolitan energy",
+      ctaText: "Discover the Difference"
+    },
       {
-        src: '/proj3_1.png',
-        title: 'Urban Oasis',
-        description: 'Escape the chaos while staying connected to the pulse of city life',
-        ctaText: 'Live Differently'
-      },
-      {
-        src: '/proj3_2.png',
-        title: 'Metropolitan Luxury',
-        description: 'Experience the perfect fusion of urban convenience and residential tranquility',
-        ctaText: 'Embrace City Life'
-      },
-      {
-        src: '/proj3_3.png',
-        title: 'Vertical Village',
-        description: 'Community living reimagined for the modern urbanite seeking connection and style',
-        ctaText: 'Join the Community'
-      },
-      {
-        src: '/proj3_4.png',
+        src: '/pro3c.jpg',
         title: 'Skyline Sanctuary',
         description: 'Rise above the ordinary with living spaces that touch the clouds',
         ctaText: 'Reach New Heights'
       },
       {
-        src: '/proj3_5.png',
+        src: '/pro3d.jpg',
         title: 'City Sophistication',
         description: 'Where urban energy meets refined living in perfect harmony',
         ctaText: 'Experience Excellence'

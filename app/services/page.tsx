@@ -201,12 +201,14 @@ const ServicesPage = () => {
             }}
             viewport={{ once: true }}
           >
+            <Link href="/contact">
             <button className="group relative inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white hover:bg-gray-900 hover:text-black transition-all duration-[1000ms] ease-out overflow-hidden ">
               <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
                 Contact Us
               </span>
               <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
             </button>
+            </Link>
           </motion.div>
         </div>
       </section>

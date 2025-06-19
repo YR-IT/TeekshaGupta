@@ -154,7 +154,7 @@ const Hero = () => {
             style={{transitionDelay: '2800ms'}}
           >
             <Link
-              href="/projects"
+              href="/projectPage"
               className="group relative overflow-hidden bg-transparent border-2 border-white text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 font-light tracking-widest uppercase text-xs sm:text-sm transition-all duration-700 hover:text-black w-full sm:w-auto max-w-xs transform hover:scale-105"
             >
               <span className="relative z-10">Explore Our Projects</span>

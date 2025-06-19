@@ -8,15 +8,15 @@ const projects = [
     title: "Serene Modern Residence",
     description:
   "The Serene Modern Residence embodies calm sophistication and refined living. Designed to harmonize with its natural surroundings, the home features clean architectural lines, expansive glazing, and a soothing material palette. Sunlight pours through floor-to-ceiling windows, illuminating airy interiors that balance minimalism with warmth. Thoughtfully integrated smart technology and sustainable materials enhance comfort, while landscaped courtyards and panoramic views offer a constant connection to nature. Every element is curated to create a peaceful, timeless sanctuary.",
-    image: "/project1.jpg",
+    image: "/pro4a.png",
     link: "/projects/modern-residential-home",
   },
   {
     id: 2,
-    title: "Innovative Commercial Workspace",
+    title: "Innovative Commercial Jewellery Showroom",
     description:
-  "The Elevated Commercial Environment sets a new benchmark for modern workplace design—where innovation, wellness, and sophistication converge. Flexible layouts support dynamic collaboration, while breakout lounges and acoustically refined meeting zones foster focus and creativity. Abundant natural light, glass partitions, and biophilic design elements create a bright, uplifting atmosphere that promotes well-being. High-end materials and refined detailing reinforce a strong brand identity, offering a workspace that is both inspiring and elevated in every sense.",
-    image: "/ofc_image.png",
+  "This premium commercial showroom concept reimagines the jewellery retail experience—where elegance, brand presence, and customer engagement take center stage. Adaptive display arrangements highlight signature collections, while plush consultation zones and ambient lighting curate a personalized buying journey. Glass facades, high-gloss finishes, and artisanal detailing establish a refined atmosphere that enhances product value and client perception. The design merges luxury with functionality, offering a space that’s commercially strategic and visually captivating.",
+    image: "/pro1a.jpg",
     link: "/projects/commercial-office-space",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     title: "Urban Hospitality Living",
     description:
   "Urban Hospitality Living reimagines city life through the lens of comfort, style, and community. Nestled in the heart of a vibrant urban setting, this development blends the warmth of hospitality with the ease of modern living. Sustainable features like green roofs and energy-efficient systems complement thoughtfully curated amenities—including rooftop lounges, wellness spaces, and co-working hubs—that foster connection and convenience. Interiors exude contemporary elegance, with open layouts, smart technologies, and abundant natural light, creating a refined yet welcoming atmosphere for the modern urban dweller or guest.",
-    image: "/reception.png",
+    image: "/pro3e.jpeg",
     link: "/projects/urban-apartment-complex",
   },
 ];
