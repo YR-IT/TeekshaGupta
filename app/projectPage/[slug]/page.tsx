@@ -84,7 +84,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+      <div className="max-w-full mx-auto px-12 py-12 sm:py-16">
         <p className="text-xs sm:text-sm mb-4 text-center tracking-wide">VISUAL JOURNEY</p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-8 sm:mb-12 text-center underline underline-offset-8 tracking-wide">
           Project Gallery
