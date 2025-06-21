@@ -189,7 +189,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
           <p className="text-sm md:text-base text-gray-300/90 font-light tracking-widest uppercase" style={{
             textShadow: '0 1px 3px rgba(0, 0, 0, 0.3)',
           }}>
-            Architecture Interior Design Studio
+            Architecture Teeksha Gupta
           </p>
         </div>
 
