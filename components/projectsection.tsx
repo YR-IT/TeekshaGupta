@@ -72,17 +72,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       {/* Content Container */}
       <div className="flex-1 space-y-4 sm:space-y-6 w-full">
         <div className="space-y-3 sm:space-y-4">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-wide leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
             {project.title}
           </h3>
-          <p className="text-gray-600 leading-relaxed text-base sm:text-lg" style={{ fontFamily: "DM Serif Text" }}>
+          <p className="text-white/75 tracking-wider leading-relaxed text-base sm:text-lg" style={{ fontFamily: "DM Serif Text" }}>
             {project.description}
           </p>
         </div>
         
         <Link 
           href={project.link}
-          className="inline-flex items-center gap-3 text-gray-900 font-medium text-base sm:text-lg hover:gap-4 transition-all duration-300 group"  style={{ fontFamily: "DM Serif Text" }}
+          className="inline-flex items-center gap-3 text-white font-medium text-base sm:text-lg hover:gap-4 hover:text-amber-300 transition-all duration-300 group"  style={{ fontFamily: "DM Serif Text" }}
         >
           View Project
           <svg 
@@ -101,14 +101,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
 const ProjectSection: React.FC = () => {
   return (
-    <section className="py-12 sm:py-20 lg:py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-20 lg:py-20 bg-black">
+      <div className="max-w-8xl mx-auto px-12 sm:px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-24" style={{ fontFamily: "DM Serif Text" }}>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6">
-            Featured Projects
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-4 sm:mb-6">
+            Featured <span className="font-bold text-amber-300">Projects</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-xl text-white/75 max-w-3xl mx-auto leading-relaxed tracking-wide px-4">
             Discover our latest interior design projects that showcase innovative spaces, 
             thoughtful functionality, and timeless aesthetic appeal.
           </p>

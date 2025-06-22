@@ -201,91 +201,23 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="relative bg-gray-50 overflow-hidden">
-      {/* RATINGS Section */}
-      {/* <div
-        ref={ratingsRef}
-        className={`relative bg-white py-16 overflow-hidden transition-all duration-1000 delay-500 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      > */}
+    <section id="about" className="relative bg-black overflow-hidden">
 
-        {/* Content Container */}
-        {/* <div className="relative z-10 px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8 gap-16 max-w-6xl mx-auto">
-            {ratings.map((stat, index) => (
-              <div
-                key={index}
-                className={`group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15 hover:shadow-2xl hover:shadow-white/10 ${
-                  ratingsVisible ? "animate-bounce-in" : ""
-                }`}
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  animationFillMode: "both",
-                }}
-                onMouseEnter={() => setActiveCard(100 + index)}
-                onMouseLeave={() => setActiveCard(null)}
-              >
-                <div className="text-center space-y-4">
-                  <div
-                    className={`w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto transition-all duration-500 ${
-                      ratingsVisible
-                        ? "group-hover:scale-110 group-hover:rotate-12"
-                        : ""
-                    }`}
-                  >
-                    <stat.icon className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <div
-                      className={`text-4xl font-bold text-white mb-2 transition-all duration-300 ${
-                        ratingsVisible ? "transform scale-110" : ""
-                      }`}
-                    >
-                      <span className="inline-block tabular-nums">
-                        {ratingsAnimatedValues[index] || 0}
-                        {stat.suffix}
-                      </span>
-                    </div>
-                    <div className="text-white/80 text-sm font-medium uppercase tracking-wider group-hover:text-white/70 transition-colors duration-300">
-                      {stat.label}
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-white via-white/80 to-white transition-all duration-300 ${
-                    activeCard === 100 + index ? "w-full" : "w-0"
-                  }`}
-                ></div>
-
-                <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div className="absolute inset-0 rounded-lg bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              </div>
-            ))}
-          </div>
-        </div> */}
-
-      {/* </div> */}
-
-      <div className="relative container mx-auto px-6 py-20 lg:px-8">
+      <div className="relative container mx-auto px-6 py-28 lg:px-8">
         {/* Section Header */}
         <div
           className={`text-center mb-20 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-6 py-2 bg-black text-white text-xs sm:text-sm font-medium rounded-full mb-6">
+          {/* <div className="inline-flex items-center gap-2 px-6 py-2 text-white text-xs sm:text-sm font-medium rounded-full mb-6">
             <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            FOUNDER
-          </div>
+            ABOUT
+          </div> */}
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-black mb-4 tracking-tight leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
-            Teeksha
-            <span className="block font-bold">Gupta</span>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-medium text-white mb-4 tracking-tight leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
+            About Teeksha Gupta Architect
+            <span className="block text-amber-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl mt-4 tracking-wide">"Elegance Built Into Form"</span>
           </h2>
 
           <div className="w-24 h-px bg-black mx-auto"></div>
@@ -301,9 +233,9 @@ const About = () => {
           >
             <div className="space-y-8">
               <div className="relative px-4 sm:px-6 md:px-8">
-                <Quote className="absolute -top-4 -left-4 w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-black/20" />
+                <Quote className="absolute -top-4 -left-4 w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-white" />
 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-black leading-relaxed pl-8 sm:pl-10"  style={{ fontFamily: "DM Serif Text" }}>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-white/75 leading-relaxed pl-8 sm:pl-10"  style={{ fontFamily: "DM Serif Text" }}>
                   Creating spaces that tell stories, evoke emotions, and
                   transform the way people experience their environments.
                 </p>
@@ -311,10 +243,10 @@ const About = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-black/10"  style={{ fontFamily: "DM Serif Text" }}>
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-4 uppercase tracking-wider">
+                  <h3 className="text-lg font-bold text-white/75 mb-4 uppercase tracking-wider">
                     Philosophy
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-white/75 leading-relaxed tracking-wide">
                     With over 10 years of experience, I believe great design
                     transcends aesthetics—it's about creating functional art
                     that enhances daily life and reflects individual
@@ -322,76 +254,27 @@ const About = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-4 uppercase tracking-wider">
+                  <h3 className="text-lg font-bold text-white/75 mb-4 uppercase tracking-wider">
                     Approach
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-white/75 leading-relaxed tracking-wide">
                     Every project begins with understanding your story. I blend
                     contemporary innovation with timeless principles to craft
                     spaces that are both striking and deeply personal.
                   </p>
                 </div>
               </div>
+              {/* Signature Paragraph */}
+<div className="pt-4 text-amber-300 text-8xl italic leading-relaxed" style={{ fontFamily: "DM Serif Text" }}>
+ SIGNATURE
+</div>
+
             </div>
 
-            {/* Stats Grid */}
-            <div
-              ref={statsRef}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6"
-            >
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className={`group relative bg-white p-8 transition-all duration-500 cursor-pointer border-2 border-transparent transform ${
-                    activeCard === index
-                      ? "border-white shadow-2xl scale-105"
-                      : "hover:shadow-xl hover:scale-102"
-                  } ${statsVisible ? "animate-bounce-in" : ""}`}
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                    animationFillMode: "both",
-                  }}
-                  onMouseEnter={() => setActiveCard(index)}
-                  onMouseLeave={() => setActiveCard(null)}
-                >
-                  <div className="text-center space-y-4">
-                    <div
-                      className={`w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto transition-all duration-500 ${
-                        statsVisible
-                          ? "group-hover:scale-110 group-hover:rotate-12"
-                          : ""
-                      }`}
-                    >
-                      <stat.icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div
-                        className={`text-3xl font-bold text-black transition-all duration-300 ${
-                          statsVisible ? "transform scale-110" : ""
-                        }`}
-                      >
-                        <span className="inline-block tabular-nums">
-                          {statsAnimatedValues[index] || 0}
-                          {stat.suffix}
-                        </span>
-                      </div>
-                      <div className="text-sm text-gray-600 font-medium uppercase tracking-wide mt-2">
-                        {stat.label}
-                      </div>
-                    </div>
-                  </div>
-                  {/* <div
-                    className={`absolute bottom-0 left-0 h-1 transition-all duration-500 ${
-                      activeCard === index ? "w-full bg-black" : "w-0 bg-black"
-                    }`}
-                  ></div> */}
-                </div>
-              ))}
-            </div>
 
             {/* Achievements */}
-            <div className="bg-white p-8 border-l-4 border-black"  style={{ fontFamily: "DM Serif Text" }}>
-              <h3 className="text-xl font-bold text-black mb-6 uppercase tracking-wider">
+            <div className="p-8 border-l-4 border-black"  style={{ fontFamily: "DM Serif Text" }}>
+              <h3 className="text-xl font-bold text-white/75 mb-6 uppercase tracking-wider">
                 Recognition
               </h3>
               <div className="space-y-4">
@@ -400,8 +283,8 @@ const About = () => {
                     key={index}
                     className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300"
                   >
-                    <div className="w-2 h-2 bg-black rounded-full mt-3 group-hover:scale-150 transition-transform duration-300"></div>
-                    <span className="text-gray-700 font-light">
+                    <div className="w-2 h-2 bg-white rounded-full mt-3 group-hover:scale-150 transition-transform duration-300"></div>
+                    <span className="text-white/75 font-light">
                       {achievement}
                     </span>
                   </div>
@@ -420,7 +303,7 @@ const About = () => {
           >
             <div className="relative">
               <div className="relative group">
-                <div className="absolute -inset-8 bg-black/5 rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
+                <div className="absolute -inset-8 bg-white/50 rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
                 <div className="relative bg-white p-4 shadow-2xl hover:shadow-3xl transition-all duration-700 group-hover:-rotate-1">
                   <img
                     src="/TeekshaGupta.png"
@@ -455,14 +338,18 @@ const About = () => {
           }`}
         >
           <Link href="/about">
-            <button className="group relative inline-flex items-center px-8 py-4 bg-black text-white font-medium uppercase tracking-wider transition-all duration-300 hover:bg-gray-800 hover:shadow-xl active:scale-95">
-              <span className="mr-4 transition-all duration-300 group-hover:tracking-widest"  style={{ fontFamily: "DM Serif Text" }}>
-                Learn More About Us
-              </span>
-              <ArrowRight className="w-5 h-5 transition-all duration-300 group-hover:translate-x-1" />
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></div>
-            </button>
-          </Link>
+  <button className="group relative inline-flex items-center px-8 py-4 bg-white text-black font-medium uppercase tracking-wider transition-all duration-300 hover:bg-black hover:text-white hover:shadow-xl active:scale-95 border border-black">
+    <span
+      className="mr-4 transition-all duration-300 group-hover:tracking-widest"
+      style={{ fontFamily: "DM Serif Text" }}
+    >
+      Learn More About Us
+    </span>
+    <ArrowRight className="w-5 h-5 transition-all duration-300 group-hover:translate-x-1" />
+    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:bg-white transition-all duration-300 group-hover:w-full"></div>
+  </button>
+</Link>
+
         </div>
       </div>
 

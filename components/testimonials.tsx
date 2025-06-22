@@ -67,7 +67,7 @@ const settings = {
   autoplaySpeed: 6000,
   slidesToShow: 2,
   slidesToScroll: 1,
-  pauseOnHover: true,
+  pauseOnHover: false,
   fade: false,
   cssEase: "cubic-bezier(0.4, 0, 0.2, 1)",
   responsive: [
@@ -133,9 +133,12 @@ const Testimonial = () => {
             CLIENT TESTIMONIALS
           </div>
           <h2 className="text-6xl lg:text-7xl font-light text-white mb-4 tracking-tight">
-            What Our
-            <span className="block font-bold">Clients Say</span>
-          </h2>
+  What Our
+  <br />
+  <span className="font-bold">
+    <span className="text-amber-300">CLIENTS</span> Say
+  </span>
+</h2>
           <div className="w-24 h-px bg-white mx-auto mb-8"></div>
           <p className="mx-auto max-w-2xl text-xl text-white/80 leading-relaxed">
             Discover the experiences of those who trusted us to bring their architectural dreams to life
@@ -168,7 +171,7 @@ const Testimonial = () => {
                       {/* Content */}
                       <div className="pt-8 flex flex-col h-full">
                         {/* Quote */}
-                        <blockquote className="flex-1 text-white/90 text-base leading-relaxed font-light mb-6">
+                        <blockquote className="flex-1 text-white/90 text-base tracking-wide leading-relaxed font-light mb-6">
                           <span className="line-clamp-4">
                             "{testimonial.quote}"
                           </span>
@@ -217,60 +220,6 @@ const Testimonial = () => {
             </Slider>
           </div>
         </div>
-
-        {/* RATINGS Section */}
-        {/* <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {ratings.map((stat, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/10 backdrop-blur-xl p-8 transition-all duration-500 cursor-pointer border-2 border-transparent hover:border-white/30 hover:bg-white/15"
-                onMouseEnter={() => setActiveCard(100 + index)}
-                onMouseLeave={() => setActiveCard(null)}
-              >
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                    <stat.icon className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-                    <div className="text-white/80 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
-                  </div>
-                </div>
-                
-                Hover effect line
-                <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${
-                  activeCard === 100 + index ? 'w-full' : 'w-0'
-                }`}></div>
-
-                Corner accents
-                <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        Bottom Quote Section - Matching About Section
-        <div className={`mt-24 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-xl p-12 border-2 border-white/20 relative hover:border-white/40 hover:bg-white/15 transition-all duration-500">
-              <Quote className="w-16 h-16 text-white/30 mx-auto mb-6" />
-              <blockquote className="text-2xl lg:text-3xl font-light text-white leading-relaxed italic mb-6">
-                "Excellence is never an accident. It is always the result of high intention, sincere effort, and intelligent execution."
-              </blockquote>
-              <div className="text-white/70 font-medium uppercase tracking-wider text-sm">— Our Commitment to Every Project</div>
-              
-              <div className="absolute top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-white/30"></div>
-              <div className="absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 border-white/30"></div>
-              <div className="absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 border-white/30"></div>
-              <div className="absolute bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-white/30"></div>
-            </div>
-          </div>
-        </div> */}
-
 
       </div>
 
