@@ -57,7 +57,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   if (!project) return notFound();
 
   return (
-    <main className="bg-[#fef9f4] text-black" style={{ fontFamily: "Lato, sans-serif" }}>
+    <main className="bg-black text-white" style={{ fontFamily: "Lato, sans-serif" }}>
       <Navbar />
       <div className="relative h-[80vh] sm:h-screen w-full flex items-center justify-center text-center overflow-hidden">
         <Image
@@ -84,11 +84,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="max-w-full mx-auto px-12 py-12 sm:py-16">
-        <p className="text-xs sm:text-sm mb-4 text-center tracking-wide">VISUAL JOURNEY</p>
+      <div className="max-w-full mx-auto px-12 py-12 sm:py-16 mt-20">
+        {/* <p className="text-xs sm:text-sm mb-4 text-center tracking-wide">VISUAL JOURNEY</p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-8 sm:mb-12 text-center underline underline-offset-8 tracking-wide">
           Project Gallery
-        </h2>
+        </h2> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
           {project.gallery.map((img, index) => (
             <div key={index} className="relative group">
@@ -104,23 +104,24 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <section className="py-12 sm:py-16 bg-white rounded-3xl">
+      <section className="py-12 sm:py-16 rounded-3xl">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-semibold mb-4">
             Inspired by Design, Driven by Vision
           </h3>
-          <p className="text-base sm:text-lg md:text-xl mb-8">
+          <p className="text-sm sm:text-base md:text-lg mb-8">
             Dive deeper into our curated collection of innovative architectural
             spaces — where form meets function and creativity has no limits.
           </p>
           <Link href="/contact">
-            <button className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-[1000ms] ease-out overflow-hidden">
-              <span className="relative z-10 text-xs sm:text-sm md:text-base tracking-[0.3em] font-light uppercase">
-                EXPLORE ALL PROJECTS
-              </span>
-              <div className="absolute inset-0 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
-            </button>
-          </Link>
+  <button className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 border-2 border-white text-white hover:text-black transition-all duration-[1000ms] ease-out overflow-hidden">
+    <span className="relative z-10 text-xs sm:text-sm md:text-base tracking-[0.3em] font-normal uppercase">
+      EXPLORE ALL PROJECTS
+    </span>
+    <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-left"></div>
+  </button>
+</Link>
+
         </div>
       </section>
 
