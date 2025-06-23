@@ -32,7 +32,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-zinc-950 via-gray-900 to-slate-950 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-zinc-950 via-gray-900 to-slate-950 overflow-hidden" style={{ fontFamily: "Lato, sans-serif" }}>
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {/* Floating geometric shapes */}
@@ -104,7 +104,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              fontFamily: 'DM Serif Display, serif',
+              fontFamily: "Lato, sans-serif",
               textShadow: '0 0 40px rgba(255, 255, 255, 0.3), 0 0 80px rgba(255, 255, 255, 0.1)',
               transformOrigin: 'center center',
               filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.2))',
@@ -148,7 +148,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                fontFamily: 'DM Serif Display, serif',
+                fontFamily: "Lato, sans-serif",
                 filter: 'drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1))',
               }}
             >

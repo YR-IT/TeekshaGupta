@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const ServicesPage = () => {
   return (
-    <main className="bg-white text-black">
+    <main className="bg-white text-black" style={{ fontFamily: "Lato, sans-serif" }}>
       <Navbar />
       {/* Hero Section */}
       <section className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
@@ -25,14 +25,12 @@ const ServicesPage = () => {
         <div className="z-20 px-6">
           <div className="max-w-3xl mx-auto animate-fade-in">
             <h1
-              className="text-5xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-md"
-              style={{ fontFamily: 'DM Serif Text' }}
+              className="text-5xl md:text-6xl font-normal mb-6 drop-shadow-md bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent"
             >
               OUR SERVICES
             </h1>
             <p
               className="text-lg text-gray-300 leading-relaxed"
-              style={{ fontFamily: "DM Serif Text" }}
             >
               We transform spaces into timeless expressions of purpose and
               beauty — merging architectural vision with refined interiors.
@@ -70,21 +68,18 @@ const ServicesPage = () => {
       >
         <div className="text-center max-w-4xl mx-auto mb-16">
           <p
-            className="uppercase text-sm tracking-widest text-amber-300  mb-2"
-            style={{ fontFamily: "DM Serif Text" }}
+            className="uppercase text-sm tracking-widest text-amber-300  mb-8"
           >
             Our Expertise
           </p>
           <h2
-            className="text-5xl font-bold mb-6 text-white "
-            style={{ fontFamily: "DM Serif Text" }}
+            className="text-5xl font-medium mb-6 text-white "
           >
             What We Offer
           </h2>
-          <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-10"></div>
+          <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mx-auto mb-10"></div>
           <p
-            className="text-lg text-white leading-relaxed"
-            style={{ fontFamily: "DM Serif Text" }}
+            className="text-base text-white leading-relaxed"
           >
             At TAS Designs, we offer a comprehensive suite of
             architectural services thoughtfully tailored to meet the
@@ -118,15 +113,13 @@ const ServicesPage = () => {
             {/* Content Section */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2
-                className="text-5xl font-medium mb-4 text-amber-300 leading-tight"
-                style={{ fontFamily: "DM Serif Text" }}
-              >
+                className="text-5xl font-medium mb-4 text-amber-200 leading-tight"
+              >                
                 {service.title}
               </h2>
               <div className="w-16 h-1 bg- mb-6 mx-auto lg:mx-0" />
               <p
                 className="text-lg text-white mb-8 leading-relaxed"
-                style={{ fontFamily: "DM Serif Text" }}
               >
                 {service.description}
               </p>

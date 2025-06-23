@@ -28,9 +28,9 @@ const Navbar = () => {
     <>
       {/* Import Google Fonts with Stylish Cursive */}
       <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
-        rel="stylesheet"
-      />
+  href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap"
+  rel="stylesheet"
+/>
 
       <nav
   className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
@@ -75,7 +75,7 @@ const Navbar = () => {
               </div>
             </Link> */}
             <Link href="/" className="flex items-center group">
-  <div className="relative w-48 h-48">
+  <div className="relative w-48 h-48 mt-2">
     <img
       src="/logo2_transparent.png" 
       alt="TAS Designs Logo"
@@ -129,7 +129,7 @@ const Navbar = () => {
                 onClick={navbarToggleHandler}
                 className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${
                   sticky
-                    ? "text-black hover:bg-gray-100/50"
+                    ? "text-white hover:bg-gray-100/50"
                     : "text-white hover:bg-white/10"
                 }`}
               >

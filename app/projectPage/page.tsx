@@ -74,7 +74,7 @@ const Projects = () => {
   ];
 
 return (
-  <section className="bg-white overflow-hidden" style={{ fontFamily: "DM Serif Text" }}>
+  <section className="bg-black text-white overflow-hidden" style={{ fontFamily: "Lato, sans-serif" }}>
     <Navbar />
     
     {/* Hero Section with Background Video */}
@@ -82,6 +82,7 @@ return (
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
+        style={{ filter: "brightness(80%)" }}
         autoPlay
         muted
         loop
@@ -125,16 +126,16 @@ return (
             </span>
             
             {/* Main Heading - Responsive Typography */}
-            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight tracking-tight leading-none mb-6 sm:mb-8">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extralight tracking-tight leading-none mb-6 sm:mb-8">
               <span 
-                className={`inline-block text-white transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} 
+                className={`inline-block bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} 
                 style={{animationDelay: '0.8s'}}
               >
                 CURATED
               </span>
               <br />
               <span 
-                className={`inline-block bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} 
+                className={`inline-block bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} 
                 style={{animationDelay: '1.1s'}}
               >
                 SPACES
@@ -162,19 +163,19 @@ return (
     </div>
 
       {/* Projects Section */}
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
-        <div className="max-w-8xl mx-auto py-40 px-4 sm:px-8">
+      <div className="min-h-screen">
+        <div className="max-w-8xl mx-auto mt-32 px-4 sm:px-8">
           
           {/* Section Header */}
           <div className="text-center mb-32">
-            <span className="text-xs tracking-[0.4em] text-gray-600 font-light uppercase mb-8 block">
+            <span className="text-xs text-white/90 tracking-[0.4em] text-gray-600 font-light uppercase mb-8 block">
               Selected Works
             </span>
-            <h2 className="text-5xl sm:text-6xl md:text-7xl font-extralight tracking-tight text-gray-900 mb-10">
-              OUR <span className="font-thin italic text-gray-600">FINEST</span>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-extralight tracking-tight text-white/90 mb-10">
+              OUR <span className="font-thin bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent">FINEST</span>
             </h2>
-            <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-10"></div>
-            <p className="text-lg text-gray-700 font-light max-w-3xl mx-auto leading-relaxed">
+            <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mx-auto mb-10"></div>
+            <p className="text-lg text-white/75 font-light max-w-3xl mx-auto leading-relaxed">
               Each project represents our commitment to timeless design,<br />
               where every detail serves a greater purpose.
             </p>
@@ -288,8 +289,8 @@ return (
                     isProjectVisible ? 'opacity-100 transform translate-y-0' : 'opacity-60 transform translate-y-8'
                   }`}>
                     <div>
-                      <h3 className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-medium leading-tight mb-6 transition-all duration-[1500ms] ease-out ${
-                        isProjectVisible ? 'text-gray-900 transform translate-y-0' : 'text-gray-600 transform translate-y-2'
+                      <h3 className={`text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium leading-tight mb-6 transition-all duration-[1500ms] ease-out ${
+                        isProjectVisible ? 'text-gray-200 transform translate-y-0' : 'text-gray-600 transform translate-y-2'
                       }`}>
                         {project.title}
                       </h3>
@@ -301,7 +302,7 @@ return (
                       }`}></div>
                       
                       <p className={`text-lg font-light leading-relaxed mb-10 transition-all duration-[1500ms] ease-out ${
-                        isProjectVisible ? 'text-gray-800 transform translate-y-0' : 'text-gray-600 transform translate-y-2'
+                        isProjectVisible ? 'text-gray-300 transform translate-y-0' : 'text-gray-600 transform translate-y-2'
                       }`}>
                         {project.description}
                       </p>
@@ -310,7 +311,7 @@ return (
                       <Link href={`/projectPage/${project.slug}`}>
                       <button className={`group/btn relative inline-flex items-center transition-all duration-[1200ms] ease-out px-8 py-4 rounded-full ${
                         isProjectVisible 
-                          ? 'bg-gray-900 text-white hover:bg-gray-800 transform translate-y-0 scale-100' 
+                          ? 'bg-gray-700 text-white hover:bg-gray-800 transform translate-y-0 scale-100' 
                           : 'bg-gray-200 text-gray-700 hover:bg-gray-300 transform translate-y-1 scale-95'
                       }`}>
                         <span className="text-sm tracking-[0.2em] font-light uppercase mr-4">
@@ -335,22 +336,33 @@ return (
           </div>
           
           {/* Enhanced Call to Action */}
-          <div className="text-center mt-40 pt-32 border-t border-gray-300">
-            <h3 className="text-3xl sm:text-4xl font-extralight text-gray-900 mb-4">
-              Ready to transform your <span className="italic text-gray-600">vision</span>?
-            </h3>
-            <p className="text-lg text-gray-600 font-light mb-12 max-w-2xl mx-auto">
-              Let's create spaces that evolve and inspire through thoughtful design
-            </p>
-            <Link href="/contact">
-            <button className="group relative inline-flex items-center justify-center px-16 py-5 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-[1000ms] ease-out overflow-hidden rounded-full">
-              <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
-                Begin Your Journey
-              </span>
-              <div className="absolute inset-0 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-center rounded-full"></div>
-            </button>
-            </Link>
-          </div>
+          <div
+  className="relative w-full text-center mt-40 pt-32 py-24 px-6 bg-cover bg-center"
+  style={{ backgroundImage: "url('/image_1.jpg')", filter: "brightness(1.2)" }}
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  {/* Content */}
+  <div className="relative z-10">
+    <h3 className="text-3xl sm:text-4xl font-extralight text-gray-300 mb-4">
+      Ready to transform your <span className="italic bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">vision</span>?
+    </h3>
+    <p className="text-lg text-gray-300 font-light mb-12 max-w-2xl mx-auto">
+      Let's create spaces that evolve and inspire through thoughtful design
+    </p>
+    <Link href="/contact">
+      <button className="group relative inline-flex items-center justify-center px-16 py-5 border-2 border-gray-300 text-gray-200 hover:bg-gray-500 hover:text-white transition-all duration-[1000ms] ease-out overflow-hidden rounded-full">
+        <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
+          Begin Your Journey
+        </span>
+        <div className="absolute inset-0 bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-center rounded-full"></div>
+      </button>
+    </Link>
+  </div>
+</div>
+
+
         </div>
       </div>
       

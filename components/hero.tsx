@@ -36,7 +36,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style={{ fontFamily: "DM Serif Text" }}>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style={{ fontFamily: "Lato, sans-serif" }}>
       {/* Background Images */}
       <div className="absolute inset-0 z-0">
         <video
@@ -72,14 +72,16 @@ const Hero = () => {
         <div className="absolute top-2/3 right-1/4 w-4 sm:w-6 h-0.5 sm:h-1 bg-white animate-pulse" style={{animationDelay: '3s'}}></div>
       </div>
       <div className="relative z-10 text-center px-4 ">
-  <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-9xl text-amber-300 italic tracking-wider">
-    Teeksha <span className="relative inline-block">
-      Gupta
-      <span className="absolute left-3/4 -bottom-4 sm:-bottom-6 transform -translate-x-1/2 text-white text-xl sm:text-2xl lg:text-5xl italic font-semibold whitespace-nowrap">
-        Architect
-      </span>
+  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-amber-300 italic tracking-wider">
+  Teeksha{" "}
+  <span className="relative inline-block">
+    Gupta
+    <span className="absolute left-3/4 -bottom-4 sm:-bottom-6 transform -translate-x-1/2 text-white text-xl sm:text-2xl md:text-3xl lg:text-6xl italic font-light whitespace-nowrap">
+      Architect
     </span>
-  </h1>
+  </span>
+</h1>
+
 </div>
 
     </section>

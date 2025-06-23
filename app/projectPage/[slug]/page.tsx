@@ -57,7 +57,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   if (!project) return notFound();
 
   return (
-    <main className="bg-[#fef9f4] text-black" style={{ fontFamily: "DM Serif Text" }}>
+    <main className="bg-[#fef9f4] text-black" style={{ fontFamily: "Lato, sans-serif" }}>
       <Navbar />
       <div className="relative h-[80vh] sm:h-screen w-full flex items-center justify-center text-center overflow-hidden">
         <Image

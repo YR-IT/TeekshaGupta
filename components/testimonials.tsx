@@ -64,7 +64,7 @@ const settings = {
   infinite: true,
   speed: 1000,
   autoplay: true,
-  autoplaySpeed: 6000,
+  autoplaySpeed: 4000,
   slidesToShow: 2,
   slidesToScroll: 1,
   pauseOnHover: false,
@@ -102,7 +102,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <section className="relative py-24 overflow-hidden"  style={{ fontFamily: "DM Serif Text" }}>
+    <section className="relative py-24 overflow-hidden"  style={{ fontFamily: "Lato, sans-serif" }}>
       {/* Background Image with Sophisticated Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -132,11 +132,11 @@ const Testimonial = () => {
             <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
             CLIENT TESTIMONIALS
           </div>
-          <h2 className="text-6xl lg:text-7xl font-light text-white mb-4 tracking-tight">
+          <h2 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight">
   What Our
   <br />
   <span className="font-bold">
-    <span className="text-amber-300">CLIENTS</span> Say
+    <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-yellow-300">CLIENTS</span> Say
   </span>
 </h2>
           <div className="w-24 h-px bg-white mx-auto mb-8"></div>

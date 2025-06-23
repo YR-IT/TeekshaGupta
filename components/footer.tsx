@@ -14,7 +14,7 @@ import { div } from "framer-motion/client";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white relative overflow-hidden" style={{ fontFamily: "DM Serif Text" }}>
+    <footer className="bg-black text-white relative overflow-hidden" style={{ fontFamily: "Lato, sans-serif" }}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-64 h-64 bg-teal-400 rounded-full blur-3xl transform -translate-x-32 -translate-y-32"></div>

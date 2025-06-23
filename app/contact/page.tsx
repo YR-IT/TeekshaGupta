@@ -62,13 +62,13 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden" style={{ fontFamily: "DM Serif Text" }}>
+    <div className="min-h-screen bg-white overflow-hidden" style={{ fontFamily: "Lato, sans-serif" }}>
       <Navbar />
       {/* Hero Section */}
       <div className="relative h-screen flex items-center w-full justify-center bg-black overflow-hidden">
         {/* Background image */}
          <Image
-                  src="/contact.png"
+                  src="/contact_bg.jpg"
                   alt="Hero Background"
                   fill
                   className="z-0 object-cover"
@@ -76,7 +76,6 @@ const ContactPage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80 z-10" />
         
-
         {/* Floating Geometric Elements */}
         <div className="absolute inset-0 overflow-hidden opacity-10">
           <div className="absolute top-40 right-40 w-4 h-4 bg-white rotate-45 animate-bounce" style={{animationDelay: '2s'}}></div>
@@ -91,12 +90,12 @@ const ContactPage = () => {
               Contact Excellence
             </span>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl text-amber-300 italic tracking-wider">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl text-amber-300 tracking-wider">
               <span className={`inline-block bg-gradient-to-r from-white to-amber-100  bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{animationDelay: '0.8s'}}>
                 GET IN 
               </span>
               <br />
-              <span className={`inline-block bg-gradient-to-r from-white via-ambe-200 to-amber-300 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{animationDelay: '1.1s'}}>
+              <span className={`inline-block bg-gradient-to-r from-white via-amber-200 to-amber-300 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{animationDelay: '1.1s'}}>
                 TOUCH
               </span>
               <br />
@@ -107,11 +106,11 @@ const ContactPage = () => {
             
             <div className={`w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-12 transform transition-all duration-1500 ease-out ${isVisible ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}`} style={{animationDelay: '1.7s'}}></div>
             
-            <p className={`text-xl sm:text-2xl text-white font-light mb-4 transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} style={{animationDelay: '2s'}}>
+            <p className={`text-xl sm:text-2xl text-white font-light mb-4 transform transition-all duration-1500 tracking-wide ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} style={{animationDelay: '2s'}}>
               BUILD THE HOME OF YOUR DREAMS
             </p>
             
-            <p className={`text-lg text-amber-300 font-light transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} style={{animationDelay: '2.3s'}}>
+            <p className={`text-lg text-amber-300 font-light transform transition-all duration-1500 tracking-wide ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} style={{animationDelay: '2.3s'}}>
               Interior Design Excellence
             </p>
           </div>
@@ -130,7 +129,7 @@ const ContactPage = () => {
             Our Mission
           </span>
           
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl text-white italic tracking-wider">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white tracking-wider" style={{ fontFamily: "Lato, sans-serif" }}>
             Let's Create Something
             <br />
             <span className=" font-serif bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
@@ -140,7 +139,7 @@ const ContactPage = () => {
           
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-12"></div>
           
-          <p className="text-lg text-white font-serif max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed">
             Share your vision with us and let our expert team transform your space into a <em className="font-normal">masterpiece</em> that reflects your unique style and personality.
           </p>
         </div>
@@ -165,7 +164,7 @@ const ContactPage = () => {
                     <span className="text-xs tracking-[0.4em] text-amber-300 font-light text-center uppercase mb-6 block">
                       Start Your Journey
                     </span>
-                    <h3 className="text-2xl sm:text-4xl lg:text-5xl text-white text-center italic tracking-wider">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl text-white text-center italic tracking-wider">
                       Tell us about your <span className="font-thin italic">dream space</span>
                     </h3>
                   </div>
@@ -189,8 +188,8 @@ const ContactPage = () => {
                       />
                       <label className={`absolute left-8 transition-all duration-300 pointer-events-none ${
                         focusedField === 'fullName' || formData.fullName 
-                          ? '-top-6 text-xs text-black font-medium' 
-                          : 'top-4 text-gray-500'
+                          ? '-top-6 text-xs text-white font-medium' 
+                          : 'top-4 text-gray-200'
                       }`}>
                         Full Name *
                       </label>
@@ -217,8 +216,8 @@ const ContactPage = () => {
                       />
                       <label className={`absolute left-8 transition-all duration-300 pointer-events-none ${
                         focusedField === 'email' || formData.email 
-                          ? '-top-6 text-xs text-black font-medium' 
-                          : 'top-4 text-gray-500'
+                          ? '-top-6 text-xs text-white font-medium' 
+                          : 'top-4 text-gray-200'
                       }`}>
                         Email Address *
                       </label>
@@ -244,8 +243,8 @@ const ContactPage = () => {
                       />
                       <label className={`absolute left-8 transition-all duration-300 pointer-events-none ${
                         focusedField === 'phone' || formData.phone 
-                          ? '-top-6 text-xs text-black font-medium' 
-                          : 'top-4 text-gray-500'
+                          ? '-top-6 text-xs text-white font-medium' 
+                          : 'top-4 text-gray-200'
                       }`}>
                         Phone Number
                       </label>
@@ -256,7 +255,7 @@ const ContactPage = () => {
 
                     {/* Project Type - Redesigned as Card Selection */}
                     <div className="space-y-4">
-                      <label className="text-xs tracking-wide text-gray-600 uppercase font-medium block">
+                      <label className="text-xs tracking-wide text-gray-200 uppercase font-medium block">
                         Project Type
                       </label>
                       <div className="grid grid-cols-2 gap-3">
@@ -344,13 +343,13 @@ const ContactPage = () => {
                         onFocus={() => setFocusedField('vision')}
                         onBlur={() => setFocusedField('')}
                         rows={4}
-                        className="w-full pl-8 pr-0 py-4 bg-transparent border-0 border-b border-gray-300 text-gray-900 placeholder-transparent focus:border-black focus:outline-none transition-all duration-300 resize-none"
+                        className="w-full pl-8 pr-0 py-4 bg-transparent border-0 border-b border-gray-300 text-gray-200 placeholder-transparent focus:border-black focus:outline-none transition-all duration-300 resize-none"
                         placeholder="Your Vision"
                         required
                       />
                       <label className={`absolute left-8 transition-all duration-300 pointer-events-none ${
                         focusedField === 'vision' || formData.vision 
-                          ? '-top-6 text-xs text-black font-medium' 
+                          ? '-top-6 text-xs text-white font-medium' 
                           : 'top-4 text-gray-300'
                       }`}>
                         Your Vision *
@@ -470,15 +469,15 @@ const ContactPage = () => {
       Ready to Begin?
     </span>
     
-    <h3 className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tight text-white mb-12">
+    <h3 className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tight text-white mb-8">
       Ready to Transform
       <br />
-      <span className="font-thin italic bg-gradient-to-r from-white via-amber-300 to-amber-500 bg-clip-text text-transparent">
+      <span className="font-thin bg-gradient-to-r from-white via-amber-300 to-amber-500 bg-clip-text text-transparent">
         Your Space?
       </span>
     </h3>
     
-    <div className="w-40 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-12"></div>
+    <div className="w-40 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8"></div>
     
     <p className="text-lg text-gray-300 font-light max-w-4xl mx-auto leading-relaxed mb-16">
       Let's schedule a consultation and bring your interior design dreams to life with our <em className="font-normal">personalized approach</em>

@@ -201,7 +201,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="relative bg-black overflow-hidden">
+    <section id="about" className="relative bg-black overflow-hidden" style={{ fontFamily: "Lato, sans-serif" }}>
 
       <div className="relative container mx-auto px-6 py-28 lg:px-8">
         {/* Section Header */}
@@ -215,7 +215,7 @@ const About = () => {
             ABOUT
           </div> */}
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-medium text-white mb-4 tracking-tight leading-tight"  style={{ fontFamily: "DM Serif Text" }}>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-medium text-white mb-4 tracking-tight leading-tight" style={{ fontFamily: "Lato, sans-serif" }}>
             About Teeksha Gupta Architect
             <span className="block text-amber-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl mt-4 tracking-wide">"Elegance Built Into Form"</span>
           </h2>
@@ -235,13 +235,13 @@ const About = () => {
               <div className="relative px-4 sm:px-6 md:px-8">
                 <Quote className="absolute -top-4 -left-4 w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-white" />
 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-white/75 leading-relaxed pl-8 sm:pl-10"  style={{ fontFamily: "DM Serif Text" }}>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl font-light text-white/75 leading-relaxed pl-8 sm:pl-10">
                   Creating spaces that tell stories, evoke emotions, and
                   transform the way people experience their environments.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-black/10"  style={{ fontFamily: "DM Serif Text" }}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-black/10">
                 <div>
                   <h3 className="text-lg font-bold text-white/75 mb-4 uppercase tracking-wider">
                     Philosophy
@@ -265,15 +265,18 @@ const About = () => {
                 </div>
               </div>
               {/* Signature Paragraph */}
-<div className="pt-4 text-amber-300 text-8xl italic leading-relaxed" style={{ fontFamily: "DM Serif Text" }}>
- SIGNATURE
+<div className="w-full flex justify-center">
+  <img 
+    src="/name_sign.png" 
+    alt="Teeksha Gupta Signature" 
+    className="w-full max-w-[600px] object-contain"
+  />
 </div>
-
             </div>
 
 
             {/* Achievements */}
-            <div className="p-8 border-l-4 border-black"  style={{ fontFamily: "DM Serif Text" }}>
+            <div className="pl-8 border-l-2 border-white">
               <h3 className="text-xl font-bold text-white/75 mb-6 uppercase tracking-wider">
                 Recognition
               </h3>
@@ -341,7 +344,6 @@ const About = () => {
   <button className="group relative inline-flex items-center px-8 py-4 bg-white text-black font-medium uppercase tracking-wider transition-all duration-300 hover:bg-black hover:text-white hover:shadow-xl active:scale-95 border border-black">
     <span
       className="mr-4 transition-all duration-300 group-hover:tracking-widest"
-      style={{ fontFamily: "DM Serif Text" }}
     >
       Learn More About Us
     </span>
