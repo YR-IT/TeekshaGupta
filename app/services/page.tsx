@@ -66,24 +66,24 @@ const ServicesPage = () => {
       {/* Services Section */}
       <section
         id="services"
-        className="pt-20 pb-32 px-6 md:px-10 lg:px-24 space-y-24"
+        className="pt-20 pb-32 px-6 bg-black md:px-10 lg:px-24 space-y-24"
       >
         <div className="text-center max-w-4xl mx-auto mb-16">
           <p
-            className="uppercase text-sm tracking-widest text-black-400 mb-2"
+            className="uppercase text-sm tracking-widest text-amber-300  mb-2"
             style={{ fontFamily: "DM Serif Text" }}
           >
             Our Expertise
           </p>
           <h2
-            className="text-5xl font-bold mb-6 text-black underline underline-offset-8 decoration-white/40"
+            className="text-5xl font-bold mb-6 text-white "
             style={{ fontFamily: "DM Serif Text" }}
           >
             What We Offer
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-10"></div>
           <p
-            className="text-lg text-black-300 leading-relaxed"
+            className="text-lg text-white leading-relaxed"
             style={{ fontFamily: "DM Serif Text" }}
           >
             At TAS Designs, we offer a comprehensive suite of
@@ -118,21 +118,21 @@ const ServicesPage = () => {
             {/* Content Section */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2
-                className="text-5xl font-medium mb-4 text-neutral-900 leading-tight"
+                className="text-5xl font-medium mb-4 text-amber-300 leading-tight"
                 style={{ fontFamily: "DM Serif Text" }}
               >
                 {service.title}
               </h2>
-              <div className="w-16 h-1 bg-neutral-300 mb-6 mx-auto lg:mx-0" />
+              <div className="w-16 h-1 bg- mb-6 mx-auto lg:mx-0" />
               <p
-                className="text-lg text-neutral-700 mb-8 leading-relaxed"
+                className="text-lg text-white mb-8 leading-relaxed"
                 style={{ fontFamily: "DM Serif Text" }}
               >
                 {service.description}
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 text-sm tracking-wider font-medium hover:bg-gray-900 transition"
+                className="inline-flex items-center gap-2 bg-amber-300 text-black px-6 py-3 text-sm tracking-wider font-medium hover:bg-amber-500 transition"
               >
                 Get In Touch
                 <svg
