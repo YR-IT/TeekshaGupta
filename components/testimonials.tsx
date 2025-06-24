@@ -128,11 +128,11 @@ const Testimonial = () => {
       <div className="relative container mx-auto px-6 lg:px-8">
         {/* Section Header - Matching About Section Style */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 px-6 py-2 bg-white text-black text-sm font-medium rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-6 py-2 bg-white text-black text-xs font-medium rounded-full mb-6">
             <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
             CLIENT TESTIMONIALS
           </div>
-          <h2 className="text-5xl lg:text-6xl font-light text-white mb-4 tracking-tight">
+          <h2 className="text-4xl lg:text-5xl font-light text-white mb-4 tracking-tight">
   What Our
   <br />
   <span className="font-bold">
@@ -140,7 +140,7 @@ const Testimonial = () => {
   </span>
 </h2>
           <div className="w-24 h-px bg-white mx-auto mb-8"></div>
-          <p className="mx-auto max-w-2xl text-xl text-white/80 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
             Discover the experiences of those who trusted us to bring their architectural dreams to life
           </p>
         </div>

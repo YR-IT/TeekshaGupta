@@ -243,10 +243,10 @@ const About = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-black/10">
                 <div>
-                  <h3 className="text-lg font-bold text-white/75 mb-4 uppercase tracking-wider">
+                  <h3 className="text-base font-bold text-white/75 mb-4 uppercase tracking-wider">
                     Philosophy
                   </h3>
-                  <p className="text-white/75 leading-relaxed tracking-wide">
+                  <p className="text-white/75 text-base leading-relaxed tracking-wide">
                     With over 10 years of experience, I believe great design
                     transcends aesthetics—it's about creating functional art
                     that enhances daily life and reflects individual
@@ -254,10 +254,10 @@ const About = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white/75 mb-4 uppercase tracking-wider">
+                  <h3 className="text-base font-bold text-white/75 mb-4 uppercase tracking-wider">
                     Approach
                   </h3>
-                  <p className="text-white/75 leading-relaxed tracking-wide">
+                  <p className="text-white/75 text-base leading-relaxed tracking-wide">
                     Every project begins with understanding your story. I blend
                     contemporary innovation with timeless principles to craft
                     spaces that are both striking and deeply personal.
@@ -277,7 +277,7 @@ const About = () => {
 
             {/* Achievements */}
             <div className="pl-8 border-l-2 border-white">
-              <h3 className="text-xl font-bold text-white/75 mb-6 uppercase tracking-wider">
+              <h3 className="text-lg font-bold text-white/75 mb-6 uppercase tracking-wider">
                 Recognition
               </h3>
               <div className="space-y-4">
@@ -287,7 +287,7 @@ const About = () => {
                     className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300"
                   >
                     <div className="w-2 h-2 bg-white rounded-full mt-3 group-hover:scale-150 transition-transform duration-300"></div>
-                    <span className="text-white/75 font-light">
+                    <span className="text-white/75 text-base font-light">
                       {achievement}
                     </span>
                   </div>
@@ -318,7 +318,7 @@ const About = () => {
                   <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-black"></div>
                   <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-black"></div>
                 </div>
-                <div className="absolute -bottom-6 -right-6 bg-black text-white px-6 py-4 shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
+                <div className="absolute -bottom-6 -right-6 bg-black text-white px-4 py-4 shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
                   <div className="flex items-center gap-3">
                     <Star className="w-5 h-5 fill-current" />
                     <div>
@@ -343,7 +343,7 @@ const About = () => {
           <Link href="/about">
   <button className="group relative inline-flex items-center px-8 py-4 bg-white text-black font-medium uppercase tracking-wider transition-all duration-300 hover:bg-black hover:text-white hover:shadow-xl active:scale-95 border border-black">
     <span
-      className="mr-4 transition-all duration-300 group-hover:tracking-widest"
+      className="mr-4 transition-all text-sm duration-300 group-hover:tracking-widest"
     >
       Learn More About Us
     </span>

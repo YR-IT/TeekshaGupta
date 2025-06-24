@@ -30,7 +30,7 @@ const ServicesPage = () => {
               OUR SERVICES
             </h1>
             <p
-              className="text-lg text-gray-300 leading-relaxed"
+              className="text-base text-gray-300 leading-relaxed"
             >
               We transform spaces into timeless expressions of purpose and
               beauty — merging architectural vision with refined interiors.
@@ -178,7 +178,7 @@ const ServicesPage = () => {
               ease: [0.25, 0.1, 0.25, 1],
             }}
             viewport={{ once: true }}
-            className="text-lg text-gray-200 mb-14"
+            className="text-base text-gray-200 mb-14"
           >
             Contact us today to schedule a consultation and discuss how we
             can bring your architectural vision to life.

@@ -119,14 +119,14 @@ return (
           <div className="inline-block">
             {/* Portfolio Collection Label */}
             <span 
-              className="text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] text-gray-300 font-light uppercase mb-4 sm:mb-6 block animate-fade-in-up" 
+              className="text-xs sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-gray-300 font-light uppercase mb-4 sm:mb-6 block animate-fade-in-up" 
               style={{animationDelay: '0.5s'}}
             >
               Portfolio Collection
             </span>
             
             {/* Main Heading - Responsive Typography */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extralight tracking-tight leading-none mb-6 sm:mb-8">
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-extralight tracking-tight leading-none mb-6 sm:mb-8">
               <span 
                 className={`inline-block bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} 
                 style={{animationDelay: '0.8s'}}
@@ -150,7 +150,7 @@ return (
             
             {/* Description Text */}
             <p 
-              className={`text-base sm:text-lg md:text-xl text-gray-300 font-light max-w-xs sm:max-w-2xl mx-auto leading-relaxed transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} 
+              className={`text-base sm:text-base md:text-lg text-gray-300 font-light max-w-xs sm:max-w-2xl mx-auto leading-relaxed transform transition-all duration-1500 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}`} 
               style={{animationDelay: '1.7s'}}
             >
               <span className="block sm:inline">Where monochrome elegance meets architectural precision.</span>
@@ -175,7 +175,7 @@ return (
               OUR <span className="font-thin bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent">FINEST</span>
             </h2>
             <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mx-auto mb-10"></div>
-            <p className="text-lg text-white/75 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-white/75 font-light max-w-3xl mx-auto leading-relaxed">
               Each project represents our commitment to timeless design,<br />
               where every detail serves a greater purpose.
             </p>
@@ -297,8 +297,8 @@ return (
                       
                       <div className={`h-px mb-8 transition-all duration-[1800ms] ease-out ${
                         isProjectVisible 
-                          ? 'w-24 bg-gray-900' 
-                          : 'w-16 bg-gray-500'
+                          ? 'w-24 bg-gray-300' 
+                          : 'w-16 bg-gray-300'
                       }`}></div>
                       
                       <p className={`text-lg font-light leading-relaxed mb-10 transition-all duration-[1500ms] ease-out ${
@@ -348,16 +348,26 @@ return (
     <h3 className="text-3xl sm:text-4xl font-extralight text-gray-300 mb-4">
       Ready to transform your <span className="italic bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">vision</span>?
     </h3>
-    <p className="text-lg text-gray-300 font-light mb-12 max-w-2xl mx-auto">
+    <p className="text-base text-gray-300 font-light mb-12 max-w-2xl mx-auto">
       Let's create spaces that evolve and inspire through thoughtful design
     </p>
     <Link href="/contact">
-      <button className="group relative inline-flex items-center justify-center px-16 py-5 border-2 border-gray-300 text-gray-200 hover:bg-gray-500 hover:text-white transition-all duration-[1000ms] ease-out overflow-hidden rounded-full">
-        <span className="relative z-10 text-sm tracking-[0.3em] font-light uppercase">
-          Begin Your Journey
-        </span>
-        <div className="absolute inset-0 bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1000ms] ease-out origin-center rounded-full"></div>
-      </button>
+      <button className="group relative inline-flex items-center justify-center 
+  px-6 py-3 sm:px-10 sm:py-4 md:px-16 md:py-5 
+  border-2 border-gray-300 text-gray-200 
+  hover:bg-gray-500 hover:text-white 
+  transition-all duration-[1000ms] ease-out 
+  overflow-hidden rounded-full text-xs sm:text-sm md:text-base">
+  
+  <span className="relative z-10 tracking-[0.3em] font-light uppercase">
+    Begin Your Journey
+  </span>
+
+  <div className="absolute inset-0 bg-gray-800 transform scale-x-0 group-hover:scale-x-100 
+    transition-transform duration-[1000ms] ease-out origin-center rounded-full">
+  </div>
+</button>
+
     </Link>
   </div>
 </div>
