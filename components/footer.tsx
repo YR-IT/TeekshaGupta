@@ -71,7 +71,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@TEEKSHAGUPTAVLOGS"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-slate-700/50 hover:bg-red-600 p-3 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-red-600/25"
@@ -156,16 +156,17 @@ const Footer = () => {
     </div>
 
     <div className="mb-6">
-      <a
-        href="https://www.google.co.in/maps/place/Architect+Teeksha+Gupta/@30.6836404,76.8435553,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.6836358!4d76.8461302!16s%2Fg%2F11cmvtg6f8?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full inline-flex items-center justify-center gap-3 px-4 py-3 text-black text-sm font-semibold rounded-xl bg-amber-300 transition-all duration-300 transform hover:scale-[1.02]"
-      >
-        <Navigation className="w-4 h-4" />
-        View on Map
-      </a>
-    </div>
+  <a
+    href="https://www.google.co.in/maps/place/Architect+Teeksha+Gupta/@30.6836404,76.8435553,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.6836358!4d76.8461302!16s%2Fg%2F11cmvtg6f8?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-full inline-flex items-center justify-center gap-3 px-4 py-3 text-white text-sm font-semibold rounded-xl bg-black transition-all duration-300 transform hover:scale-[1.02] hover:bg-white hover:text-black border border-white"
+  >
+    <Navigation className="w-4 h-4" />
+    View on Map
+  </a>
+</div>
+
 
     <div className="space-y-4">
       <div className="flex items-center gap-3">

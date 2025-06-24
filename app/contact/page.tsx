@@ -361,16 +361,19 @@ const ContactPage = () => {
 
                     {/* Submit Button */}
                     <div className="pt-8">
-                      <button
-                        type="button"
-                        onClick={handleSubmit}
-                        className="group relative overflow-hidden bg-gradient-to-r from-amber-200 to-amber-400 text-black px-12 py-4 font-light tracking-wide hover:bg-gray-900 transition-all duration-500 transform hover:scale-105 rounded-lg shadow-lg hover:shadow-xl"
-                      ><span> Start</span>
-                        <div className="absolute inset-0 shadow-lg bg-amber-500 text-black transform scale-x-0 group-hover:scale-x-100 p-4 transition-transform duration-500 origin-left border-gray-200">
-                          <span>Start</span>
-                        </div>
-                      </button>
-                    </div>
+  <button
+    type="button"
+    onClick={handleSubmit}
+    className="group relative overflow-hidden bg-black text-white px-8 sm:px-10 md:px-12 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base md:text-lg font-light tracking-wide transition-all duration-500 transform hover:scale-105 border border-white rounded-lg shadow-lg hover:shadow-xl hover:text-black"
+  >
+    <span className="relative z-10">Start</span>
+    
+    <div className="absolute inset-0 bg-white text-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left flex items-center justify-center">
+      {/* <span className="font-light text-sm sm:text-base md:text-lg">Start</span> */}
+    </div>
+  </button>
+</div>
+
                   </form>
                 </div>
               </div>
@@ -431,19 +434,20 @@ const ContactPage = () => {
   
   {/* Open in Maps Button - Centered */}
   <div className="flex justify-center">
-    <a 
-      href="https://www.google.com/maps/place/Architect+Teeksha+Gupta/@30.683636,76.8461302,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.683636!4d76.8461302!16s%2Fg%2F11y3k8qx8q"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative inline-flex items-center justify-center gap-3 overflow-hidden border-2 border-amber-500 bg-amber-300 text-black font-medium py-3 px-8 transition-colors duration-300 group"
-    >
-      <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-        Open in Maps
-      </span>
-      <BiNavigation className="relative z-10 w-5 h-5 group-hover:text-black transition-colors duration-300" />
-      <div className="absolute inset-0 bg-amber-500  text-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
-    </a>
-  </div>
+  <a 
+    href="https://www.google.com/maps/place/Architect+Teeksha+Gupta/@30.683636,76.8461302,17z/data=!3m1!4b1!4m6!3m5!1s0x390f94a39b70cf8b:0xc4d4eeec8e4d7785!8m2!3d30.683636!4d76.8461302!16s%2Fg%2F11y3k8qx8q"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative inline-flex items-center justify-center gap-3 overflow-hidden border-2 border-white bg-black text-white font-medium py-3 px-8 transition-colors duration-300 group"
+  >
+    <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+      Open in Maps
+    </span>
+    <BiNavigation className="relative z-10 w-5 h-5 group-hover:text-black transition-colors duration-300" />
+    <div className="absolute inset-0 bg-white text-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
+  </a>
+</div>
+
 </div>
             </div>
           </div>
