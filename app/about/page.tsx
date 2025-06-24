@@ -131,7 +131,7 @@ const About = () => {
               <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">The Journey</p>
               <h2 className="text-4xl mb-6 underline underline-offset-8 decoration-white">Our Story</h2>
               <p className="text-base leading-relaxed text-white/75 mb-6 tracking-wide">
-                With over two decades of design excellence, AR-TEEKSHA Interiors has earned a reputation as one of the
+                With over decades of design excellence, TAS Designs has earned a reputation as one of the
                 most visionary firms in the industry. Our philosophy is rooted in creating spaces that evoke comfort and
                 character — whether it’s a bespoke home, a cutting-edge workspace, or a tranquil retreat.
               </p>

@@ -35,10 +35,10 @@ const About = () => {
   ];
 
   const achievements = [
-    "Featured in Architectural Digest",
-    "Winner of Interior Design Excellence Award 2024",
-    "Certified by International Interior Design Association",
-  ];
+  "Awarded for Best Interior Design at Architecture Reconnect Summit 2024",
+  "India Design Award 2023 for Eco & Luxury Interiors",
+  "Eminent Jury at ARCH EX 2024, Chandigarh",
+];
 
   // Enhanced easing functions
   const easeOutBack = (t: number): number => {

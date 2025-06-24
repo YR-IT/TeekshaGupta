@@ -147,7 +147,7 @@ const Footer = () => {
       </div>
       <div className="text-white text-sm leading-relaxed tracking-wide">
         <div className="font-medium text-white mb-1">Our Office</div>
-        SCO 207 CABIN 22
+        SCO 207 CABIN 28
         <br />
         SECOND FLOOR SECTOR 14,
         <br />
