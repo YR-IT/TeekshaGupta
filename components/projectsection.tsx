@@ -17,16 +17,22 @@ const projects = [
     description:
   "This premium commercial showroom concept reimagines the jewellery retail experience—where elegance, brand presence, and customer engagement take center stage. Adaptive display arrangements highlight signature collections, while plush consultation zones and ambient lighting curate a personalized buying journey. Glass facades, high-gloss finishes, and artisanal detailing establish a refined atmosphere that enhances product value and client perception. The design merges luxury with functionality, offering a space that’s commercially strategic and visually captivating.",
     image: "/pro1a.jpg",
-    link: "/projects/commercial-office-space",
+    link: "/projects/commercial-showroom",
   },
   {
-    id: 3,
-    title: "Urban Hospitality Living",
-    description:
-  "Urban Hospitality Living reimagines city life through the lens of comfort, style, and community. Nestled in the heart of a vibrant urban setting, this development blends the warmth of hospitality with the ease of modern living. Sustainable features like green roofs and energy-efficient systems complement thoughtfully curated amenities—including rooftop lounges, wellness spaces, and co-working hubs—that foster connection and convenience. Interiors exude contemporary elegance, with open layouts, smart technologies, and abundant natural light, creating a refined yet welcoming atmosphere for the modern urban dweller or guest.",
-    image: "/pro3e.jpeg",
-    link: "/projects/urban-apartment-complex",
-  },
+  id: 3,
+  title: "Collaborative Workspace",
+  description: "Urban Collaborative Workspace redefines the modern office by merging functionality, aesthetics, and community in a dynamic urban environment. Located in the heart of the city, this workspace promotes productivity and well-being through smart design and sustainable innovation. Features such as energy-efficient systems, biophilic elements, and green rooftops align with forward-thinking values. Amenities include state-of-the-art meeting rooms, wellness zones, rooftop breakout areas, and flexible co-working hubs—fostering creativity, focus, and connection. Interiors boast sleek, open layouts with smart technologies and abundant natural light, offering professionals a refined, energizing environment to thrive.",
+  image: "/pro2a.jpeg",
+  link: "/projects/commercial-workspace"
+},
+{
+  id: 4,
+  title: "Adaptive Furniture Design",
+  description: "Adaptive Furniture Design reimagines the modern workspace through the art of functional and aesthetic furniture solutions. Designed for dynamic urban environments, each piece balances ergonomics, sustainability, and style to enhance productivity and well-being. From modular workstations and adaptable seating to creative lounge settings and biophilic design elements, the collection supports diverse work styles and fosters connection. Crafted with eco-conscious materials and smart features, the furniture complements open, light-filled interiors—creating refined, versatile environments where form meets function.",
+  image: "/fur1.jpeg",
+  link: "/projects/furniture-design"
+}
 ];
 
 interface ProjectCardProps {

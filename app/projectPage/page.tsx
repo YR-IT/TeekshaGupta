@@ -57,20 +57,29 @@ const Projects = () => {
     },
     {
       id: 2,
-      slug: "commercial-space",
-      title: "Commercial Showroom",
+      slug: "jewellery-showroom",
+      title: "Jewellery Showroom",
       image: "/pro1a.jpg",
-      description: "Functional and aesthetic dining area designs with natural elements and contemporary furnishing.",
+      description: "A luxurious retail environment crafted to showcase elegance, enhance customer experience, and reflect the brilliance of fine jewellery.",
       category: "COMMERCIAL"
     },
     {
       id: 3,
-      slug: "hospitality-space",
-      title: "Hospitality Space",
-      image: "/pro3e.jpeg",
+      slug: "commercial-workspace",
+      title: "Commercial Workspace",
+      image: "/pro2a.jpeg",
       description: "Luxurious and elegant workspace interiors with modern materials and ergonomic considerations.",
-      category: "HOSPITALITY"
+      category: "COMMERCIAL"
     },
+    {
+  id: 4,
+  slug: "furniture-studio",
+  title: "Modern Furniture Studio",
+  image: "/fur5.jpeg",
+  description: "Curated furniture designs blending form, function, and craftsmanship to elevate modern living and working environments.",
+  category: "FURNITURE"
+}
+
   ];
 
 return (

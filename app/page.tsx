@@ -9,6 +9,7 @@ import Loader from '@/components/loader';
 import Footer from '@/components/footer';
 import Projects from '@/components/projectsection';
 import Testimonial from '@/components/testimonials';
+import ProjectSlider from '@/components/projectsliderhome';
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true); // Always start with true
@@ -95,6 +96,7 @@ export default function HomePage() {
         <HeroSection />
         {/* <ServicesSection /> */}
         <AboutSection />
+         <ProjectSlider />
         <Projects />
         <Testimonial />
         {/* <ContactSection /> */}

@@ -149,13 +149,16 @@ const ProjectSlideshow: React.FC<ProjectSlideshowProps> = ({ images, projectTitl
           >
             {/* Background Image */}
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${image.src})`,
-                filter: 'brightness(0.9) contrast(1.1) saturate(1.05)',
-              }}
-            />
-            
+  className="absolute inset-0 bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url(${image.src})`,
+    filter: 'brightness(0.9) contrast(1.1) saturate(1.05)',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+     backgroundSize: projectTitle === "Furniture Design" ? 'contain' : 'cover',
+  }}
+/> 
+
             {/* Bottom Gradient Overlay */}
             <div 
               className="absolute inset-0"

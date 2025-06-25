@@ -16,11 +16,11 @@ const projects = [
     description:
       "A serene living space blending elegance, comfort, and warmth through refined interiors, curated furnishings, and harmonious tones that evoke a sense of luxury, calm, and timeless residential sophistication.",
     category: "RESIDENTIAL",
-    gallery: ["/pro4a.png", "/pro4b.png", "/pro4c.png"],
+    gallery: ["/pro4a.png", "/pro4b.png", "/pro4c.png", "/fur15.jpeg", "/fur16.jpeg", "/fur14.jpeg"],
   },
   {
     id: 2,
-    slug: "commercial-space",
+    slug: "jewellery-showroom",
     title: "Commercial Showroom",
     image: "/pro1a.jpg",
     description:
@@ -37,13 +37,23 @@ const projects = [
   },
   {
     id: 3,
-    slug: "hospitality-space",
-    title: "Hospitality Space",
-    image: "/pro3e.jpeg",
+    slug: "commercial-workspace",
+    title: "Commercial Workspace",
+    image: "/pro2a.jpeg",
     description:
       "An inviting hospitality environment offering luxurious ambiance, tasteful textures, and immersive design crafted to delight guests, enhance relaxation, and reflect contemporary excellence in comfort and style.",
     category: "HOSPITALITY",
-    gallery: ["/pro3e.jpeg", "/pro3b.jpg", "/pro3d.jpg"],
+    gallery: ["/pro3e.jpeg", "/pro3b.jpg", "/pro3d.jpg", "/pro3a.jpg", "/pro2a.jpeg", "/pro2c.jpeg",],
+  },
+  {
+    id: 4,
+    slug: "furniture-studio",
+    title: "Furniture Studio",
+    image: "/fur5.jpeg",
+    description:
+      "A showcase of contemporary furniture design that blends aesthetics with functionality—featuring innovative forms, ergonomic comfort, and timeless craftsmanship tailored for modern living.",
+    category: "FURNITURE",
+    gallery: ["/fur1.jpeg", "/fur2.jpeg", "/fur3.jpeg", "/fur4.jpeg", "/fur5.jpeg", "/fur6.jpeg", "/fur7.jpeg", "/fur8.jpeg", "/fur9.jpeg", "/fur10.jpeg", "/fur11.jpeg", "/fur12.jpeg"],
   },
 ];
 

@@ -147,6 +147,51 @@ const About = () => {
           </div>
         </section>
 
+        {/* Awards section */}
+        <section className="py-16 px-6 bg-[#121212] text-white">
+  <div className="max-w-7xl mx-auto text-center mb-12">
+    <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">Recognitions</p>
+    <h2 className="text-4xl font-black mb-4 tracking-wide">Awards & Honors</h2>
+    <p className="text-lg leading-relaxed text-white/70 max-w-3xl mx-auto">
+      Celebrating our journey through design excellence and industry recognition.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 max-w-7xl mx-auto mb-8">
+    {[
+      {
+        title: "Best Interior Design 2022",
+        image: "/award1.jpeg",
+      },
+      {
+        title: "Architect’s WOW Award 2024 – Best Interior Design",
+        image: "/award2.jpeg",
+      },
+      {
+        title: "Global Architecture Innovation",
+        image: "/award3.jpeg",
+      },
+    ].map((award, index) => (
+      <div
+        key={index}
+        className="bg-white/5 border border-white/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
+      >
+        <div className="relative w-full aspect-[5/6]">
+          <Image
+            src={award.image}
+            alt={award.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+        {/* <div className="p-4">
+          <h3 className="text-lg font-semibold text-white">{award.title}</h3>
+        </div> */}
+      </div>
+    ))}
+  </div>
+</section>
+
         {/* Philosophy Section */}
         <section className="py-28 px-6 text-white" style={{ backgroundColor: "#1c1c1f" }}>
           <div className="max-w-6xl mx-auto text-center mb-16">
@@ -175,58 +220,61 @@ const About = () => {
         </section>
 
         {/* Core Values Section */}
-        <section className="bg-black py-24 px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div className="h-full">
-              <div className="overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="/design.jpg"
-                  alt="Interior design by AR-TEEKSHA"
-                  width={800}
-                  height={800}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-105"
-                />
-              </div>
-            </div>
+        <section className="bg-black py-20 px-6">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div className="h-full flex justify-center md:justify-start">
+      <div className="relative w-full max-w-[600px] aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          src="/design.jpg"
+          alt="Interior design by AR-TEEKSHA"
+          fill
+          className="object-cover transition-transform duration-700 ease-in-out hover:scale-105"
+        />
+      </div>
+    </div>
 
-            <div className="text-white">
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-wide mb-8">
-                Design with <span className="font-bold text-transparent bg-clip-text bg-gradient-to-l from-yellow-300 via-orange-400 to-amber-300">Purpose</span>
-              </h2>
-              <p className="mb-6 text-base leading-relaxed text-white/90 max-w-prose tracking-wide" >
-                At <strong>TAS Designs</strong>, we believe that exceptional design is intentional. It goes
-                beyond style—shaping spaces that support how people live, feel, and connect.
-              </p>
-              <div className="space-y-6 text-base leading-relaxed text-white/80">
-                <div className="tracking-wide">
-                  <h3 className="text-lg font-semibold text-white mb-1">Collaboration</h3>
-                  <p>
-                    Our process begins with listening. We work closely with clients to develop thoughtful design rooted
-                    in clarity, transparency, and trust.
-                  </p>
-                </div>
-                <div className="tracking-wide">
-                  <h3 className="text-lg font-semibold text-white mb-1">Craft</h3>
-                  <p >
-                    Details matter. From materials and lighting to proportion and finish, our work reflects a commitment
-                    to enduring quality and meaningful form.
-                  </p>
-                </div>
-                <div className="tracking-wide">
-                  <h3 className="text-lg font-semibold text-white mb-1">People</h3>
-                  <p >
-                    Every space is made for people. We focus on comfort, beauty, and usability—creating interiors that
-                    foster well-being and connection.
-                  </p>
-                </div>
-              </div>
-              <p className="mt-10 italic text-lg text-white tracking-wide" >
-                Thoughtful design isn’t just about how a space looks—
-                <strong> it’s about how it makes you feel.</strong>
-              </p>
-            </div>
-          </div>
-        </section>
+    <div className="text-white">
+      <h2 className="text-3xl md:text-4xl font-semibold tracking-wide mb-8">
+        Design with{" "}
+        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-l from-yellow-300 via-orange-400 to-amber-300">
+          Purpose
+        </span>
+      </h2>
+      <p className="mb-6 text-base leading-relaxed text-white/90 max-w-prose tracking-wide">
+        At <strong>TAS Designs</strong>, we believe that exceptional design is intentional. It goes
+        beyond style—shaping spaces that support how people live, feel, and connect.
+      </p>
+      <div className="space-y-6 text-base leading-relaxed text-white/80">
+        <div className="tracking-wide">
+          <h3 className="text-lg font-semibold text-white mb-1">Collaboration</h3>
+          <p>
+            Our process begins with listening. We work closely with clients to develop thoughtful
+            design rooted in clarity, transparency, and trust.
+          </p>
+        </div>
+        <div className="tracking-wide">
+          <h3 className="text-lg font-semibold text-white mb-1">Craft</h3>
+          <p>
+            Details matter. From materials and lighting to proportion and finish, our work reflects
+            a commitment to enduring quality and meaningful form.
+          </p>
+        </div>
+        <div className="tracking-wide">
+          <h3 className="text-lg font-semibold text-white mb-1">People</h3>
+          <p>
+            Every space is made for people. We focus on comfort, beauty, and usability—creating
+            interiors that foster well-being and connection.
+          </p>
+        </div>
+      </div>
+      <p className="mt-10 italic text-lg text-white tracking-wide">
+        Thoughtful design isn’t just about how a space looks—
+        <strong> it’s about how it makes you feel.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
 
         {/* Achievements Section */}
         {/* <section className="relative bg-[url('/achievements_bg.jpg')] bg-cover bg-center px-4 sm:px-6 py-16 sm:py-24 flex items-center justify-center">
