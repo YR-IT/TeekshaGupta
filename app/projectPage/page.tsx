@@ -191,7 +191,7 @@ return (
           </div>
 
           {/* Projects Grid with Scroll Animations */}
-          <div className="space-y-48">
+          <div className="space-y-32">
             {projects.map((project, index) => {
               const isProjectVisible = visibleProjects.has(project.id);
               

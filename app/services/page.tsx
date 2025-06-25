@@ -79,14 +79,11 @@ const ServicesPage = () => {
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mx-auto mb-10"></div>
           <p
-            className="text-base text-white leading-relaxed"
-          >
-            At TAS Designs, we offer a comprehensive suite of
-            architectural services thoughtfully tailored to meet the
-            distinct vision of each project. From the earliest concepts to
-            the final build, Teeksha and her team deliver innovative,
-            elegant solutions with precision, creativity, and care.
-          </p>
+  className="text-sm sm:text-sm md:text-base text-white leading-relaxed sm:leading-relaxed md:leading-loose max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] mx-auto"
+>
+  At TAS Designs, we offer a comprehensive suite of architectural services thoughtfully tailored to meet the distinct vision of each project. From the earliest concepts to the final build, Teeksha and her team deliver innovative, elegant solutions with precision, creativity, and care.
+</p>
+
         </div>
 
         {services.map((service, index) => (
@@ -113,7 +110,7 @@ const ServicesPage = () => {
             {/* Content Section */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2
-                className="text-5xl font-medium mb-4 text-amber-200 leading-tight"
+                className="text-5xl font-medium mb-4 text-white/90 leading-tight"
               >                
                 {service.title}
               </h2>

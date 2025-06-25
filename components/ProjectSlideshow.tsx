@@ -209,7 +209,7 @@ const ProjectSlideshow: React.FC<ProjectSlideshowProps> = ({ images, projectTitl
               
               <p 
                 key={`desc-${currentIndex}`}
-                className="text-white/95 text-lg md:text-xl leading-relaxed font-light max-w-xl transition-all duration-700"
+                className="text-white/95 text-base md:text-xl leading-relaxed font-light max-w-xl transition-all duration-700"
                 style={{ 
                   textShadow: '0 1px 8px rgba(0, 0, 0, 0.8)',
                 }}
@@ -223,26 +223,27 @@ const ProjectSlideshow: React.FC<ProjectSlideshowProps> = ({ images, projectTitl
               {isEvenSlide ? (
                 /* WHITE TO BLACK BUTTON (Even slides: 0, 2, 4...) */
                 <button
-                  key={`cta-${currentIndex}`}
-                  onClick={handleContactClick}
-                  className="relative inline-flex items-center justify-center gap-3 overflow-hidden border-2 border-white bg-white text-black font-medium py-4 px-8 transition-all duration-500 group shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 active:scale-95"
-                >
-                  <span className="relative z-10 group-hover:text-white transition-all duration-500 tracking-wide uppercase text-sm group-hover:tracking-wider">
-                    {currentImage.ctaText}
-                  </span>
-                  <span className="relative z-10 text-lg group-hover:text-white transition-all duration-500 group-hover:translate-x-2 group-hover:scale-110">
-                    →
-                  </span>
-                  
-                  {/* Sliding Black Background */}
-                  <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                  
-                  {/* Shine Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 opacity-20" />
-                  
-                  {/* Pulse Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300 shadow-[inset_0_0_20px_rgba(255,255,255,0.1)]" />
-                </button>
+  key={`cta-${currentIndex}`}
+  onClick={handleContactClick}
+  className="relative inline-flex items-center justify-center gap-2 sm:gap-3 overflow-hidden border-2 border-white bg-white text-black font-medium py-3 px-6 sm:py-4 sm:px-8 transition-all duration-500 group shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 active:scale-95"
+>
+  <span className="relative z-10 group-hover:text-white transition-all duration-500 tracking-wide uppercase text-xs sm:text-sm group-hover:tracking-wider">
+    {currentImage.ctaText}
+  </span>
+  <span className="relative z-10 text-base sm:text-lg group-hover:text-white transition-all duration-500 group-hover:translate-x-2 group-hover:scale-110">
+    →
+  </span>
+
+  {/* Sliding Black Background */}
+  <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+
+  {/* Shine Effect */}
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 opacity-20" />
+
+  {/* Pulse Glow */}
+  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300 shadow-[inset_0_0_20px_rgba(255,255,255,0.1)]" />
+</button>
+
               ) : (
                 /* BLACK TO WHITE BUTTON (Odd slides: 1, 3, 5...) */
                 <button
