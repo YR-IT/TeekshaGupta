@@ -6,6 +6,13 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import ResidentialCard from "@/components/ResidentialCard";
+import { residentialProjects } from "@/lib/residentialProjects";
+import JewelleryCard from "@/components/JewelleryCard";
+import CommercialCard from "@/components/CommercialCard";
+
+import { jewelleryProjects } from "@/lib/jewelleryProjects";
+import { commercialProjects } from "@/lib/commercialProjects";
 
 const projects = [
   {
@@ -21,7 +28,7 @@ const projects = [
   {
     id: 2,
     slug: "jewellery-showroom",
-    title: "Commercial Showroom",
+    title: "jewellery Showroom",
     image: "/pro1a.jpg",
     description:
       "A thoughtfully designed jewellery showroom combining elegance and functionality with luxurious materials, ambient lighting, secure layouts, and refined displays to enhance customer experience and showcase craftsmanship in a sophisticated environment.",
@@ -91,15 +98,16 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </h1>
             <p className="text-base sm:text-lg mt-4 tracking-wide">{project.description}</p>
           </div>
-        </div>
+        </div> 
       </div>
 
-      <div className="max-w-full mx-auto px-12 py-12 sm:py-16 mt-20">
-        {/* <p className="text-xs sm:text-sm mb-4 text-center tracking-wide">VISUAL JOURNEY</p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-8 sm:mb-12 text-center underline underline-offset-8 tracking-wide">
+      <div className="max-2/4 mx-auto px-12 py-12   sm:py-16 mt-20">
+      {project.slug === "furniture-studio" && (
+  <section className="py-20 px-6 sm:px-12 bg-black">
+   <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-8 sm:mb-12 text-center underline underline-offset-8 tracking-wide">
           Project Gallery
-        </h2> */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
+        </h2> 
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
           {project.gallery.map((img, index) => (
             <div key={index} className="relative group">
               <Image
@@ -111,7 +119,75 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               />
             </div>
           ))}
-        </div>
+      
+    </div>
+  </section>
+)}
+
+{project.slug === "residential-haven" && (
+  <section className="py-20 px-6 sm:px-12 bg-black">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-12 text-center">
+      Residential Projects
+    </h2>
+    <div className="flex flex-col gap-12 max-w-7xl mx-auto">
+      {residentialProjects.map((proj, idx) => (
+        <ResidentialCard
+          key={idx}
+          client={proj.client}
+          location={proj.location}
+          area={proj.area}
+          theme={proj.theme}
+          status={proj.status}
+          images={proj.images}
+        />
+      ))}
+    </div>
+  </section>
+)}
+
+{project.slug === "jewellery-showroom" && (
+  <section className="py-20 px-6 sm:px-12 bg-black">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-12 text-center">
+      Jewellery Showrooms
+    </h2>
+    <div className="flex flex-col gap-12 max-w-8xl mx-auto justify-center">
+      {jewelleryProjects.map((proj, idx) => (
+        <JewelleryCard
+          key={idx}
+          name={proj.name}
+          location={proj.location}
+          area={proj.area}
+          about={proj.about}
+          designConcept={proj.designConcept}
+          images={proj.images}
+        />
+      ))}
+    </div>
+  </section>
+)}
+
+{project.slug === "commercial-workspace" && (
+  <section className="py-20 px-6 sm:px-12 bg-black">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-12 text-center">
+      Commercial Workspace Projects
+    </h2>
+    <div className="flex flex-col gap-12 max-w-7xl mx-auto">
+      {commercialProjects.map((proj, idx) => (
+        <CommercialCard
+          key={idx}
+          name={proj.name}
+          location={proj.location}
+          area={proj.area}
+          summary={proj.summary}
+          intent={proj.intent}
+          images={proj.images}
+        />
+      ))}
+    </div>
+  </section>
+)}
+
+
       </div>
 
       <section className="py-12 sm:py-16 rounded-3xl">
