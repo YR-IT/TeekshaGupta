@@ -72,7 +72,3 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-app.get('/api/ping', (req, res) => {
-  console.log('👉 Received GET /api/ping');
-  res.send('pong');
-});
