@@ -92,7 +92,7 @@ const Footer = () => {
             <ul className="space-y-3 tracking-wide">
               {[
                 { name: "Home", href: "/" },
-                { name: "Projects", href: "/projects" },
+                { name: "Projects", href: "/projectPage" },
                 { name: "Services", href: "/services" },
                 { name: "About Us", href: "/about" },
                 { name: "Contact", href: "/contact" },
@@ -201,38 +201,19 @@ const Footer = () => {
 
       {/* Footer bottom */}
       <div className="border-t border-slate-700/50 bg-slate-900/50 backdrop-blur-sm tracking-wide">
-        <div className="container mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-400 text-sm">
-              © 2025{" "}
-              <span className="text-amber-300 font-medium">
-                Teeksha Gupta
-              </span>
-              . All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <a
-                href="#"
-                className="text-slate-400 hover:text-amber-100 transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-slate-400 hover:text-amber-100 transition-colors"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-slate-400 hover:text-amber-100 transition-colors"
-              >
-                Cookie Policy
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div className="container mx-auto px-6 py-6">
+    <div className="flex justify-center items-center gap-4">
+      <p className="text-slate-400 text-sm text-center">
+        © 2025{" "}
+        <span className="text-amber-300 font-medium">
+          Teeksha Gupta
+        </span>
+        . All rights reserved.
+      </p>
+    </div>
+  </div>
+</div>
+
     </footer>
   );
 };

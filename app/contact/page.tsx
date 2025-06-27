@@ -27,6 +27,7 @@ const ContactPage = () => {
     vision: ''
   });
   const [focusedField, setFocusedField] = useState('');
+  const [status, setStatus] = useState('');
 
   useEffect(() => {
     setIsVisible(true);
@@ -39,17 +40,37 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setStatus('');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ fullName: '', email: '', phone: '', projectType: '', subject: '', vision: '' });
+      } else {
+        setStatus(result.error || 'Failed to send message');
+      }
+    } catch (error) {
+      setStatus('An error occurred. Please try again.');
+    }
   };
 
   const getProjectIcon = (type: string) => {
     switch(type) {
-      case 'residential': return <Home className="w-4 h-4 text-gray-600" />;
-      case 'commercial': return <Building className="w-4 h-4 text-gray-600" />;
-      case 'renovation': return <Wrench className="w-4 h-4 text-gray-600" />;
-      case 'consultation': return <MessageCircle className="w-4 h-4 text-gray-600" />;
+      case 'residential': return <Home className="w-4 h-4 text-gray-400" />;
+      case 'commercial': return <Building className="w-4 h-4 text-gray-400" />;
+      case 'renovation': return <Wrench className="w-4 h-4 text-gray-400" />;
+      case 'consultation': return <MessageCircle className="w-4 h-4 text-gray-400" />;
       default: return <Building className="w-4 h-4 text-gray-400" />;
     }
   };
@@ -152,10 +173,6 @@ const ContactPage = () => {
             
             {/* Form Section with Glowing Moonlight Border */}
             <div className="relative">
-              {/* Glowing Border Container */}
-              {/* <div className="absolute -inset-4 bg-gradient-to-r from-gray-200/50 via-gray-300/60 to-gray-200/50 rounded-2xl blur-xl opacity-70 animate-pulse"></div>
-              <div className="absolute -inset-2 bg-gradient-to-r from-gray-300/40 via-gray-400/50 to-gray-300/40 rounded-xl blur-lg opacity-80"></div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-gray-400/30 via-gray-500/40 to-gray-400/30 rounded-lg blur-md opacity-90"></div> */}
               
               {/* Form Content */}
               <div className="relative bg-black  border border-gray-200/50 rounded-lg p-12 shadow-2xl shadow-gray-300/20">
@@ -169,7 +186,7 @@ const ContactPage = () => {
                     </h3>
                   </div>
 
-                  <form className="space-y-8">
+                  <form onSubmit={handleSubmit} className="space-y-8">
                     {/* Full Name */}
                     <div className="relative group">
                       <div className="absolute left-0 top-4 flex items-center">
@@ -361,19 +378,19 @@ const ContactPage = () => {
 
                     {/* Submit Button */}
                     <div className="pt-8">
-  <button
-    type="button"
-    onClick={handleSubmit}
-    className="group relative overflow-hidden bg-black text-white px-8 sm:px-10 md:px-12 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base md:text-lg font-light tracking-wide transition-all duration-500 transform hover:scale-105 border border-white rounded-lg shadow-lg hover:shadow-xl hover:text-black"
-  >
-    <span className="relative z-10">Start</span>
-    
-    <div className="absolute inset-0 bg-white text-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left flex items-center justify-center">
-      {/* <span className="font-light text-sm sm:text-base md:text-lg">Start</span> */}
-    </div>
-  </button>
-</div>
-
+                      <button
+                        type="submit"
+                        className="group relative overflow-hidden bg-black text-white px-8 sm:px-10 md:px-12 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base md:text-lg font-light tracking-wide transition-all duration-500 transform hover:scale-105 border border-white rounded-lg shadow-lg hover:shadow-xl hover:text-black"
+                      >
+                        <span className="relative z-10">Start</span>
+                        <div className="absolute inset-0 bg-white text-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left flex items-center justify-center"></div>
+                      </button>
+                      {status && (
+                        <div className={`mt-4 text-center ${status.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
+                          {status}
+                        </div>
+                      )}
+                    </div>
                   </form>
                 </div>
               </div>

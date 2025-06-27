@@ -2,86 +2,33 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import { Briefcase, Award, Clock, Users, Leaf, Puzzle } from "lucide-react";
 
-const philosophyCards = [
-  {
-    icon: <Users className="w-8 h-8 text-white" />,
-    title: "Human-Centric Thinking",
-    desc: "Architecture should serve the people who inhabit it. By understanding user needs and behaviors, we create spaces that enrich daily life and foster connection.",
-  },
-  {
-    icon: <Leaf className="w-8 h-8 text-white" />,
-    title: "Eco-Conscious Design",
-    desc: "We integrate environmental responsibility into every project, designing for low impact, reduced carbon footprint, and long-term well-being.",
-  },
-  {
-    icon: <Puzzle className="w-8 h-8 text-white" />,
-    title: "Innovating with Purpose",
-    desc: "Innovation guided by cultural, social, and environmental context. Our designs balance bold creativity with respectful integration.",
-  },
-];
-
-const achievements = [
-  {
-    target: 150,
-    suffix: "+",
-    label: "Projects Completed",
-    icon: <Briefcase size={40} className="text-black" />,
-  },
-  {
-    target: 18,
-    suffix: "",
-    label: "Design Awards",
-    icon: <Award size={40} className="text-black" />,
-  },
-  {
-    target: 10,
-    suffix: "+",
-    label: "Years of Excellence",
-    icon: <Clock size={40} className="text-black" />,
-  },
-];
-
-const AchievementCounter = ({ target, suffix }: { target: number; suffix?: string }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          const start = performance.now();
-          const duration = 1500;
-
-          const step = (now: number) => {
-            const progress = Math.min((now - start) / duration, 1);
-            setCount(Math.floor(progress * target));
-            if (progress < 1) requestAnimationFrame(step);
-          };
-
-          requestAnimationFrame(step);
-        }
-      },
-      { threshold: 0.6 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [target]);
-
-  return (
-    <div ref={ref} className="text-3xl sm:text-4xl font-extrabold">
-      {count}
-      {suffix}
-    </div>
-  );
-};
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const About = () => {
+    const awards = [
+    {
+      title: "Best Interior Design 2022",
+      image: "/award1.jpeg",
+    },
+    {
+      title: "Architect’s WOW Award 2024 – Best Interior Design",
+      image: "/award2.jpeg",
+    },
+    {
+      title: "Global Architecture Innovation",
+      image: "/award3.jpeg",
+    },
+    {
+      title: "Global Architecture Innovation",
+      image: "/award.png",
+    },
+  ];
+
   return (
     <main className="font-inter text-white bg-black" style={{ fontFamily: "Lato, sans-serif" }}>
       <Navbar />
@@ -104,123 +51,154 @@ const About = () => {
 
         {/* Our Story Section */}
         <section className="py-20 px-6 bg-black">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-  <div className="relative group">
-    <div className="absolute -inset-8 bg-white/50 rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
-    <div className="relative bg-white p-4 shadow-2xl hover:shadow-3xl transition-all duration-700 group-hover:-rotate-1">
-      <Image
-        src="/award.png"
-        alt="Award Recognition"
-        width={800}
-        height={600}
-        className="rounded-xl shadow-xl w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
-      />
-      <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-black" />
-      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-black" />
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-black" />
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-black" />
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div className="relative w-full max-w-xl mx-auto">
+      <div className="relative group">
+        {/* ✅ Responsive background shape */}
+        <div className="absolute inset-0 -m-4 md:-m-8 bg-white/50 rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
+
+        {/* ✅ Image container */}
+        <div className="relative bg-white p-2 md:p-4 shadow-2xl hover:shadow-3xl transition-all duration-700 group-hover:-rotate-1 rounded-xl">
+          <Image
+            src="/award.png"
+            alt="Award Recognition"
+            width={800}
+            height={600}
+            className="rounded-xl shadow-xl w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
+          />
+          {/* Decorative corners */}
+          <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-black" />
+          <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-black" />
+          <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-black" />
+          <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-black" />
+        </div>
+      </div>
+
+      {/* Floating shapes */}
+      <div className="absolute -top-4 -left-4 w-16 h-16 md:w-24 md:h-24 border border-white/20 rotate-45"></div>
+      <div className="absolute -bottom-6 -left-6 w-12 h-12 md:w-16 md:h-16 bg-white/10 rotate-12"></div>
+    </div>
+
+    <div className="text-left">
+      <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">The Journey</p>
+      <h2 className="text-4xl mb-6 underline underline-offset-8 decoration-white">Our Story</h2>
+      <p className="text-base leading-relaxed text-white/75 mb-6 tracking-wide">
+        With over decades of design excellence, TAS Designs has earned a reputation as one of the
+        most visionary firms in the industry. Our philosophy is rooted in creating spaces that evoke comfort and
+        character — whether it’s a bespoke home, a cutting-edge workspace, or a tranquil retreat.
+      </p>
+      <p className="text-base leading-relaxed text-white/75 mb-6 tracking-wide">
+        Our commitment to innovation and craftsmanship has been recognized with multiple prestigious design
+        awards, celebrating our ability to merge creativity with functionality.
+      </p>
+      <p className="text-base leading-relaxed text-white/75 tracking-wide">
+        Nationally and internationally acclaimed, our accolades stand as a testament to our passion and
+        dedication to design that resonates.
+      </p>
     </div>
   </div>
+</section>
 
-  <div className="absolute -top-4 -left-4 w-24 h-24 border border-white/20 rotate-45"></div>
-  <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-white/10 rotate-12"></div>
+
+        {/* Founding Team Section */}
+<section className="py-12 px-6 bg-black text-white">
+  <div className="max-w-7xl mx-auto text-center mb-12">
+    <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">Our Leadership</p>
+    <h2 className="text-4xl font-black mb-4 tracking-wide">Founding Team</h2>
+    <p className="text-lg leading-relaxed text-white/70 max-w-3xl mx-auto">
+  Founded in 2015, TAS Designs has been driven by a passionate team of visionaries committed to shaping innovative, thoughtful architecture.
+</p>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-28 max-w-6xl mx-auto select-none">
+  {/* Teeksha Gupta */}
+  <div className="bg-white rounded-2xl shadow-lg overflow-hidden text-center px-2 py-2">
+    <div className="w-full aspect-square mb-4 relative group overflow-hidden rounded-xl">
+      <Image
+        src="/teeksha_about.jpg"
+        alt="Teeksha Gupta"
+        fill
+        className="object-cover transform transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <h3 className="text-xl font-bold text-black leading-tight">Teeksha Gupta</h3>
+    <p className="text-gray-700 text-sm mt-1 leading-snug">Bachelor of Architecture</p>
+    <p className="text-gray-500 text-xs leading-snug">C.O.A. Registered, Founder</p>
+  </div>
+
+  {/* Salil Modgil */}
+  <div className="bg-white rounded-2xl shadow-lg overflow-hidden text-center px-2 py-2">
+    <div className="w-full aspect-square mb-4 relative group overflow-hidden rounded-xl">
+      <Image
+        src="/salil.jpg"
+        alt="Salil Modgil"
+        fill
+        className="object-cover transform transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <h3 className="text-lg font-bold text-black leading-tight">Salil Modgil</h3>
+    <p className="text-gray-700 text-sm mt-1 leading-snug">B.Tech, M.Tech Urban Planning</p>
+    <p className="text-gray-500 text-xs leading-snug">Founder</p>
+  </div>
 </div>
-
-            <div className="text-left">
-              <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">The Journey</p>
-              <h2 className="text-4xl mb-6 underline underline-offset-8 decoration-white">Our Story</h2>
-              <p className="text-base leading-relaxed text-white/75 mb-6 tracking-wide">
-                With over decades of design excellence, TAS Designs has earned a reputation as one of the
-                most visionary firms in the industry. Our philosophy is rooted in creating spaces that evoke comfort and
-                character — whether it’s a bespoke home, a cutting-edge workspace, or a tranquil retreat.
-              </p>
-              <p className="text-base leading-relaxed text-white/75 mb-6 tracking-wide">
-                Our commitment to innovation and craftsmanship has been recognized with multiple prestigious design
-                awards, celebrating our ability to merge creativity with functionality.
-              </p>
-              <p className="text-base leading-relaxed text-white/75 tracking-wide">
-                Nationally and internationally acclaimed, our accolades stand as a testament to our passion and
-                dedication to design that resonates.
-              </p>
-            </div>
-          </div>
-        </section>
+</section>
 
         {/* Awards section */}
-        <section className="py-16 px-6 bg-[#121212] text-white">
+        <section className="py-16 px-6 bg-black text-white">
   <div className="max-w-7xl mx-auto text-center mb-12">
-    <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">Recognitions</p>
-    <h2 className="text-4xl font-black mb-4 tracking-wide">Awards & Honors</h2>
+    <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">
+      Recognitions
+    </p>
+    <h2 className="text-4xl font-black mb-4 tracking-wide">
+      Awards & Honors
+    </h2>
     <p className="text-lg leading-relaxed text-white/70 max-w-3xl mx-auto">
       Celebrating our journey through design excellence and industry recognition.
     </p>
   </div>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 max-w-7xl mx-auto mb-8">
-    {[
-      {
-        title: "Best Interior Design 2022",
-        image: "/award1.jpeg",
-      },
-      {
-        title: "Architect’s WOW Award 2024 – Best Interior Design",
-        image: "/award2.jpeg",
-      },
-      {
-        title: "Global Architecture Innovation",
-        image: "/award3.jpeg",
-      },
-    ].map((award, index) => (
-      <div
-        key={index}
-        className="bg-white/5 border border-white/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
-      >
-        <div className="relative w-full aspect-[5/6]">
-          <Image
-            src={award.image}
-            alt={award.title}
-            fill
-            className="object-cover"
-          />
-        </div>
-        {/* <div className="p-4">
-          <h3 className="text-lg font-semibold text-white">{award.title}</h3>
-        </div> */}
+ <Swiper
+  modules={[Autoplay, Navigation]}
+  spaceBetween={50}
+  loop
+  autoplay={{
+    delay: 2500,
+    disableOnInteraction: false,
+  }}
+  navigation={{
+    nextEl: ".custom-swiper-button-next",
+    prevEl: ".custom-swiper-button-prev",
+  }}
+  breakpoints={{
+    320: { slidesPerView: 1 },
+    480: { slidesPerView: 1 },
+    640: { slidesPerView: 2 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  }}
+  className="px-12 sm:px-12 relative"
+>
+  {awards.map((award, index) => (
+    <SwiperSlide
+      key={index}
+      className="flex items-center justify-center mb-12"
+    >
+      <div className="bg-white/5 border border-white/20 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500 relative w-full aspect-[3/3]">
+        <Image
+          src={award.image}
+          alt={award.title}
+          fill
+          className="object-cover"
+        />
       </div>
-    ))}
-  </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
 </section>
 
-        {/* Philosophy Section */}
-        <section className="py-28 px-6 text-white" style={{ backgroundColor: "#1c1c1f" }}>
-          <div className="max-w-6xl mx-auto text-center mb-16">
-            <p className="text-sm uppercase tracking-widest text-gray-400 mb-2" >
-              What Drives us
-            </p>
-            <h2 className="text-4xl font-black mb-8 tracking-wide">Our Philosophy</h2>
-            <p className="text-lg leading-relaxed text-gray-300 mb-8 tracking-wide">
-              We believe in blending functionality with artistic expression. Every design is a story — your story —
-              crafted with care, detail, and emotion.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {philosophyCards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 transition duration-300 cursor-pointer text-white"
-              >
-                <div className="mb-4">{card.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 tracking-wide">{card.title}</h3>
-                <p className="text-white/75 tracking-wide">{card.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Core Values Section */}
-        <section className="bg-black py-20 px-6">
+        <section className="bg-black py-12 px-6">
   <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
     <div className="h-full flex justify-center md:justify-start">
       <div className="relative w-full max-w-[600px] aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
@@ -274,32 +252,6 @@ const About = () => {
     </div>
   </div>
 </section>
-
-
-        {/* Achievements Section */}
-        {/* <section className="relative bg-[url('/achievements_bg.jpg')] bg-cover bg-center px-4 sm:px-6 py-16 sm:py-24 flex items-center justify-center">
-          <div className="absolute inset-0 bg-black/60 z-0" />
-          <div className="relative z-10 max-w-6xl w-full text-center text-white">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-6 tracking-wide">OUR <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#fcd34d] via-[#fbbf24] to-[#f59e0b]">  ACHIEVEMENTS</span></h2>
-            <p className="text-sm sm:text-base mb-12 max-w-2xl mx-auto tracking-wide">
-              A few milestones we’re proud of along our journey of creative excellence.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
-              {achievements.map((item, index) => (
-                <div
-                  key={index}
-                  className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center text-center transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-white/20 hover:border-white hover:border-2"
-                >
-                  <div className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-4">
-                    {item.icon}
-                  </div>
-                  <AchievementCounter target={item.target} suffix={item.suffix} />
-                  <p className="text-base sm:text-lg mt-2 font-dark tracking-wide">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
       </div>
       <Footer />
     </main>

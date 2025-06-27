@@ -139,7 +139,7 @@ const Navbar = () => {
           <div
             className="backdrop-blur-xl border-t shadow-2xl"
             style={{
-              backgroundColor: "rgba(255, 255, 255, 0.95)",
+              backgroundColor: "rgba(0, 0, 0, 0.95)",
               borderColor: "rgba(0, 0, 0, 0.1)",
             }}
           >
@@ -156,11 +156,11 @@ const Navbar = () => {
                     className={`block font-semibold transition-all duration-300 py-2 pl-4 ${
                       isActive
                         ? "text-amber-300"
-                        : "text-black hover:text-gray-700 border-l-2 border-transparent hover:border-black"
+                        : "text-white hover:text-gray-700 border-l-2 border-transparent hover:border-black"
                     }`}
                     style={{
                       animationDelay: `${index * 50}ms`,
-                      fontFamily: "DM Serif Text, sans-serif",
+                      fontFamily: "Lato, sans-serif",
                     }}
                   >
                     {item.title}
