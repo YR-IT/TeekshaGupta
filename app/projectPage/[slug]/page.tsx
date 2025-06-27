@@ -125,65 +125,59 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 )}
 
 {project.slug === "residential-haven" && (
-  <section className="py-20 px-6 sm:px-12 bg-black">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-12 text-center">
-      Residential Projects
-    </h2>
-    <div className="flex flex-col gap-12 max-w-7xl mx-auto">
-      {residentialProjects.map((proj, idx) => (
-        <ResidentialCard
-          key={idx}
-          client={proj.client}
-          location={proj.location}
-          area={proj.area}
-          theme={proj.theme}
-          status={proj.status}
-          images={proj.images}
-        />
-      ))}
-    </div>
+  <section className="py-5 px-auto sm:px-12 bg-black">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-7xl mx-auto">
+  {residentialProjects.map((proj, idx) => (
+    <ResidentialCard
+      key={idx}
+      client={proj.client}
+      location={proj.location}
+      area={proj.area}
+      theme={proj.theme}
+      status={proj.status}
+      images={proj.images}
+    />
+  ))}
+</div>
+
   </section>
 )}
 
 {project.slug === "jewellery-showroom" && (
-  <section className="py-20 px-6 sm:px-12 bg-black">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-12 text-center">
-      Jewellery Showrooms
-    </h2>
-    <div className="flex flex-col gap-12 max-w-8xl mx-auto justify-center">
-      {jewelleryProjects.map((proj, idx) => (
-        <JewelleryCard
-          key={idx}
-          name={proj.name}
-          location={proj.location}
-          area={proj.area}
-          about={proj.about}
-          designConcept={proj.designConcept}
-          images={proj.images}
-        />
-      ))}
-    </div>
+  <section className="py-5 px-6 sm:px-12 bg-black">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-7xl mx-auto">
+  {jewelleryProjects.map((proj, idx) => (
+    <JewelleryCard
+      key={idx}
+      name={proj.name}
+      location={proj.location}
+      area={proj.area}
+      about={proj.about}
+      designConcept={proj.designConcept}
+      images={proj.images}
+    />
+  ))}
+</div>
+
   </section>
 )}
 
 {project.slug === "commercial-workspace" && (
-  <section className="py-20 px-6 sm:px-12 bg-black">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-12 text-center">
-      Commercial Workspace Projects
-    </h2>
-    <div className="flex flex-col gap-12 max-w-7xl mx-auto">
-      {commercialProjects.map((proj, idx) => (
-        <CommercialCard
-          key={idx}
-          name={proj.name}
-          location={proj.location}
-          area={proj.area}
-          summary={proj.summary}
-          intent={proj.intent}
-          images={proj.images}
-        />
-      ))}
-    </div>
+  <section className="py-5 px-6 sm:px-12 bg-black">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8  max-w-7xl mx-auto">
+  {commercialProjects.map((proj, idx) => (
+    <CommercialCard
+      key={idx}
+      name={proj.name}
+      location={proj.location}
+      area={proj.area}
+      summary={proj.summary}
+      intent={proj.intent}
+      images={proj.images}
+    />
+  ))}
+</div>
+
   </section>
 )}
 
