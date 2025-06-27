@@ -382,7 +382,7 @@ const ContactPage = () => {
                         type="submit"
                         className="group relative overflow-hidden bg-black text-white px-8 sm:px-10 md:px-12 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base md:text-lg font-light tracking-wide transition-all duration-500 transform hover:scale-105 border border-white rounded-lg shadow-lg hover:shadow-xl hover:text-black"
                       >
-                        <span className="relative z-10">Start</span>
+                        <span className="relative z-10">Submit</span>
                         <div className="absolute inset-0 bg-white text-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left flex items-center justify-center"></div>
                       </button>
                       {status && (
