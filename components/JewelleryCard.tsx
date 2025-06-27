@@ -39,7 +39,7 @@ const JewelleryCard: React.FC<JewelleryCardProps> = ({
   };
 
   return (
-    <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all max-w-xl w-full mx-auto">
+    <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all w-full mb-10">
 
       <div className="relative h-72 w-full">
         <Image 
