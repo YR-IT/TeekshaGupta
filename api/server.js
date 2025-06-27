@@ -18,8 +18,8 @@ app.use(express.json()); // Parse JSON bodies
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'tasdesign7@gmail.com',
-    pass: 'yuzbutgjnligkvyg',
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS,
   },
 });
 
