@@ -1,42 +1,9 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const heroImages = ["/hero_image.jpg", "/hero_image2.jpg", "/hero_image3.jpg"];
 
 const Hero = () => {
-  const [index, setIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    // Start image slideshow immediately
-    const timer = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 6000);
-
-    // Trigger background animations first
-    setTimeout(() => {
-      setIsVisible(true);
-    }, 500);
-
-    // Trigger content animations after 2 seconds
-    setTimeout(() => {
-      setShowContent(true);
-    }, 2000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const handleDotClick = (dotIndex : number) => {
-    if (dotIndex !== index) {
-      setIndex(dotIndex);
-    }
-  };
-
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style={{ fontFamily: "Lato, sans-serif" }}>
+    <section id="hero" className="relative h-[95vh] flex items-center justify-center overflow-hidden" style={{ fontFamily: "Lato, sans-serif" }}>
       {/* Background Images */}
       <div className="absolute inset-0 z-0">
         <video
@@ -46,7 +13,7 @@ const Hero = () => {
           muted
           loop
           playsInline
-        >
+        > 
           <source src="/pj.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -71,19 +38,28 @@ const Hero = () => {
         <div className="absolute bottom-32 sm:bottom-60 left-8 sm:left-60 w-2 sm:w-3 h-2 sm:h-3 bg-white rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
         <div className="absolute top-2/3 right-1/4 w-4 sm:w-6 h-0.5 sm:h-1 bg-white animate-pulse" style={{animationDelay: '3s'}}></div>
       </div>
-      <div className="relative z-10 text-center px-4 ">
-  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-amber-300 italic tracking-wider">
-  Teeksha{" "}
-  <span className="relative inline-block">
-    Gupta
-    <span className="absolute left-3/4 -bottom-4 sm:-bottom-6 transform -translate-x-1/2 text-white text-xl sm:text-2xl md:text-3xl lg:text-6xl italic font-light whitespace-nowrap">
-      Architect
+
+      <div className="relative z-10 w-full flex flex-col items-center justify-end pt-64 sm:pt-70 select-none">
+  <h1 className="text-amber-300 text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-9xl italic tracking-wider text-center z-0">
+    Teeksha{" "}
+    <span className="relative inline-block">
+      Gupta
+      <span className="absolute left-3/4 -bottom-4 sm:-bottom-6 transform -translate-x-1/2 text-white text-2xl sm:text-3xl md:text-4xl lg:text-6xl italic font-light whitespace-nowrap">
+        Architect
+      </span>
     </span>
-  </span>
-</h1>
+  </h1>
 
+  <div className="absolute -top-0 sm:-top-0 left-1/2 transform -translate-x-1/2 z-20">
+    <Image
+      src="/teeksha.png"
+      alt="Architect Portrait"
+      width={400} 
+      height={800}
+      className="object-contain pointer-events-none select-none"
+    />
+  </div>
 </div>
-
     </section>
   );
 };
