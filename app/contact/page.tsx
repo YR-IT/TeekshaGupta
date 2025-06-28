@@ -270,54 +270,58 @@ const ContactPage = () => {
 
                     {/* Project Type - Redesigned as Card Selection */}
                     <div className="space-y-4">
-                      <label className="text-xs tracking-wide text-gray-200 uppercase font-medium block">
-                        Project Type
-                      </label>
-                      <div className="grid grid-cols-2 gap-3">
-                        {projectOptions.map((option) => {
-                          const IconComponent = option.icon;
-                          return (
-                            <div
-                              key={option.value}
-                              className={`relative cursor-pointer group transition-all duration-200 ${
-                                formData.projectType === option.value
-                                  ? 'ring-2 ring-black bg-gray-900'
-                                  : 'hover:bg-black hover:shadow-md'
-                              }`}
-                              onClick={() => setFormData({...formData, projectType: option.value})}
-                            >
-                              <div className="p-4 border border-gray-200 rounded-lg">
-                                <div className="flex items-center space-x-3 mb-2">
-                                  <IconComponent className={`w-5 h-5 transition-colors ${
-                                    formData.projectType === option.value 
-                                      ? 'text-amber-300' 
-                                      : 'text-amber-300 group-hover:text-yellow00'
-                                  }`} />
-                                  <span className={`font-medium text-sm transition-colors ${
-                                    formData.projectType === option.value 
-                                      ? 'text-white' 
-                                      : 'text-white'
-                                  }`}>
-                                    {option.label}
-                                  </span>
-                                </div>
-                                <p className={`text-xs transition-colors ${
-                                  formData.projectType === option.value 
-                                    ? 'text-white' 
-                                    : 'text-gray-200'
-                                }`}>
-                                  {option.description}
-                                </p>
-                                {formData.projectType === option.value && (
-                                  <div className="absolute top-2 right-2 w-2 h-2 bg-white rounded-full"></div>
-                                )}
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
+  <label className="text-xs tracking-wide text-gray-300 uppercase font-medium block">
+    Project Type
+  </label>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {projectOptions.map((option) => {
+      const IconComponent = option.icon;
+      const isSelected = formData.projectType === option.value;
+      return (
+        <div
+          key={option.value}
+          className={`relative cursor-pointer group transition-all duration-200 ${
+            isSelected
+              ? 'ring-2 ring-amber-400 bg-neutral-900'
+              : 'hover:bg-neutral-800 hover:shadow-md'
+          }`}
+          onClick={() =>
+            setFormData({ ...formData, projectType: option.value })
+          }
+        >
+          <div className="p-4 border border-neutral-700 rounded-lg flex flex-col">
+            <div className="flex items-center space-x-3 mb-2">
+              <IconComponent
+                className={`w-5 h-5 flex-shrink-0 ${
+                  isSelected
+                    ? 'text-amber-400'
+                    : 'text-amber-300 group-hover:text-amber-400'
+                }`}
+              />
+              <span
+                className={`font-medium text-sm ${
+                  isSelected ? 'text-white' : 'text-gray-100'
+                }`}
+              >
+                {option.label}
+              </span>
+            </div>
+            <p
+              className={`text-xs ${
+                isSelected ? 'text-gray-200' : 'text-gray-400'
+              }`}
+            >
+              {option.description}
+            </p>
+            {isSelected && (
+              <div className="absolute top-2 right-2 w-2 h-2 bg-amber-400 rounded-full"></div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
                     {/* Subject */}
                     <div className="relative group">
                       <div className="absolute left-0 top-4 flex items-center">
