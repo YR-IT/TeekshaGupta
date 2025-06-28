@@ -6,6 +6,7 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import { BiNavigation } from "react-icons/bi";
 import Image from "next/image";
+import { ContactFormData, sendContactEmail } from '@/helper/email';
 
 interface FormData {
   fullName: string;
@@ -18,7 +19,7 @@ interface FormData {
 
 const ContactPage = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     fullName: '',
     email: '',
     phone: '',
@@ -28,6 +29,7 @@ const ContactPage = () => {
   });
   const [focusedField, setFocusedField] = useState('');
   const [status, setStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -43,25 +45,21 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('');
+    setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-      if (response.ok) {
-        setStatus('Message sent successfully!');
+      const result = await sendContactEmail(formData);
+      
+      if (result.success) {
+        setStatus(result.message);
         setFormData({ fullName: '', email: '', phone: '', projectType: '', subject: '', vision: '' });
       } else {
-        setStatus(result.error || 'Failed to send message');
+        setStatus(result.message);
       }
     } catch (error) {
-      setStatus('An error occurred. Please try again.');
+      setStatus('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
