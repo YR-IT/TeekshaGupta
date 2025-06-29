@@ -155,7 +155,7 @@ const ProjectSlideshow: React.FC<ProjectSlideshowProps> = ({ images, projectTitl
     filter: 'brightness(0.9) contrast(1.1) saturate(1.05)',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-     backgroundSize: projectTitle === "Furniture Design" ? 'contain' : 'cover',
+     backgroundSize: projectTitle === "Furniture Design" || "Modern Residential Home" ? 'contain' : 'cover',
   }}
 /> 
 

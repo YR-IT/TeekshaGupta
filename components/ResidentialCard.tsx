@@ -78,7 +78,7 @@ const ResidentialCard: React.FC<ResidentialCardProps> = ({
       </div>
 
       <div className="p-5 space-y-2">
-        <h3 className="text-xl font-bold">{client}</h3>
+        <h3 className="text-xl font-bold uppercase tracking-wide">{client}</h3>
         <p className="text-gray-300 flex items-center">
           <span className="mr-2">📍</span>
           <span>{location}</span>

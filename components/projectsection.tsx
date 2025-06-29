@@ -8,12 +8,12 @@ const projects = [
     title: "Serene Modern Residence",
     description:
   "The Serene Modern Residence embodies calm sophistication and refined living. Designed to harmonize with its natural surroundings, the home features clean architectural lines, expansive glazing, and a soothing material palette. Sunlight pours through floor-to-ceiling windows, illuminating airy interiors that balance minimalism with warmth. Thoughtfully integrated smart technology and sustainable materials enhance comfort, while landscaped courtyards and panoramic views offer a constant connection to nature. Every element is curated to create a peaceful, timeless sanctuary.",
-    image: "/pro4a.png",
+    image: "/villa1.jpeg",
     link: "/projects/modern-residential-home",
   },
   {
     id: 2,
-    title: "Innovative Commercial Jewellery Showroom",
+    title: "Commercial Space",
     description:
   "This premium commercial showroom concept reimagines the jewellery retail experience—where elegance, brand presence, and customer engagement take center stage. Adaptive display arrangements highlight signature collections, while plush consultation zones and ambient lighting curate a personalized buying journey. Glass facades, high-gloss finishes, and artisanal detailing establish a refined atmosphere that enhances product value and client perception. The design merges luxury with functionality, offering a space that’s commercially strategic and visually captivating.",
     image: "/pro1a.jpg",
@@ -21,7 +21,7 @@ const projects = [
   },
   {
   id: 3,
-  title: "Collaborative Workspace",
+  title: "Office Building",
   description: "Urban Collaborative Workspace redefines the modern office by merging functionality, aesthetics, and community in a dynamic urban environment. Located in the heart of the city, this workspace promotes productivity and well-being through smart design and sustainable innovation. Features such as energy-efficient systems, biophilic elements, and green rooftops align with forward-thinking values. Amenities include state-of-the-art meeting rooms, wellness zones, rooftop breakout areas, and flexible co-working hubs—fostering creativity, focus, and connection. Interiors boast sleek, open layouts with smart technologies and abundant natural light, offering professionals a refined, energizing environment to thrive.",
   image: "/pro2a.jpeg",
   link: "/projects/commercial-workspace"
@@ -78,7 +78,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       {/* Content Container */}
       <div className="flex-1 space-y-4 sm:space-y-6 w-full">
         <div className="space-y-3 sm:space-y-4">
-          <h3 className="text-2xl sm:text-3xl lg:text-3xl font-black text-white tracking-wide leading-tight"  style={{ fontFamily: "Lato, sans-serif" }}>
+          <h3 className="text-2xl sm:text-3xl lg:text-3xl font-black text-white tracking-wider leading-tight"  style={{ fontFamily: "Lato, sans-serif" }}>
             {project.title}
           </h3>
           <p className="text-white/75 tracking-wider leading-relaxed text-sm sm:text-base" style={{ fontFamily: "Lato, sans-serif" }}>
@@ -112,7 +112,7 @@ const ProjectSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-24" style={{ fontFamily: "Lato, sans-serif" }}>
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-4 sm:mb-6">
-            Featured <span className="font-bold bg-gradient-to-r from-white via-orange-200 to-amber-300  bg-clip-text text-transparent">Projects</span>
+            Featured <span className="font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-lg sm:text-xl text-white/75 max-w-3xl mx-auto leading-relaxed tracking-wide px-4">
             Discover our latest interior design projects that showcase innovative spaces, 

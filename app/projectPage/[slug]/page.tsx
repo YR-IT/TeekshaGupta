@@ -19,16 +19,16 @@ const projects = [
     id: 1,
     slug: "residential-haven",
     title: "Residential Haven",
-    image: "/pro4a.png",
+    image: "/villa1.jpeg",
     description:
-      "A serene living space blending elegance, comfort, and warmth through refined interiors, curated furnishings, and harmonious tones that evoke a sense of luxury, calm, and timeless residential sophistication.",
+      "A serene living space blending e1egance, comfort, and warmth through refined interiors, curated furnishings, and harmonious tones that evoke a sense of luxury, calm, and timeless residential sophistication.",
     category: "RESIDENTIAL",
     gallery: ["/pro4a.png", "/pro4b.png", "/pro4c.png", "/fur15.jpeg", "/fur16.jpeg", "/fur14.jpeg"],
   },
   {
     id: 2,
     slug: "jewellery-showroom",
-    title: "jewellery Showroom",
+    title: "Commercial Space",
     image: "/pro1a.jpg",
     description:
       "A thoughtfully designed jewellery showroom combining elegance and functionality with luxurious materials, ambient lighting, secure layouts, and refined displays to enhance customer experience and showcase craftsmanship in a sophisticated environment.",
@@ -45,7 +45,7 @@ const projects = [
   {
     id: 3,
     slug: "commercial-workspace",
-    title: "Commercial Workspace",
+    title: "Office Building",
     image: "/pro2a.jpeg",
     description:
       "An inviting hospitality environment offering luxurious ambiance, tasteful textures, and immersive design crafted to delight guests, enhance relaxation, and reflect contemporary excellence in comfort and style.",

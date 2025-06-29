@@ -45,7 +45,7 @@ const Navbar = () => {
               href="/"
               className="flex items-center group ml-0 lg:ml-[-4rem]"
             >
-              <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 mt-2">
+              <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 mt-2">
                 <img
                   src="/logo2_transparent.png"
                   alt="TAS Designs Logo"

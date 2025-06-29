@@ -19,14 +19,16 @@ const projects = [
   { title: "Bedroom Suite", image: "/fur2.jpeg" },
   { title: "Workstation", image: "/fur7.jpeg" },
   { title: "Lounge Area", image: "/fur19.jpeg" },
+  { title: "Lounge Area", image: "/villa2.jpeg" },
+  { title: "Lounge Area", image: "/villa6.jpeg" },
 
 ];
 
 export default function ProjectSlider() {
   return (
-    <section className="bg-[#0f0f0f] text-white py-16 px-4 overflow-visible">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">
-        <span className="text-[#d6b36c]">Portfolio:</span>{" "}
+    <section className="bg-black text-white py-16 px-4 overflow-visible">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-center mb-16 tracking-tight">
+        <span className="bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">Portfolio:</span>{" "}
         Iconic Designs That Inspire Worldwide
       </h2>
 

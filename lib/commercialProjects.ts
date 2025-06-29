@@ -6,8 +6,8 @@ export const commercialProjects = [
       summary: "A four-level pharma hub combining warehouse efficiency with corporate workspace.",
       intent: "Functionality meets hygiene & modernism, optimizing workflows and comfort.",
       images: [
-        "/HSSIDCH&CARE.jpeg",
         "/HSSIDCH&CARE2.jpeg",
+        "/HSSIDCH&CARE.jpeg",
         // Add more images here if available
       ]
     },

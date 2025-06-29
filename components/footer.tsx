@@ -26,7 +26,7 @@ const Footer = () => {
           {/* Brand + Social */}
           <div className="md:col-span-1">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-amber-100 mb-3 tracking-wide">
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent mb-3 tracking-wider">
                 Architect Teeksha Gupta
               </h2>
               {/* <div className="w-12 h-1 bg-gradient-to-r from-teal-400 to-amber-400 rounded-full mb-4"></div> */}
@@ -86,7 +86,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-amber-100 mb-6 text-lg tracking-wide">
+            <h4 className="font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent mb-6 text-lg tracking-wider">
               Quick Links
             </h4>
             <ul className="space-y-3 tracking-wide">
@@ -112,7 +112,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold text-amber-100 mb-6 text-lg tracking-wide">
+            <h4 className="font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent mb-6 text-lg tracking-wider">
               Our Services
             </h4>
             <ul className="space-y-3 tracking-wide">
@@ -122,8 +122,8 @@ const Footer = () => {
                 "Urban Planning",
                 "Landscape Design",
                 "Renovation",
-                "Construction Management",
-                "Evaluation",
+                "Construction",
+                "Crafted Furniture",
               ].map((service) => (
                 <li
                   key={service}
@@ -138,7 +138,7 @@ const Footer = () => {
 
           {/* Contact */}
          <div>
-  <h4 className="font-bold text-amber-100 mb-6 text-lg tracking-wide">Contact Us</h4>
+  <h4 className="font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent mb-6 text-lg tracking-wider">Contact Us</h4>
 
   <div className="bg-black rounded-2xl p-6 border-4 border-white/10">
     <div className="flex items-start gap-3 mb-6">

@@ -51,14 +51,14 @@ const Projects = () => {
       id: 1,
       slug: "residential-haven",
       title: "Residential Haven",
-      image: "/pro4a.png",
+      image: "/villa1.jpeg",
       description: "Luxurious and elegant bedroom interiors with modern materials and sophisticated lighting design.",
       category: "RESIDENTIAL"
     },
     {
       id: 2,
       slug: "jewellery-showroom",
-      title: "Jewellery Showroom",
+      title: "Commercial Space",
       image: "/pro1a.jpg",
       description: "A luxurious retail environment crafted to showcase elegance, enhance customer experience, and reflect the brilliance of fine jewellery.",
       category: "COMMERCIAL"
@@ -66,7 +66,7 @@ const Projects = () => {
     {
       id: 3,
       slug: "commercial-workspace",
-      title: "Commercial Workspace",
+      title: "Office Building",
       image: "/pro2a.jpeg",
       description: "Luxurious and elegant workspace interiors with modern materials and ergonomic considerations.",
       category: "COMMERCIAL"
@@ -128,7 +128,7 @@ return (
           <div className="inline-block">
             {/* Portfolio Collection Label */}
             <span 
-              className="text-xs sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-gray-300 font-light uppercase mb-4 sm:mb-6 block animate-fade-in-up" 
+              className="text-sm sm:text-sm tracking-[0.3em] sm:tracking-[0.4em] text-gray-300 font-light uppercase mb-4 sm:mb-6 block animate-fade-in-up" 
               style={{animationDelay: '0.5s'}}
             >
               Portfolio Collection

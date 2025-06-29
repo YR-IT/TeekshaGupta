@@ -144,28 +144,28 @@ const ContactPage = () => {
       {/* Vision Section */}
       <div className="py-6 bg-black">
         <div className="max-w-6xl mx-auto px-8  text-center">
-          <span className="text-xs tracking-[0.4em] pt-10 text-amber-300 font-light uppercase mb-8 block">
+          <span className="text-base tracking-[0.4em] pt-10 text-amber-300 font-light uppercase mb-8 block">
             Our Mission
           </span>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white tracking-wider" style={{ fontFamily: "Lato, sans-serif" }}>
             Let's Create Something
             <br />
-            <span className=" font-serif bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            <span className="font-serif bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
               Extraordinary
             </span>
           </h2>
           
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-12"></div>
           
-          <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base text-white max-w-3xl mx-auto leading-relaxed">
             Share your vision with us and let our expert team transform your space into a <em className="font-normal">masterpiece</em> that reflects your unique style and personality.
           </p>
         </div>
       </div>
 
       {/* Contact Form Section */}
-      <div className="py-32 bg-black">
+      <div className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid lg:grid-cols-2 gap-24 items-start">
             

@@ -18,38 +18,38 @@ export const projectsData: Record<string, ProjectData> = {
     description: "Where luxury meets contemporary living",
     images: [
       {
-        src: "/pro4a.png",
+        src: "/villa2.jpeg",
         title: "Architectural Marvel",
         description:
           "Experience the pinnacle of modern residential design with clean lines and sophisticated aesthetics",
         ctaText: "Transform Your Space",
       },
       {
-        src: "/pro4b.png",
+        src: "/villa3.jpeg",
         title: "Living Redefined",
         description:
           "Immerse yourself in spaces that breathe luxury and embrace minimalist elegance",
         ctaText: "Discover More",
       },
       {
-        src: "/pro4c.png",
+        src: "/villa4.jpeg",
         title: "Timeless Elegance",
         description:
           "Where every corner tells a story of refined taste and architectural brilliance",
         ctaText: "Start Your Journey",
       },
-      // {
-      //   src: '/proj1_4.png',
-      //   title: 'Sanctuary of Style',
-      //   description: 'Create memories in spaces designed for the discerning homeowner',
-      //   ctaText: 'Envision Your Dream'
-      // },
-      // {
-      //   src: '/proj1_5.png',
-      //   title: 'Future Living',
-      //   description: 'Step into tomorrow with designs that transcend time and trend',
-      //   ctaText: 'Make It Reality'
-      // }
+      {
+        src: '/villa5.jpeg',
+        title: 'Sanctuary of Style',
+        description: 'Create memories in spaces designed for the discerning homeowner',
+        ctaText: 'Envision Your Dream'
+      },
+      {
+        src: '/villa6.jpeg',
+        title: 'Future Living',
+        description: 'Step into tomorrow with designs that transcend time and trend',
+        ctaText: 'Make It Reality'
+      }
     ],
   },
   "commercial-showroom": {

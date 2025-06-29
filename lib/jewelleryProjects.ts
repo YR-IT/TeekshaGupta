@@ -7,11 +7,11 @@ export const jewelleryProjects = [
     about: "A refined showroom blending legacy with modern elegance for jewellery display.",
     designConcept: "Inspired by precision of fine jewellery. Gold, velvet, mirrors—luxurious yet warm.",
     images: [
-      "/jewelleryshowroom1 (5).jpeg",
-      "/jewelleryshowroom1 (4).jpeg",
-      "/jewelleryshowroom1 (3).jpeg",
       "/jewelleryshowroom1 (2).jpeg",
       "/jewelleryshowroom1 (1).jpeg",
+      "/jewelleryshowroom1 (3).jpeg",
+      "/jewelleryshowroom1 (4).jpeg",
+      "/jewelleryshowroom1 (5).jpeg",
     ]
   },
   {

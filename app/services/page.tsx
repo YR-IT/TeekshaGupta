@@ -25,7 +25,7 @@ const ServicesPage = () => {
         <div className="z-20 px-6">
           <div className="max-w-3xl mx-auto animate-fade-in">
             <h1
-              className="text-5xl md:text-6xl font-normal mb-6 drop-shadow-md bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent"
+              className="inline-block text-5xl md:text-6xl bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent font-thin transform transition-all duration-1500 ease-out mb-6"
             >
               OUR SERVICES
             </h1>
@@ -79,7 +79,7 @@ const ServicesPage = () => {
           </h2>
           <div className="w-40 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mx-auto mb-10"></div>
           <p
-  className="text-sm sm:text-sm md:text-base text-white leading-relaxed sm:leading-relaxed md:leading-loose max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] mx-auto"
+  className="text-sm sm:text-sm md:text-base text-white leading-relaxed sm:leading-relaxed md:leading-loose max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[80%] mx-auto"
 >
   At TAS Designs, we offer a comprehensive suite of architectural services thoughtfully tailored to meet the distinct vision of each project. From the earliest concepts to the final build, Teeksha and her team deliver innovative, elegant solutions with precision, creativity, and care.
 </p>
@@ -122,7 +122,7 @@ const ServicesPage = () => {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-amber-300 text-black px-6 py-3 text-sm tracking-wider font-medium hover:bg-amber-500 transition"
+                className="inline-flex items-center gap-2 bg-amber-500 text-black px-6 py-3 text-sm tracking-wider font-medium hover:bg-amber-600 transition"
               >
                 Get In Touch
                 <svg

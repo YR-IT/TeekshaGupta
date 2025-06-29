@@ -27,6 +27,10 @@ const About = () => {
       title: "Global Architecture Innovation",
       image: "/award.png",
     },
+    {
+      title: "Global Architecture Innovation",
+      image: "/award_teeksha.jpeg",
+    },
   ];
 
   return (
@@ -41,7 +45,7 @@ const About = () => {
           </video>
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <div className="relative z-20 text-center px-6">
-            <h1 className="text-5xl md:text-6xl font-black text-white drop-shadow-xl tracking-wide"><span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-yellow-300">ABOUT</span> US</h1>
+            <h1 className="text-5xl md:text-6xl font-light text-white drop-shadow-xl tracking-wide"><span className="font-light bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">ABOUT US</span></h1>
             <div className="w-40 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mt-5" />
             <p className="text-base md:text-lg mt-4 text-white/90 max-w-3xl mx-auto mt-5 tracking-wide">
               Where creativity meets functionality – shaping spaces that reflect you.
@@ -60,12 +64,13 @@ const About = () => {
         {/* ✅ Image container */}
         <div className="relative bg-white p-2 md:p-4 shadow-2xl hover:shadow-3xl transition-all duration-700 group-hover:-rotate-1 rounded-xl">
           <Image
-            src="/award.png"
-            alt="Award Recognition"
-            width={800}
-            height={600}
-            className="rounded-xl shadow-xl w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
-          />
+  src="/award_teeksha.jpeg"
+  alt="Award Recognition"
+  width={600}
+  height={400}
+  className="shadow-xl w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 max-h-[32rem]"
+/>
+
           {/* Decorative corners */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-black" />
           <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-black" />

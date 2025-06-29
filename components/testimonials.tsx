@@ -9,22 +9,22 @@ import { Star, Quote, Users, Award, TrendingUp } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Som Kumar",
+    name: "Ankit Singla",
     rating: 5,
     quote:
-      "Teeksha Gupta's designs harmoniously blend with their surroundings. Her work is a testament to how architecture can enhance and complement the natural environment. Our project was a perfect example of this, with her innovative approach creating a space that feels both modern and timeless.",
+      "Teeksha has a great vision and she could visualise our home beautifully long before we could see it happening. Starting from understanding our requirements, conceptualising, putting the concepts on paper and executing, she has been on the top of it even on the day she delivered a baby!! I haven't seen anyone more committed to work than she is! It was a pleasure working with Teeksha and Salil. Thank you guys!!",
   },
   {
-    name: "Dhiraj Kumar",
-    rating: 4,
-    quote:
-      "Teeksha Gupta has a knack for creating designs that are both contemporary and timeless. Her buildings age gracefully, maintaining their charm and functionality for decades.",
-  },
-  {
-    name: "Prakash Kumar Raj",
+    name: "Nitish Giri",
     rating: 5,
     quote:
-      "Working with Teeksha Gupta was a fantastic experience. Her innovative designs and commitment to sustainability truly set her apart. Our new home is not only beautiful but also energy-efficient. Teeksha's expertise and professionalism made the entire process seamless.",
+      "Teeksha Gupta has a gift for transforming spaces into something extraordinary. Her innovative use of space and materials brought a new life to our project, making it both aesthetically pleasing and incredibly functional.",
+  },
+  {
+    name: "Prince Kumar",
+    rating: 5,
+    quote:
+      "From concept to completion, Teeksha Gupta’s work was flawless. Her ability to manage the project efficiently and address every detail ensured that everything ran smoothly. Highly impressed with her professionalism.",
   },
   {
     name: "Jai Jindal",
@@ -40,7 +40,7 @@ const testimonials = [
   },
   {
     name: "Akshat Verma",
-    rating: 4,
+    rating: 5,
     quote:
       "Teeksha has a unique talent for transforming ordinary spaces into extraordinary environments. Her designs are not only aesthetically pleasing but also enhance the functionality of the space.",
   },
@@ -52,7 +52,7 @@ const renderStars = (rating: number) => {
     stars.push(
       <Star 
         key={i} 
-        className={`w-4 h-4 ${i <= rating ? 'text-white fill-current' : 'text-white/30'} transition-colors duration-300`} 
+        className={`w-4 h-4 ${i <= rating ? 'text-amber-400 fill-current' : 'text-white/30'} transition-colors duration-300`} 
       />
     );
   }
@@ -136,7 +136,7 @@ const Testimonial = () => {
   What Our
   <br />
   <span className="font-bold">
-    <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-yellow-300">CLIENTS</span> Say
+    <span className="font-bold bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent">CLIENTS</span> Say
   </span>
 </h2>
           <div className="w-24 h-px bg-white mx-auto mb-8"></div>

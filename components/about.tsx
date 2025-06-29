@@ -13,187 +13,12 @@ import Link from "next/link";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
-  const [ratingsVisible, setRatingsVisible] = useState(false);
-  const [statsVisible, setStatsVisible] = useState(false);
-  const [ratingsAnimatedValues, setRatingsAnimatedValues] = useState([0, 0, 0]);
-  const [statsAnimatedValues, setStatsAnimatedValues] = useState([0, 0, 0, 0]);
-  const ratingsRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-
-  const stats = [
-    { icon: Home, label: "Projects Completed", value: 150, suffix: "+" },
-    { icon: Users, label: "Happy Clients", value: 120, suffix: "+" },
-    { icon: Award, label: "Years Experience", value: 10, suffix: "+" },
-    { icon: Palette, label: "Design Awards", value: 15, suffix: "+" },
-  ];
-
-  const ratings = [
-    { icon: Users, label: "Happy Clients", value: 100, suffix: "+" },
-    { icon: Star, label: "Average Rating", value: 4.8, suffix: "/5" },
-    { icon: Award, label: "Projects Completed", value: 50, suffix: "+" },
-  ];
 
   const achievements = [
   "Awarded for Best Interior Design at Architecture Reconnect Summit 2024",
   "India Design Award 2023 for Eco & Luxury Interiors",
   "Eminent Jury at ARCH EX 2024, Chandigarh",
 ];
-
-  // Enhanced easing functions
-  const easeOutBack = (t: number): number => {
-    const c1 = 1.70158;
-    const c3 = c1 + 1;
-    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
-  };
-
-  const easeOutElastic = (x: number): number => {
-    const c4 = (2 * Math.PI) / 3;
-    return x === 0
-      ? 0
-      : x === 1
-      ? 1
-      : Math.pow(2, -10 * x) * Math.sin((x * 10 - 0.75) * c4) + 1;
-  };
-
-  // Enhanced counter animation with multiple easing options
-  const animateValue = (
-    start: number,
-    end: number,
-    duration: number,
-    callback: (value: number) => void,
-    delay: number = 0,
-    easingType: "elastic" | "back" | "bounce" = "elastic"
-  ) => {
-    setTimeout(() => {
-      const startTime = Date.now();
-      const animate = () => {
-        const now = Date.now();
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        let easedProgress;
-        switch (easingType) {
-          case "elastic":
-            easedProgress = easeOutElastic(progress);
-            break;
-          case "back":
-            easedProgress = easeOutBack(progress);
-            break;
-          case "bounce":
-            easedProgress =
-              progress < 0.5
-                ? 2 * progress * progress
-                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-            break;
-          default:
-            easedProgress = easeOutElastic(progress);
-        }
-
-        const currentValue = start + (end - start) * easedProgress;
-
-        // Handle decimal values for ratings
-        if (end < 10 && end % 1 !== 0) {
-          callback(Math.round(currentValue * 10) / 10);
-        } else {
-          callback(Math.floor(currentValue));
-        }
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      requestAnimationFrame(animate);
-    }, delay);
-  };
-
-  // Separate observer for ratings section
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !ratingsVisible) {
-            setRatingsVisible(true);
-
-            ratings.forEach((rating, index) => {
-              animateValue(
-                0,
-                rating.value,
-                2500,
-                (value) => {
-                  setRatingsAnimatedValues((prev) => {
-                    const newValues = [...prev];
-                    newValues[index] = value;
-                    return newValues;
-                  });
-                },
-                index * 300,
-                index === 1 ? "back" : "elastic" // Different easing for rating
-              );
-            });
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
-
-    if (ratingsRef.current) {
-      observer.observe(ratingsRef.current);
-    }
-
-    return () => {
-      if (ratingsRef.current) {
-        observer.unobserve(ratingsRef.current);
-      }
-    };
-  }, [ratingsVisible]);
-
-  // Separate observer for stats section
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !statsVisible) {
-            setStatsVisible(true);
-
-            stats.forEach((stat, index) => {
-              animateValue(
-                0,
-                stat.value,
-                3000,
-                (value) => {
-                  setStatsAnimatedValues((prev) => {
-                    const newValues = [...prev];
-                    newValues[index] = value;
-                    return newValues;
-                  });
-                },
-                index * 200,
-                "bounce"
-              );
-            });
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "0px 0px -100px 0px",
-      }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
-      }
-    };
-  }, [statsVisible]);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 200);
@@ -210,14 +35,10 @@ const About = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {/* <div className="inline-flex items-center gap-2 px-6 py-2 text-white text-xs sm:text-sm font-medium rounded-full mb-6">
-            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            ABOUT
-          </div> */}
 
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-medium text-white mb-4 tracking-tight leading-tight" style={{ fontFamily: "Lato, sans-serif" }}>
             About Teeksha Gupta Architect
-            <span className="block text-amber-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl mt-4 tracking-wide">"Elegance Built Into Form"</span>
+            <span className="block bg-gradient-to-r from-white via-yellow-300 to-yellow-500 bg-clip-text text-transparent text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl mt-4 tracking-wide">"Elegance Built Into Form"</span>
           </h2>
 
           <div className="w-24 h-px bg-black mx-auto"></div>
@@ -309,7 +130,7 @@ const About = () => {
                 <div className="absolute -inset-8 bg-white/50 rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
                 <div className="relative bg-white p-4 shadow-2xl hover:shadow-3xl transition-all duration-700 group-hover:-rotate-1">
                   <img
-                    src="/TeekshaGupta.png"
+                    src="/about_image.JPG"
                     alt="Teeksha Gupta - Interior Designer"
                     className="w-full aspect-[4/5] object-cover transition-all duration-700 group-hover:scale-105"
                   />

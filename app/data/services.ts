@@ -12,21 +12,21 @@ export const services: Service[] = [
     slug: "architectural-design",
     description:
       "Our architectural design process fuses creativity with technical precision. We tailor every building to its context, ensuring both aesthetic beauty and functional harmony. From early-stage ideation to detailed blueprints, our work reflects deep attention to proportion, light, space, and materiality—transforming concepts into enduring architectural landmarks.",
-    image: "/architect_service.jpg",
+    image: "/villa4.jpeg",
   },
   {
     title: "Interior Designing",
     slug: "interior-design",
     description:
       "We craft immersive interior experiences that are tailored to your lifestyle and aspirations. Our designs reflect a balance of texture, lighting, and custom furnishings—layered with timeless sophistication. Whether residential or commercial, our spaces enhance the human experience and evoke emotion.",
-    image: "/interior_service.jpg",
+    image: "/villa6.jpeg",
   },
   {
   title: "Turnkey Solutions",
   slug: "turnkey-solutions",
   description:
     "From concept to completion, our turnkey service ensures a seamless project journey. We manage every phase—design, approvals, procurement, and construction—delivering fully realized spaces ready for immediate use. With a single point of responsibility, clients benefit from streamlined communication, time savings, and budget control.",
-  image: "/office_image1.png",
+  image: "/service3.jpg",
 },
 {
   title: "Design Consultancy",

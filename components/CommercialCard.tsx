@@ -81,7 +81,7 @@ const CommercialCard: React.FC<CommercialCardProps> = ({
       </div>
 
       <div className="p-5 space-y-2">
-        <h3 className="text-xl font-bold">{name}</h3>
+        <h3 className="text-xl font-bold uppercase tracking-wide">{name}</h3>
         <div className="flex items-center text-gray-300">
           <FiMapPin className="mr-2 flex-shrink-0" />
           <span className="truncate">{location}</span>

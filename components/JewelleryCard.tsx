@@ -78,7 +78,7 @@ const JewelleryCard: React.FC<JewelleryCardProps> = ({
       </div>
 
       <div className="p-5 space-y-2">
-        <h3 className="text-xl font-bold">{name}</h3>
+        <h3 className="text-xl font-bold uppercase tracking-wide">{name}</h3>
         <p className="text-gray-300 flex items-center">
           <span className="mr-2">📍</span>
           <span>{location}</span>
