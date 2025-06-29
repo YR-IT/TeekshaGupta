@@ -46,7 +46,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
-          style={{ filter: "brightness(50%)" }}
+          style={{ filter: "brightness(70%)" }}
           autoPlay
           muted
           loop
